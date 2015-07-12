@@ -1,0 +1,123 @@
+/* Mozilla based browsers */
+::-moz-selection {
+  background-color: rgba(255, 1, 1, 1);
+  color: #efefef;
+}
+
+/* Works in Safari */
+::selection {
+  background-color: rgba(255, 1, 1, 1);
+  color: #efefef;
+}
+
+body {
+  background-color: #efefef;
+  color: #000;
+  font-family: "Courier New", Courier, monospace;
+  margin: 0 auto;
+  width: 100%;
+}
+
+
+/* Media Queries */
+
+@media only screen and (max-width: 1600px) {
+
+}
+
+@media only screen and (max-width: 1490px) {
+
+}
+
+@media only screen and (max-width: 1315px) {
+
+}
+
+@media only screen and (max-width: 1230px) {
+
+}
+
+@media only screen and (max-width: 1170px) {
+
+}
+
+@media only screen and (max-width: 1024px) /* iPad Landscape*/{
+
+  .section {
+
+    .link {
+      font-size: 3rem;
+    }
+
+  }
+
+}
+
+
+@media screen and (max-width: 966px) /* 7in Tablet Landscape*/{
+
+}
+
+
+@media only screen and (max-width: 768px) /* iPad */ {
+
+  .container {
+    width: 90%;
+    padding-top: 10vh;
+  }
+
+}
+
+
+@media screen and (max-width: 736px) /* iPhone 6 Plus landscape*/{
+
+  .container {
+    width: 100%;
+    padding-top: 10vh;
+  }
+
+}
+
+@media screen and (max-width: 705px) {
+
+}
+
+@media screen and (max-width: 667px) /* iPhone 6 landscape*/{
+
+}
+
+@media screen and (max-width: 660px) /* 7in Tablet*/{
+
+}
+
+
+@media screen and (max-width: 568px) /* iPhone 5 landscape*/{
+
+}
+
+@media screen and (max-width: 480px) {
+
+}
+
+@media screen and (max-width: 414px) /* iPhone 6 Plus */{
+
+  .section {
+
+    .link {
+      font-size: 2em;
+    }
+
+  }
+
+}
+
+
+@media screen and (max-width: 375px) /* iPhone 6 */{
+
+}
+
+
+@media screen and (max-width: 320px) /* iPhone 5 */{
+
+
+}

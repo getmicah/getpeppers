@@ -1,0 +1,34 @@
+/* Mozilla based browsers */
+::-moz-selection {
+  background-color: #ff0101;
+  color: #efefef; }
+
+/* Works in Safari */
+::selection {
+  background-color: #ff0101;
+  color: #efefef; }
+
+body {
+  background-color: #efefef;
+  color: #000;
+  font-family: "Courier New", Courier, monospace;
+  margin: 0 auto;
+  width: 100%; }
+
+/* Media Queries */
+@media only screen and (max-width: 1024px) {
+  .section .link {
+    font-size: 3rem; } }
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 90%;
+    padding-top: 10vh; } }
+@media screen and (max-width: 736px) {
+  .container {
+    width: 100%;
+    padding-top: 10vh; } }
+@media screen and (max-width: 414px) {
+  .section .link {
+    font-size: 2em; } }
+
+/*# sourceMappingURL=main.css.map */
