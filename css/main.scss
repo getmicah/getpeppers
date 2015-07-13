@@ -26,7 +26,6 @@ body {
   }
 
   .red {
-    height: 15em;
     background-color: #e74c3c;
     border: 0.5em solid #c0392b;
 
@@ -42,7 +41,6 @@ body {
   }
 
   .green {
-    height: 15em;
     background-color: #2ecc71;
     border: 0.5em solid #27ae60;
 
@@ -55,6 +53,8 @@ body {
   .col-md-12 {
     padding-top: 2em;
     .col-sm-4 {
+      padding-left: 3em;
+      padding-right: 3em;
       a {
         color: #efefef;
 
@@ -67,10 +67,7 @@ body {
 
         .reaper {
           margin: 0 auto;
-          width: 75%;
           height: 15em;
-          padding-left: 2em;
-          padding-right: 2em;
           background-image: url("img/reaper.jpg");
           background-size: cover;
           background-repeat: no-repeat;
@@ -81,14 +78,15 @@ body {
             background-image: none;
             background-color: #e67e22;
           }
+
+          &:active {
+            text-decoration: none;
+          }
         }
 
         .ghost {
           margin: 0 auto;
-          width: 75%;
           height: 15em;
-          padding-left: 2em;
-          padding-right: 2em;
           background-image: url("img/ghost.jpg");
           background-size: cover;
           background-repeat: no-repeat;
@@ -98,14 +96,15 @@ body {
             background-image: none;
             background-color: #e67e22;
           }
+
+          &:active {
+            text-decoration: none;
+          }
         }
 
         .habanero {
           margin: 0 auto;
-          width: 75%;
           height: 15em;
-          padding-left: 2em;
-          padding-right: 2em;
           background-image: url("img/habanero.jpg");
           background-size: cover;
           background-repeat: no-repeat;
@@ -115,11 +114,79 @@ body {
             background-image: none;
             background-color: #e67e22;
           }
+
+          &:active {
+            text-decoration: none;
+          }
+        }
+
+        h1 {
+          margin: 0.25em;
         }
 
 
   }
 }
+
+.modal {
+ .modal-dialog {
+   width: 40%;
+   height: 50%;
+   overflow: auto;
+   margin: auto;
+   position: absolute;
+   top: 0; left: 0; bottom: 0; right: 0;
+ }
+  .modal-content {
+    background-image: url("img/reaper.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 0;
+    color: #fff;
+    .modal-body {
+      p{
+        padding-top: 1em;
+        font-size: 0.75em;
+        float: right;
+      }
+      a {
+        color: #fff;
+      }
+    }
+    .modal-footer {
+      li {
+        display: inline;
+        padding-left: 1em;
+      }
+    }
+  }
+}
+
+.reaperModal {
+  .modal-content {
+    background-image: url("img/reaper.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
+.ghostModal {
+  .modal-content {
+    background-image: url("img/ghost.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
+
+.habaneroModal {
+  .modal-content {
+    background-image: url("img/habanero.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
 
 .footer {
   position: absolute;
