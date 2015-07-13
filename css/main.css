@@ -1,34 +1,106 @@
-/* Mozilla based browsers */
+/* Mozilla based browsers*/
 ::-moz-selection {
-  background-color: #ff0101;
-  color: #efefef; }
+  background-color: #efefef;
+  color: #e74c3c; }
 
-/* Works in Safari */
+/* Works in Safari*/
 ::selection {
-  background-color: #ff0101;
-  color: #efefef; }
+  background-color: #efefef;
+  color: #e74c3c; }
 
 body {
   background-color: #efefef;
-  color: #000;
+  color: #efefef;
   font-family: "Courier New", Courier, monospace;
   margin: 0 auto;
   width: 100%; }
 
+.container {
+  padding-top: 2em; }
+  .container .group {
+    padding-bottom: 2em; }
+  .container .red {
+    height: 15em;
+    background-color: #e74c3c;
+    border: 0.5em solid #c0392b; }
+    .container .red .content {
+      padding-top: 0.1em;
+      margin: 1em; }
+      .container .red .content h1 {
+        font-size: 6em; }
+  .container .green {
+    height: 15em;
+    background-color: #2ecc71;
+    border: 0.5em solid #27ae60; }
+    .container .green .content {
+      padding-top: 0.1em;
+      margin: 1em; }
+  .container .col-md-12 {
+    padding-top: 2em; }
+    .container .col-md-12 .col-sm-4 a {
+      color: #efefef; }
+      .container .col-md-12 .col-sm-4 a:hover {
+        text-decoration: none; }
+    .container .col-md-12 .reaper {
+      margin: 0 auto;
+      width: 75%;
+      height: 15em;
+      padding-left: 2em;
+      padding-right: 2em;
+      background-image: url("img/reaper.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      border: 0.5em solid #d35400; }
+      .container .col-md-12 .reaper h1 {
+        padding: -0.5em; }
+      .container .col-md-12 .reaper:hover {
+        font-weight: bold;
+        background-image: none;
+        background-color: #e67e22; }
+    .container .col-md-12 .ghost {
+      margin: 0 auto;
+      width: 75%;
+      height: 15em;
+      padding-left: 2em;
+      padding-right: 2em;
+      background-image: url("img/ghost.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      border: 0.5em solid #d35400; }
+      .container .col-md-12 .ghost h1 {
+        padding: -0.5em; }
+      .container .col-md-12 .ghost:hover {
+        background-image: none;
+        background-color: #e67e22; }
+    .container .col-md-12 .habanero {
+      margin: 0 auto;
+      width: 75%;
+      height: 15em;
+      padding-left: 2em;
+      padding-right: 2em;
+      background-image: url("img/habanero.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      border: 0.5em solid #d35400; }
+      .container .col-md-12 .habanero h1 {
+        padding: -0.5em; }
+      .container .col-md-12 .habanero:hover {
+        background-image: none;
+        background-color: #e67e22; }
+
+.footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0; }
+  .footer a {
+    color: #000; }
+    .footer a:hover {
+      text-decoration: none;
+      color: #000; }
+      .footer a:hover .heart {
+        color: #e74c3c; }
+
 /* Media Queries */
-@media only screen and (max-width: 1024px) {
-  .section .link {
-    font-size: 3rem; } }
-@media only screen and (max-width: 768px) {
-  .container {
-    width: 90%;
-    padding-top: 10vh; } }
-@media screen and (max-width: 736px) {
-  .container {
-    width: 100%;
-    padding-top: 10vh; } }
-@media screen and (max-width: 414px) {
-  .section .link {
-    font-size: 2em; } }
 
 /*# sourceMappingURL=main.css.map */

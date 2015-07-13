@@ -1,23 +1,142 @@
-/* Mozilla based browsers */
+/* Mozilla based browsers*/
 ::-moz-selection {
-  background-color: rgba(255, 1, 1, 1);
-  color: #efefef;
+  background-color: #efefef;
+  color: #e74c3c;
 }
 
-/* Works in Safari */
+/* Works in Safari*/
 ::selection {
-  background-color: rgba(255, 1, 1, 1);
-  color: #efefef;
+  background-color: #efefef;
+  color: #e74c3c;
 }
 
 body {
   background-color: #efefef;
-  color: #000;
+  color: #efefef;
   font-family: "Courier New", Courier, monospace;
   margin: 0 auto;
   width: 100%;
 }
 
+.container {
+  padding-top: 2em;
+
+  .group {
+    padding-bottom: 2em;
+  }
+
+  .red {
+    height: 15em;
+    background-color: #e74c3c;
+    border: 0.5em solid #c0392b;
+
+      .content {
+        padding-top: 0.1em;
+        margin: 1em;
+
+        h1 {
+          font-size: 6em;
+        }
+
+      }
+  }
+
+  .green {
+    height: 15em;
+    background-color: #2ecc71;
+    border: 0.5em solid #27ae60;
+
+      .content {
+        padding-top: 0.1em;
+        margin: 1em;
+      }
+  }
+
+  .col-md-12 {
+    padding-top: 2em;
+    .col-sm-4 {
+      a {
+        color: #efefef;
+
+        &:hover {
+          text-decoration: none;
+          }
+        }
+      }
+
+
+        .reaper {
+          margin: 0 auto;
+          width: 75%;
+          height: 15em;
+          padding-left: 2em;
+          padding-right: 2em;
+          background-image: url("img/reaper.jpg");
+          background-size: cover;
+          background-repeat: no-repeat;
+          border: 0.5em solid #d35400;
+
+          &:hover {
+            font-weight: bold;
+            background-image: none;
+            background-color: #e67e22;
+          }
+        }
+
+        .ghost {
+          margin: 0 auto;
+          width: 75%;
+          height: 15em;
+          padding-left: 2em;
+          padding-right: 2em;
+          background-image: url("img/ghost.jpg");
+          background-size: cover;
+          background-repeat: no-repeat;
+          border: 0.5em solid #d35400;
+
+          &:hover {
+            background-image: none;
+            background-color: #e67e22;
+          }
+        }
+
+        .habanero {
+          margin: 0 auto;
+          width: 75%;
+          height: 15em;
+          padding-left: 2em;
+          padding-right: 2em;
+          background-image: url("img/habanero.jpg");
+          background-size: cover;
+          background-repeat: no-repeat;
+          border: 0.5em solid #d35400;
+
+          &:hover {
+            background-image: none;
+            background-color: #e67e22;
+          }
+        }
+
+
+  }
+}
+
+.footer {
+  position: absolute;
+  left: 0; bottom: 0; right: 0;
+    a{
+      color: #000;
+
+      &:hover{
+        text-decoration: none;
+        color: #000;
+
+        .heart{
+            color: #e74c3c;
+          }
+      }
+    }
+}
 
 /* Media Queries */
 
@@ -43,13 +162,6 @@ body {
 
 @media only screen and (max-width: 1024px) /* iPad Landscape*/{
 
-  .section {
-
-    .link {
-      font-size: 3rem;
-    }
-
-  }
 
 }
 
@@ -61,20 +173,11 @@ body {
 
 @media only screen and (max-width: 768px) /* iPad */ {
 
-  .container {
-    width: 90%;
-    padding-top: 10vh;
-  }
-
 }
 
 
 @media screen and (max-width: 736px) /* iPhone 6 Plus landscape*/{
 
-  .container {
-    width: 100%;
-    padding-top: 10vh;
-  }
 
 }
 
@@ -100,14 +203,6 @@ body {
 }
 
 @media screen and (max-width: 414px) /* iPhone 6 Plus */{
-
-  .section {
-
-    .link {
-      font-size: 2em;
-    }
-
-  }
 
 }
 
