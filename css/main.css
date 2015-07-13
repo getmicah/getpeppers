@@ -85,7 +85,8 @@ body {
 .modal .modal-dialog {
   width: 40%;
   height: 50%;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
   margin: auto;
   position: absolute;
   top: 0;
@@ -93,35 +94,21 @@ body {
   bottom: 0;
   right: 0; }
 .modal .modal-content {
-  background-image: url("img/reaper.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-color: #efefef;
   border-radius: 0;
-  color: #fff; }
-  .modal .modal-content .modal-body p {
-    padding-top: 1em;
-    font-size: 0.75em;
+  color: #000; }
+  .modal .modal-content .modal-body .source {
+    padding-bottom: 1em;
+    font-size: 0.7em;
+    position: relative;
     float: right; }
+  .modal .modal-content .modal-body img {
+    padding: 0.5em; }
   .modal .modal-content .modal-body a {
-    color: #fff; }
+    color: #000; }
   .modal .modal-content .modal-footer li {
     display: inline;
     padding-left: 1em; }
-
-.reaperModal .modal-content {
-  background-image: url("img/reaper.jpg");
-  background-size: cover;
-  background-repeat: no-repeat; }
-
-.ghostModal .modal-content {
-  background-image: url("img/ghost.jpg");
-  background-size: cover;
-  background-repeat: no-repeat; }
-
-.habaneroModal .modal-content {
-  background-image: url("img/habanero.jpg");
-  background-size: cover;
-  background-repeat: no-repeat; }
 
 .footer {
   position: absolute;
