@@ -33,8 +33,8 @@
       <div class="group">
         <div class="red">
           <div class="content">
-            <h1>Piquant Peppers</h1>
-            <h2>Reasonably Priced, Unreasonably Spiced</h2>
+            <h1>Piquant<br class="responsive-break"> Peppers</h1>
+            <h2>Reasonably Priced,<br class="responsive-break"> Unreasonably Spiced</h2>
           </div>
         </div>
       </div>
@@ -47,28 +47,32 @@
       </div>
       </div>
 
-      <div class="col-md-12">
-        <div class="purchase">
+      <div class="purchase col-md-12">
 
-        <div class="col-sm-4"><a href="" data-toggle="modal" data-target="#reaperModal">
+        <div class="item col-md-3 col-sm-6"><a href="" data-toggle="modal" data-target="#reaperModal">
           <div class="reaper">
             <h1>Carolina<br> Reaper</h1>
           </div></a>
         </div>
 
-        <div class="col-sm-4"><a href="" data-toggle="modal" data-target="#ghostModal">
+        <div class="item col-md-3 col-sm-6"><a href="" data-toggle="modal" data-target="#ghostModal">
           <div class="ghost">
             <h1>Ghost<br> Pepper</h1>
           </div></a>
         </div>
 
-        <div class="col-sm-4"><a href="" data-toggle="modal" data-target="#habaneroModal">
+        <div class="item col-md-3 col-sm-6"><a href="" data-toggle="modal" data-target="#habaneroModal">
           <div class="habanero">
             <h1>Spicy<br> Habanero</h1>
           </div></a>
         </div>
 
-      </div>
+        <div class="item col-md-3 col-sm-6"><a href="" data-toggle="modal" data-target="#habaneroModal">
+          <div class="habanero">
+            <h1>Spicy<br> Habanero</h1>
+          </div></a>
+        </div>
+
     </div>
 
 
@@ -142,14 +146,37 @@
 </div>
 
 
-
-
-
-    <div class="footer">
-      <center><p><a href="http://www.micahcowell.com" target="_blank">
-        made with <span class="heart">&hearts;</span> in Richland, WA
-      </a></p>
+<!-- Habanero Modal -->
+<div class="modal fade" id="habaneroModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"><center>Spicy Habanero</center></h4>
+      </div>
+      <div class="modal-body">
+        <p class="info">The habanero (/ˌhɑːbəˈnɛroʊ/; Spanish pronunciation: [aβaˈneɾo] is a variety of chili pepper. When used in English, it is sometimes spelled (and pronounced) habañero, the tilde being added as a hyperforeignism (patterned after jalapeño). Unripe habaneros are green, and they color as they mature. Common colors are orange and red, but white, brown, yellow, and pink are also seen. Typically, a ripe habanero chili is 2–6 cm (0.8–2.4 in) long. Habanero chilis are very hot, rated <b>100,000–350,000</b> on the Scoville scale.</p>
+        <i class="source">source: <a href="https://en.wikipedia.org/wiki/Habanero">Wikipedia</a></i>
+      </div>
+      <div class="modal-footer">
+        <ul>
+          <li>$10/pepper</li>
+          <li><button type="button" class="btn btn-success">Buy Now</button></li>
+        </ul>
+      </div>
     </div>
+  </div>
+</div>
+
+
+  </div><!-- end of container -->
+
+
+  <div class="footer">
+    <center><p><a href="http://www.micahcowell.com" target="_blank">
+      made with <span class="heart">&hearts;</span> in Richland, WA
+    </a></p>
+  </div>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

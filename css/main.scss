@@ -1,3 +1,5 @@
+@import 'responsive';
+
 /* Mozilla based browsers*/
 ::-moz-selection {
   background-color: #efefef;
@@ -10,20 +12,36 @@
   color: #e74c3c;
 }
 
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 body {
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
   background-color: #efefef;
   color: #efefef;
   font-family: "Courier New", Courier, monospace;
-  margin: 0 auto;
   width: 100%;
+  min-height: 100%;
 }
 
 .container {
-  padding-top: 2em;
+  padding-top: 4em;
+  margin: 0 auto;
 
   .group {
     padding-bottom: 2em;
   }
+
 
   .red {
     background-color: #e74c3c;
@@ -35,26 +53,38 @@ body {
 
         h1 {
           font-size: 6em;
+          .responsive-break {
+            display: none;
+          }
         }
-
+        h2 {
+          font-size: 3em;
+          .responsive-break {
+            display: none;
+          }
+        }
       }
   }
+
+
 
   .green {
     background-color: #2ecc71;
     border: 0.5em solid #27ae60;
 
-      .content {
-        padding-top: 0.1em;
-        margin: 1em;
-      }
+    .content {
+      padding-top: 0.1em;
+      margin: 1em;
+    }
   }
 
-  .col-md-12 {
+
+
+  .purchase {
     padding-top: 2em;
-    .col-sm-4 {
-      padding-left: 3em;
-      padding-right: 3em;
+    .item {
+      padding-left: 2em;
+      padding-right: 2em;
       a {
         color: #efefef;
 
@@ -62,57 +92,74 @@ body {
           text-decoration: none;
           }
         }
+
+        h1 {
+          font-size: 2em;
+          padding-top: 0.25em;
+          margin: 0.5em;
+          font-weight: bold;
+        }
       }
+
 
 
         .reaper {
           margin: 0 auto;
-          height: 15em;
+          height: 20vh;
+          background-color: #003200;
           background-image: url("img/reaper.jpg");
-          background-size: cover;
+          background-size: 110%;
+          background-position: center;
           background-repeat: no-repeat;
-          border: 0.5em solid #d35400;
+          box-shadow: 5px 5px 2px #888888;
 
           &:hover {
-            font-weight: bold;
-            background-image: none;
-            background-color: #e67e22;
+            background-size: 100%;
+            background-position: center;
           }
 
           &:active {
             text-decoration: none;
           }
         }
+
+
 
         .ghost {
           margin: 0 auto;
-          height: 15em;
+          height: 20vh;
+          background-color: #003200;
           background-image: url("img/ghost.jpg");
-          background-size: cover;
+          background-size: 110%;
+          background-position: center;
           background-repeat: no-repeat;
-          border: 0.5em solid #d35400;
+          box-shadow: 5px 5px 2px #888888;
 
           &:hover {
-            background-image: none;
-            background-color: #e67e22;
+            background-size: 100%;
+            background-position: center;
           }
 
           &:active {
             text-decoration: none;
           }
         }
+
+
 
         .habanero {
           margin: 0 auto;
-          height: 15em;
+          height: 20vh;
+          background-color: #003200;
           background-image: url("img/habanero.jpg");
-          background-size: cover;
+          background-size: 110%;
+          background-position: center;
           background-repeat: no-repeat;
-          border: 0.5em solid #d35400;
+          box-shadow: 5px 5px 5px #888888;
 
           &:hover {
-            background-image: none;
-            background-color: #e67e22;
+            background-size: 100%;
+            background-position: center;
           }
 
           &:active {
@@ -120,13 +167,10 @@ body {
           }
         }
 
-        h1 {
-          margin: 0.25em;
-        }
+
+    }/* end of purchase */
 
 
-  }
-}
 
 .modal {
  .modal-dialog {
@@ -165,13 +209,65 @@ body {
         padding-left: 1em;
       }
     }
+   }
   }
-}
+
+  /* container media queries */
+  @media (max-width: $iphone6plus) {
+        padding-top: 1em;
+        .group {
+          padding-bottom: 0.75em;
+        }
+
+        .red {
+          .content {
+            padding-top: 0em;
+            h1 {
+              font-size: 3em;
+              .responsive-break {
+                display: block;
+              }
+            }
+            h2 {
+              font-size: 1em;
+              .responsive-break {
+                display: block;
+              }
+            }
+          }
+        }
+
+        .green {
+          .content {
+
+          }
+        }
+
+        .purchase {
+          .item {
+            padding-left: 0.5em;
+            padding-right: 0.5em;
+            padding-top: 0.25em;
+            padding-bottom: 0.25em;
+
+             h1 {
+               font-size: 1em;
+             }
+            }
+          }
+
+      }
+
+}/* end of container */
+
 
 
 .footer {
   position: absolute;
-  left: 0; bottom: 0; right: 0;
+  right: 0; bottom: 0; left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
     a{
       color: #000;
 
@@ -184,83 +280,4 @@ body {
           }
       }
     }
-}
-
-/* Media Queries */
-
-@media only screen and (max-width: 1600px) {
-
-}
-
-@media only screen and (max-width: 1490px) {
-
-}
-
-@media only screen and (max-width: 1315px) {
-
-}
-
-@media only screen and (max-width: 1230px) {
-
-}
-
-@media only screen and (max-width: 1170px) {
-
-}
-
-@media only screen and (max-width: 1024px) /* iPad Landscape*/{
-
-
-}
-
-
-@media screen and (max-width: 966px) /* 7in Tablet Landscape*/{
-
-}
-
-
-@media only screen and (max-width: 768px) /* iPad */ {
-
-}
-
-
-@media screen and (max-width: 736px) /* iPhone 6 Plus landscape*/{
-
-
-}
-
-@media screen and (max-width: 705px) {
-
-}
-
-@media screen and (max-width: 667px) /* iPhone 6 landscape*/{
-
-}
-
-@media screen and (max-width: 660px) /* 7in Tablet*/{
-
-}
-
-
-@media screen and (max-width: 568px) /* iPhone 5 landscape*/{
-
-}
-
-@media screen and (max-width: 480px) {
-
-}
-
-@media screen and (max-width: 414px) /* iPhone 6 Plus */{
-
-}
-
-
-@media screen and (max-width: 375px) /* iPhone 6 */{
-
-}
-
-
-@media screen and (max-width: 320px) /* iPhone 5 */{
-
-
 }
