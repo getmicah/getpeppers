@@ -1,6 +1,14 @@
 @import 'responsive';
 
 @import url(http://fonts.googleapis.com/css?family=Arvo:400,700);
+@import url(http://fonts.googleapis.com/css?family=Lato);
+
+@mixin transition($transition) {
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -o-transition: $transition;
+    transition: $transition;
+  }
 
 /* Mozilla based browsers*/
 ::-moz-selection {
@@ -60,17 +68,15 @@ a {
     border: 0.5em solid #c0392b;
     margin: 0 auto;
       .content {
-        padding-top: 0.1em;
         margin: 1em;
-
         h1 {
-          font-size: 6em;
+          font-size: 6rem;
           .responsive-break {
             display: none;
           }
         }
         h2 {
-          font-size: 3em;
+          font-size: 3rem;
           .responsive-break {
             display: none;
           }
@@ -78,44 +84,49 @@ a {
       }
   }
 
-
-
   .green {
     background-color: #2ecc71;
     border: 0.5em solid #27ae60;
     margin: 0 auto;
     .content {
-      padding-top: 0.1em;
       margin: 1em;
+      h1 {
+        font-size: 3rem;
+      }
+      p {
+        font-size: 2rem;
+        line-height: 1.4;
+      }
     }
   }
 
 
 
   .purchase {
-    padding-top: 2em;
+    padding-top: 1em;
     .item {
-      padding-left: 1em;
-      padding-right: 1em;
+      padding: 1em;
+      &:active {
+        text-decoration: none;
+        border: none;
+      }
       a {
         color: #efefef;
-
-        &:hover {
+        &:hover, &:active {
           text-decoration: none;
           }
         }
 
         h1 {
-          font-size: 2em;
-          padding-top: 0.25em;
-          padding-bottom: 0.25em;
-          margin: 0.5em;
-
-          /*Center*/
-          text-align: center;
-          position: relative;
-          top: 50%;
-          transform: translateY(-50%);
+          margin-top: 0em;
+          font-weight: bold;
+          font-size: 3rem;
+          line-height: 1.2;
+          padding: 0.25em;
+          padding-right: 0.5em;
+          display: inline-block;
+          background-color: rgba(0,0,0,0.5);
+          @include transition(500ms ease);
         }
       }
 
@@ -126,15 +137,15 @@ a {
             background-size: 110%;
             background-repeat: no-repeat;
             box-shadow: 5px 5px 2px #888888;
-            -moz-box-shadow: 5px 5px 2px #888888;
-            -webkit-box-shadow: 5px 5px 2px #888888;
-            transition: 1s ease;
-            -webkit-transition: 1s ease;
+            @include transition(1s ease);
 
             &:hover {
               background-size: 100%;
-              transition: 1s ease;
-              -webkit-transition: 1s ease;
+              @include transition(1s ease);
+              h1 {
+                @include transition(500ms ease);
+                background-color: rgba(0,0,0,0.8);
+              }
             }
 
             .image:hover > .overlay {
@@ -154,7 +165,7 @@ a {
         .reaper {background-image: url("img/reaper.jpg");}
         .ghost {background-image: url("img/ghost.jpg");}
         .habanero {background-image: url("img/habanero.jpg");}
-
+        .naga {background-image: url("img/naga.jpg");}
 
     }/* end of purchase */
 
@@ -171,16 +182,14 @@ a {
    top: 0; left: 0; bottom: 0; right: 0;
  }
   .modal-content {
+    font-family: 'Lato', sans-serif;
     background-color: #efefef;
     border-radius: 0;
     color: #000;
     .modal-body {
-      .info {
-
-      }
       .source{
         padding-bottom: 1em;
-        font-size: 0.7em;
+        font-size: 1rem;
         position: relative;
         float: right;
       }
@@ -214,13 +223,11 @@ a {
           .content {
             padding-top: 0em;
             h1 {
-              font-size: 3em;
               .responsive-break {
                 display: block;
               }
             }
             h2 {
-              font-size: 1em;
               .responsive-break {
                 display: block;
               }
@@ -238,18 +245,15 @@ a {
         .purchase {
           padding-top: 0em;
           .item {
-            padding-left: 0em;
-            padding-right: 0em;
-            padding-top: 0.5em;
-            padding-bottom: 0.5em;
-
+            padding: 0.5em;
             .pepper {
-              height: 30vh;
+              height: 25vh;
               background-position: center;
             }
-
              h1 {
-               font-size: 2em;
+               display: block;
+               font-size: 1.5rem;
+               line-height: 1.4;
              }
             }
           }
@@ -268,15 +272,12 @@ a {
   text-align: center;
     a{
       color: #000;
-
-      &:hover{
+      &:hover, &:active, {
         text-decoration: none;
         color: #000;
-
         .heart{
             color: #e74c3c;
-            transition: 0.5s ease;
-            -webkit-transition: 0.5s ease;
+            @include transition(1s ease);
           }
       }
     }
