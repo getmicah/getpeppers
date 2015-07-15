@@ -1,5 +1,7 @@
 @import 'responsive';
 
+@import url(http://fonts.googleapis.com/css?family=Arvo:400,700);
+
 /* Mozilla based browsers*/
 ::-moz-selection {
   background-color: #efefef;
@@ -10,6 +12,10 @@
 ::selection {
   background-color: #efefef;
   color: #e74c3c;
+}
+
+input::-moz-focus-inner {
+  border: 0;
 }
 
 html {
@@ -26,12 +32,18 @@ html {
 body {
   position: relative;
   margin: 0;
-  padding-bottom: 6rem;
+  padding-bottom: 8em;
   background-color: #efefef;
   color: #efefef;
-  font-family: "Courier New", Courier, monospace;
+  font-family: 'Arvo', serif;
   width: 100%;
   min-height: 100%;
+}
+
+a {
+  &:focus, a:active {
+    outline: 0;
+  }
 }
 
 .container {
@@ -46,7 +58,7 @@ body {
   .red {
     background-color: #e74c3c;
     border: 0.5em solid #c0392b;
-
+    margin: 0 auto;
       .content {
         padding-top: 0.1em;
         margin: 1em;
@@ -71,7 +83,7 @@ body {
   .green {
     background-color: #2ecc71;
     border: 0.5em solid #27ae60;
-
+    margin: 0 auto;
     .content {
       padding-top: 0.1em;
       margin: 1em;
@@ -83,8 +95,8 @@ body {
   .purchase {
     padding-top: 2em;
     .item {
-      padding-left: 2em;
-      padding-right: 2em;
+      padding-left: 1em;
+      padding-right: 1em;
       a {
         color: #efefef;
 
@@ -96,76 +108,52 @@ body {
         h1 {
           font-size: 2em;
           padding-top: 0.25em;
+          padding-bottom: 0.25em;
           margin: 0.5em;
-          font-weight: bold;
+
+          /*Center*/
+          text-align: center;
+          position: relative;
+          top: 50%;
+          transform: translateY(-50%);
         }
       }
 
+        .pepper {
+            margin: 0 auto;
+            height: 25vh;
+            background-color: #003200;
+            background-size: 110%;
+            background-repeat: no-repeat;
+            box-shadow: 5px 5px 2px #888888;
+            -moz-box-shadow: 5px 5px 2px #888888;
+            -webkit-box-shadow: 5px 5px 2px #888888;
+            transition: 1s ease;
+            -webkit-transition: 1s ease;
 
+            &:hover {
+              background-size: 100%;
+              transition: 1s ease;
+              -webkit-transition: 1s ease;
+            }
 
-        .reaper {
-          margin: 0 auto;
-          height: 20vh;
-          background-color: #003200;
-          background-image: url("img/reaper.jpg");
-          background-size: 110%;
-          background-position: center;
-          background-repeat: no-repeat;
-          box-shadow: 5px 5px 2px #888888;
+            .image:hover > .overlay {
+              width:100%;
+              height:100%;
+              position:absolute;
+              background-color:#000;
+              opacity:0.5;
+              border-radius:30px;
+            }
 
-          &:hover {
-            background-size: 100%;
-            background-position: center;
-          }
-
-          &:active {
-            text-decoration: none;
-          }
+            &:active {
+              text-decoration: none;
+            }
         }
 
-
-
-        .ghost {
-          margin: 0 auto;
-          height: 20vh;
-          background-color: #003200;
-          background-image: url("img/ghost.jpg");
-          background-size: 110%;
-          background-position: center;
-          background-repeat: no-repeat;
-          box-shadow: 5px 5px 2px #888888;
-
-          &:hover {
-            background-size: 100%;
-            background-position: center;
-          }
-
-          &:active {
-            text-decoration: none;
-          }
-        }
-
-
-
-        .habanero {
-          margin: 0 auto;
-          height: 20vh;
-          background-color: #003200;
-          background-image: url("img/habanero.jpg");
-          background-size: 110%;
-          background-position: center;
-          background-repeat: no-repeat;
-          box-shadow: 5px 5px 5px #888888;
-
-          &:hover {
-            background-size: 100%;
-            background-position: center;
-          }
-
-          &:active {
-            text-decoration: none;
-          }
-        }
+        .reaper {background-image: url("img/reaper.jpg");}
+        .ghost {background-image: url("img/ghost.jpg");}
+        .habanero {background-image: url("img/habanero.jpg");}
 
 
     }/* end of purchase */
@@ -213,13 +201,16 @@ body {
   }
 
   /* container media queries */
-  @media (max-width: $iphone6plus) {
+  @media (max-width: $iphone6) {
         padding-top: 1em;
+        padding-left: 0;
+        padding-right: 0;
         .group {
           padding-bottom: 0.75em;
         }
 
         .red {
+          width: 90%;
           .content {
             padding-top: 0em;
             h1 {
@@ -238,25 +229,32 @@ body {
         }
 
         .green {
+          width: 90%;
           .content {
-
+            padding-top: 0em;
           }
         }
 
         .purchase {
+          padding-top: 0em;
           .item {
-            padding-left: 0.5em;
-            padding-right: 0.5em;
-            padding-top: 0.25em;
-            padding-bottom: 0.25em;
+            padding-left: 0em;
+            padding-right: 0em;
+            padding-top: 0.5em;
+            padding-bottom: 0.5em;
+
+            .pepper {
+              height: 30vh;
+              background-position: center;
+            }
 
              h1 {
-               font-size: 1em;
+               font-size: 2em;
              }
             }
           }
 
-      }
+      }/* end of iphone6 query */
 
 }/* end of container */
 
@@ -277,6 +275,8 @@ body {
 
         .heart{
             color: #e74c3c;
+            transition: 0.5s ease;
+            -webkit-transition: 0.5s ease;
           }
       }
     }

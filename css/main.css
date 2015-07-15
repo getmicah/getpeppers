@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Arvo:400,700);
 /* Mozilla based browsers*/
 ::-moz-selection {
   background-color: #efefef;
@@ -7,6 +8,9 @@
 ::selection {
   background-color: #efefef;
   color: #e74c3c; }
+
+input::-moz-focus-inner {
+  border: 0; }
 
 html {
   height: 100%;
@@ -20,23 +24,28 @@ html {
 body {
   position: relative;
   margin: 0;
-  padding-bottom: 6rem;
+  padding-bottom: 8em;
   background-color: #efefef;
   color: #efefef;
-  font-family: "Courier New", Courier, monospace;
+  font-family: 'Arvo', serif;
   width: 100%;
   min-height: 100%; }
+
+a:focus, a a:active {
+  outline: 0; }
 
 .container {
   padding-top: 4em;
   margin: 0 auto;
   /* end of purchase */
-  /* container media queries */ }
+  /* container media queries */
+  /* end of iphone6 query */ }
   .container .group {
     padding-bottom: 2em; }
   .container .red {
     background-color: #e74c3c;
-    border: 0.5em solid #c0392b; }
+    border: 0.5em solid #c0392b;
+    margin: 0 auto; }
     .container .red .content {
       padding-top: 0.1em;
       margin: 1em; }
@@ -50,15 +59,16 @@ body {
           display: none; }
   .container .green {
     background-color: #2ecc71;
-    border: 0.5em solid #27ae60; }
+    border: 0.5em solid #27ae60;
+    margin: 0 auto; }
     .container .green .content {
       padding-top: 0.1em;
       margin: 1em; }
   .container .purchase {
     padding-top: 2em; }
     .container .purchase .item {
-      padding-left: 2em;
-      padding-right: 2em; }
+      padding-left: 1em;
+      padding-right: 1em; }
       .container .purchase .item a {
         color: #efefef; }
         .container .purchase .item a:hover {
@@ -66,47 +76,43 @@ body {
       .container .purchase .item h1 {
         font-size: 2em;
         padding-top: 0.25em;
+        padding-bottom: 0.25em;
         margin: 0.5em;
-        font-weight: bold; }
+        /*Center*/
+        text-align: center;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%); }
+    .container .purchase .pepper {
+      margin: 0 auto;
+      height: 25vh;
+      background-color: #003200;
+      background-size: 110%;
+      background-repeat: no-repeat;
+      box-shadow: 5px 5px 2px #888888;
+      -moz-box-shadow: 5px 5px 2px #888888;
+      -webkit-box-shadow: 5px 5px 2px #888888;
+      transition: 1s ease;
+      -webkit-transition: 1s ease; }
+      .container .purchase .pepper:hover {
+        background-size: 100%;
+        transition: 1s ease;
+        -webkit-transition: 1s ease; }
+      .container .purchase .pepper .image:hover > .overlay {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-color: #000;
+        opacity: 0.5;
+        border-radius: 30px; }
+      .container .purchase .pepper:active {
+        text-decoration: none; }
     .container .purchase .reaper {
-      margin: 0 auto;
-      height: 20vh;
-      background-image: url("img/reaper.jpg");
-      background-size: 110%;
-      background-position: center;
-      background-repeat: no-repeat;
-      box-shadow: 5px 5px 2px #888888; }
-      .container .purchase .reaper:hover {
-        background-size: 100%;
-        background-position: center; }
-      .container .purchase .reaper:active {
-        text-decoration: none; }
+      background-image: url("img/reaper.jpg"); }
     .container .purchase .ghost {
-      margin: 0 auto;
-      height: 20vh;
-      background-image: url("img/ghost.jpg");
-      background-size: 110%;
-      background-position: center;
-      background-repeat: no-repeat;
-      box-shadow: 5px 5px 2px #888888; }
-      .container .purchase .ghost:hover {
-        background-size: 100%;
-        background-position: center; }
-      .container .purchase .ghost:active {
-        text-decoration: none; }
+      background-image: url("img/ghost.jpg"); }
     .container .purchase .habanero {
-      margin: 0 auto;
-      height: 20vh;
-      background-image: url("img/habanero.jpg");
-      background-size: 110%;
-      background-position: center;
-      background-repeat: no-repeat;
-      box-shadow: 5px 5px 5px #888888; }
-      .container .purchase .habanero:hover {
-        background-size: 100%;
-        background-position: center; }
-      .container .purchase .habanero:active {
-        text-decoration: none; }
+      background-image: url("img/habanero.jpg"); }
   .container .modal .modal-dialog {
     width: 40%;
     height: 50%;
@@ -134,28 +140,41 @@ body {
     .container .modal .modal-content .modal-footer li {
       display: inline;
       padding-left: 1em; }
-  @media (max-width: 414px) {
+  @media (max-width: 375px) {
     .container {
-      padding-top: 1em; }
+      padding-top: 1em;
+      padding-left: 0;
+      padding-right: 0; }
       .container .group {
         padding-bottom: 0.75em; }
-      .container .red .content {
+      .container .red {
+        width: 90%; }
+        .container .red .content {
+          padding-top: 0em; }
+          .container .red .content h1 {
+            font-size: 3em; }
+            .container .red .content h1 .responsive-break {
+              display: block; }
+          .container .red .content h2 {
+            font-size: 1em; }
+            .container .red .content h2 .responsive-break {
+              display: block; }
+      .container .green {
+        width: 90%; }
+        .container .green .content {
+          padding-top: 0em; }
+      .container .purchase {
         padding-top: 0em; }
-        .container .red .content h1 {
-          font-size: 3em; }
-          .container .red .content h1 .responsive-break {
-            display: block; }
-        .container .red .content h2 {
-          font-size: 1em; }
-          .container .red .content h2 .responsive-break {
-            display: block; }
-      .container .purchase .item {
-        padding-left: 0.5em;
-        padding-right: 0.5em;
-        padding-top: 0.25em;
-        padding-bottom: 0.25em; }
-        .container .purchase .item h1 {
-          font-size: 1em; } }
+        .container .purchase .item {
+          padding-left: 0em;
+          padding-right: 0em;
+          padding-top: 0.5em;
+          padding-bottom: 0.5em; }
+          .container .purchase .item .pepper {
+            height: 30vh;
+            background-position: center; }
+          .container .purchase .item h1 {
+            font-size: 2em; } }
 
 /* end of container */
 .footer {
@@ -172,6 +191,8 @@ body {
       text-decoration: none;
       color: #000; }
       .footer a:hover .heart {
-        color: #e74c3c; }
+        color: #e74c3c;
+        transition: 0.5s ease;
+        -webkit-transition: 0.5s ease; }
 
 /*# sourceMappingURL=main.css.map */
