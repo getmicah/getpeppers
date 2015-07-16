@@ -25,7 +25,7 @@ html {
 body {
   position: relative;
   margin: 0;
-  padding-bottom: 8em;
+  padding-bottom: 4em;
   background-color: #efefef;
   color: #efefef;
   font-family: 'Arvo', serif;
@@ -93,8 +93,9 @@ a:focus, a a:active {
         -o-transition: 500ms ease;
         transition: 500ms ease; }
     .container .purchase .pepper {
-      margin: 0 auto;
+      width: 100%;
       height: 25vh;
+      margin: 0 auto;
       background-color: #003200;
       background-size: 110%;
       background-repeat: no-repeat;
@@ -143,24 +144,25 @@ a:focus, a a:active {
     left: 0;
     bottom: 0;
     right: 0; }
-  .container .modal .modal-content {
-    font-family: 'Lato', sans-serif;
-    background-color: #efefef;
-    border-radius: 0;
-    color: #000; }
-    .container .modal .modal-content .modal-body .source {
-      padding-bottom: 1em;
-      font-size: 1rem;
-      position: relative;
-      float: right; }
-    .container .modal .modal-content .modal-body img {
-      padding: 0.5em; }
-    .container .modal .modal-content .modal-body a {
+    .container .modal .modal-dialog .modal-content {
+      font-family: 'Lato', sans-serif;
+      background-color: #efefef;
+      border-radius: 0;
       color: #000; }
-    .container .modal .modal-content .modal-footer li {
-      display: inline;
-      padding-left: 1em; }
-  @media (max-width: 375px) {
+      .container .modal .modal-dialog .modal-content .modal-body .source {
+        padding-bottom: 1em;
+        font-size: 1rem;
+        position: relative;
+        float: right; }
+      .container .modal .modal-dialog .modal-content .modal-body img {
+        padding: 0.5em; }
+      .container .modal .modal-dialog .modal-content .modal-body a {
+        color: #000; }
+      .container .modal .modal-dialog .modal-content .modal-footer li {
+        display: inline; }
+      .container .modal .modal-dialog .modal-content .modal-footer .price {
+        padding-right: 1em; }
+  @media (max-width: 414px) {
     .container {
       padding-top: 1em;
       padding-left: 0;
@@ -171,25 +173,35 @@ a:focus, a a:active {
         width: 90%; }
         .container .red .content {
           padding-top: 0em; }
-          .container .red .content h1 .responsive-break {
-            display: block; }
-          .container .red .content h2 .responsive-break {
-            display: block; }
+          .container .red .content h1 {
+            font-size: 4rem; }
+            .container .red .content h1 .responsive-break {
+              display: block; }
+          .container .red .content h2 {
+            font-size: 2rem; }
+            .container .red .content h2 .responsive-break {
+              display: block; }
       .container .green {
         width: 90%; }
         .container .green .content {
           padding-top: 0em; }
+          .container .green .content h1 {
+            font-size: 1rem; }
+          .container .green .content p {
+            font-size: 1.25rem; }
       .container .purchase {
-        padding-top: 0em; }
+        padding-top: 1em; }
         .container .purchase .item {
           padding: 0.5em; }
-          .container .purchase .item .pepper {
-            height: 25vh;
-            background-position: center; }
           .container .purchase .item h1 {
             display: block;
             font-size: 1.5rem;
-            line-height: 1.4; } }
+            line-height: 1.4; }
+      .container .modal .modal-dialog {
+        width: 90%;
+        height: 90%; }
+        .container .modal .modal-dialog .modal-content {
+          font-size: 1.25rem; } }
 
 /* end of container */
 .footer {
@@ -197,6 +209,7 @@ a:focus, a a:active {
   right: 0;
   bottom: 0;
   left: 0;
+  padding-top: 4em;
   padding: 1rem;
   background-color: #efefef;
   text-align: center; }

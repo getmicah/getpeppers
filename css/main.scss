@@ -40,7 +40,7 @@ html {
 body {
   position: relative;
   margin: 0;
-  padding-bottom: 8em;
+  padding-bottom: 4em;
   background-color: #efefef;
   color: #efefef;
   font-family: 'Arvo', serif;
@@ -131,8 +131,9 @@ a {
       }
 
         .pepper {
-            margin: 0 auto;
+            width: 100%;
             height: 25vh;
+            margin: 0 auto;
             background-color: #003200;
             background-size: 110%;
             background-repeat: no-repeat;
@@ -180,7 +181,6 @@ a {
    margin: auto;
    position: absolute;
    top: 0; left: 0; bottom: 0; right: 0;
- }
   .modal-content {
     font-family: 'Lato', sans-serif;
     background-color: #efefef;
@@ -203,14 +203,17 @@ a {
     .modal-footer {
       li {
         display: inline;
-        padding-left: 1em;
       }
+      .price {
+        padding-right: 1em;
+      }
+     }
     }
    }
   }
 
   /* container media queries */
-  @media (max-width: $iphone6) {
+  @media (max-width: $iphone6plus) {
         padding-top: 1em;
         padding-left: 0;
         padding-right: 0;
@@ -223,11 +226,13 @@ a {
           .content {
             padding-top: 0em;
             h1 {
+              font-size: 4rem;
               .responsive-break {
                 display: block;
               }
             }
             h2 {
+              font-size: 2rem;
               .responsive-break {
                 display: block;
               }
@@ -239,17 +244,22 @@ a {
           width: 90%;
           .content {
             padding-top: 0em;
+            h1 {
+              font-size: 1rem;
+            }
+            p {
+              font-size: 1.25rem;
+            }
           }
         }
 
         .purchase {
-          padding-top: 0em;
+          padding-top: 1em;
           .item {
             padding: 0.5em;
             .pepper {
-              height: 25vh;
-              background-position: center;
-            }
+
+              }
              h1 {
                display: block;
                font-size: 1.5rem;
@@ -257,6 +267,17 @@ a {
              }
             }
           }
+
+          .modal {
+           .modal-dialog {
+             width: 90%;
+             height: 90%;
+             .modal-content {
+               font-size: 1.25rem;
+             }
+           }
+          }
+
 
       }/* end of iphone6 query */
 
@@ -267,6 +288,7 @@ a {
 .footer {
   position: absolute;
   right: 0; bottom: 0; left: 0;
+  padding-top: 4em;
   padding: 1rem;
   background-color: #efefef;
   text-align: center;
