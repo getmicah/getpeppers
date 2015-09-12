@@ -1,203 +1,295 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class=“no-js”>
+
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta name="google-site-verification" content="#"/>
-
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="theme-color" content="#e74c3c"/>
 
-    <meta name="application-name" content="Micah Cowell">
+    <meta name="application-name" content="GetPeppers">
     <meta name="description" content="Reasonably Priced, Unreasonably Spiced">
     <meta name="keywords" content="micah cowell, micah, cowell, carolina reaper, peppers, hot, spicy,">
     <meta name="author" content="micah cowell">
 
-    <title>Get Peppers</title>
-    <link rel="icon" href="#">
+    <meta property="og:url"           content="http://getpeppers.com" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="GetPeppers" />
+    <meta property="og:description"   content="Reasonably Priced, Unreasonably Spiced." />
+    <meta property="og:image"         content="http://www.micahcowell/img/getpeppers_scrot.jpg" />
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <title>Get Peppers</title>
+    <link rel="icon" href="img/favicon.png">
 
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
+
   </head>
 
   <body>
 
-    <div class="container">
+    <div id="nav" data-background="#e67e22">
+      <div class="container">
+        <ul class="logo">
+          <li><a href="#top">
+            <svg id="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 441.17189 92.265625">
+              <g style="line-height:125%" font-size="80" font-family="Playfair Display" letter-spacing="0" word-spacing="0" font-weight="bold">
+                <path style="-inkscape-font-specification:'Playfair Display Bold'" d="M58.32 67.773c.298-2.84-2.016-6.107-4.924-3.776-4.868 2.765-10.238 5.26-15.983 4.896-8.26-.05-17.07-2.96-22.078-9.88-5.24-7.22-6.07-16.745-4.82-25.342 1.437-9.602 8.047-18.414 17.286-21.733C33.84 9.77 40.68 9.21 46.836 11.202c2.942 1.01 5.502 2.808 8.038 4.55 3.248 1.13 1.52-4.638 3.54-4.62 2.32-.212.23 3.795.85 5.27-.103 4.702-.12 9.404-.122 14.106-1.97.536-2.198-.852-2.21-2.57-.618-4.514-2.046-9.315-5.884-12.15-5.337-4.613-14.466-5.254-19.523.15-5.53 5.775-6.902 14.157-7.238 21.843-.053 7.793.224 16.033 4.054 23.027 2.37 4.48 7.525 7.053 12.528 6.44 2.912-.182 6.49-1.975 6.313-5.35-.085-4.223.272-8.48-.344-12.668-.303-3.196-3.76-4.053-6.43-4.114-1.92.78-1.725-2.935.284-1.6 7.604.23 15.227.357 22.826-.08.807 2.39-2.12 1.306-2.94 2.96-1.07 3.086-.518 6.442-.654 9.656v11.72H58.32zM80.47 43.047c-.34 5.424-.216 11.438 3.308 15.908 2.547 3.388 7.4 4.186 11.194 2.632 2.722-1.035 4.852-3.206 6.356-5.65 1.666.113 1.47 1.213.66 2.478-2.296 5.545-7.568 10.057-13.696 10.43-5.873.48-12.31-1.472-15.882-6.402-3.99-5.337-4.5-12.386-3.93-18.81.56-6.45 3.8-13.104 9.772-16.123 4.73-2.4 10.426-2.84 15.5-1.35 4.337 1.28 7.38 5.242 8.352 9.548.617 2.393.823 4.874.826 7.34H80.47zm12.382-1.524c.008-4.25-.184-8.77-2.285-12.574-1.074-2.12-4.03-2.558-5.8-1.07-3.18 2.67-3.753 7.112-4.243 10.984.06 1.07-.893 3.163.902 2.66h11.426zM133.28 26.484c-.09.692.385 1.952-.75 1.602h-8.702c.02 11.037-.04 22.075.03 33.11-.28 2.767 2.786 4.322 5.1 3.23 2.005-.67 2.996-2.998 3.925-4.444 1.424.342 1.305 1.298.54 2.386-1.644 3.827-5.517 6.578-9.73 6.53-3.758.2-8.03-1.05-9.914-4.582-1.81-3.59-1.397-7.747-1.475-11.653V28.086h-6.72c.093-.692-.383-1.952.75-1.602h5.97V15.86c3.963.007 7.993-.72 11.523-2.58v13.204h9.453zM155.195 58.828c.042 2.33.016 5.535 2.634 6.5 1.68 1.095 5.136-.152 5.92 1.276.442 2.378-3.246.528-4.607 1.067-7.552-.225-15.107-.097-22.66.103-.653-2.234 1.667-1.554 3.173-1.997 2.64-.483 2.77-3.613 2.798-5.753-.002-13.938.04-27.877-.022-41.815.154-2.343-.86-5.28-3.653-5.26-1.508.002-2.756-.066-2.296-1.815 8.962.49 17.937.042 26.902.127 6.23.286 13.094 1.894 17.156 7.013 5.35 7.034 2.735 18.263-4.796 22.67-5.978 3.974-13.38 4.02-20.302 3.94-.567.35-.093 1.74-.25 2.5v11.445zm3.438-15.547c3.696.136 7.87-1.312 9.424-4.95 2.448-5.227 2.327-11.27 1.515-16.865-.55-3.603-2.502-7.547-6.39-8.372-2.247-.43-5.035-.846-6.903.764-1.528 2.276-.96 5.203-1.085 7.81v21.614h3.438zM198.906 43.047c-.34 5.424-.215 11.438 3.31 15.908 2.547 3.388 7.4 4.186 11.193 2.632 2.72-1.035 4.852-3.206 6.356-5.65 1.665.113 1.47 1.213.66 2.478-2.296 5.545-7.568 10.057-13.696 10.43-5.873.48-12.312-1.472-15.883-6.402-3.99-5.337-4.5-12.386-3.93-18.81.56-6.45 3.8-13.104 9.773-16.123 4.73-2.4 10.426-2.84 15.498-1.35 4.338 1.28 7.38 5.242 8.353 9.548.618 2.393.824 4.874.827 7.34h-22.46zm12.383-1.524c.007-4.25-.185-8.77-2.286-12.574-1.073-2.12-4.03-2.558-5.8-1.07-3.18 2.67-3.752 7.112-4.242 10.984.06 1.07-.893 3.163.902 2.66h11.425zM242.305 32.97c1.96-4.9 7.21-7.842 12.383-7.657 5.486-.184 10.46 3.665 12.344 8.705 2.524 6.125 2.38 13.046 1.18 19.457-1.198 5.965-4.768 11.913-10.675 14.157-4.454 1.65-9.77 1.95-14.03-.402-1.558-1.757-1.175.088-1.202 1.285.1 2.827-.265 5.704.336 8.486.745 2.978 4.223 3.643 6.852 3.586.56 2.015-1.05 1.785-2.624 1.585-6.96-.325-13.936-.37-20.89.096-.558-1.997 1.05-1.697 2.545-2.07 2.557-1.134 2.235-4.306 2.258-6.654-.01-13.104.025-26.208-.017-39.312-.01-2.47-.884-5.72-3.798-6.04-1.607.85-1.926-2.43-.353-1.704 5.236.328 10.553.182 15.693-.94v7.423zm0 31.64c3.07 3.49 9.427 2.493 11.616-1.506 2.93-5.302 2.997-11.593 3.026-17.5-.21-4.888-.096-10.21-2.786-14.503-1.76-2.99-6.002-2.89-8.497-.944-2.427 1.706-3.647 4.745-3.358 7.655v26.8zM290.273 32.97c1.96-4.9 7.212-7.842 12.383-7.657 5.487-.184 10.462 3.665 12.345 8.705 2.524 6.125 2.38 13.046 1.18 19.457-1.198 5.965-4.767 11.913-10.674 14.157-4.454 1.65-9.77 1.95-14.03-.402-1.558-1.757-1.176.088-1.203 1.285.1 2.827-.264 5.704.337 8.486.744 2.978 4.222 3.643 6.85 3.586.56 2.015-1.05 1.785-2.624 1.585-6.96-.325-13.936-.37-20.89.096-.557-1.997 1.05-1.697 2.546-2.07 2.557-1.134 2.235-4.306 2.258-6.654-.012-13.104.024-26.208-.018-39.312-.01-2.47-.884-5.72-3.798-6.04-1.608.85-1.926-2.43-.353-1.704 5.237.328 10.554.182 15.693-.94v7.423zm0 31.64c3.07 3.49 9.428 2.493 11.617-1.506 2.93-5.302 2.995-11.593 3.025-17.5-.21-4.888-.097-10.21-2.786-14.503-1.76-2.99-6.003-2.89-8.498-.944-2.427 1.706-3.647 4.745-3.36 7.655v26.8zM335.156 43.047c-.34 5.424-.215 11.438 3.31 15.908 2.547 3.388 7.4 4.186 11.193 2.632 2.72-1.035 4.852-3.206 6.356-5.65 1.665.113 1.47 1.213.66 2.478-2.296 5.545-7.568 10.057-13.696 10.43-5.873.48-12.312-1.472-15.883-6.402-3.99-5.337-4.5-12.386-3.93-18.81.56-6.45 3.8-13.104 9.773-16.123 4.73-2.4 10.426-2.84 15.498-1.35 4.338 1.28 7.38 5.242 8.353 9.548.618 2.393.824 4.874.827 7.34h-22.46zm12.383-1.524c.007-4.25-.185-8.77-2.286-12.574-1.073-2.12-4.03-2.558-5.8-1.07-3.18 2.67-3.752 7.112-4.242 10.984.06 1.07-.893 3.163.902 2.66h11.425zM378.398 32.97c1.91-4.475 6.472-8.03 11.492-7.64 3.206.004 6.058 2.55 6.523 5.704.672 3.103-.644 6.898-3.85 7.982-2.722.876-6.535.266-7.758-2.65-1.195-3.083.392-6.67 3.125-8.358-2.876-.51-5.69 1.237-7.273 3.56-1.81 2.398-2.425 5.448-2.26 8.4.02 6.818-.035 13.638.03 20.456.017 2.18 1.143 4.558 3.418 5.12 1.094.944 4.008-.29 4.093 1.21.488 1.732-1.655.752-2.67.938-6.375-.244-12.756-.307-19.13 0-1.056-.07-2.85.63-2.38-1.017.083-1.402 2.963-.172 3.764-1.574 1.762-1.898 1.27-4.67 1.353-7.054-.01-7.942.023-15.883-.018-23.824-.072-2.178-.533-5.044-2.933-5.815-1.19-.33-2.625-.002-2.166-1.64.772-.82 3.26.17 4.658-.127 4.012 0 8.06-.186 11.982-1.093v7.422zM402.852 52.344c.57 4.43 1.534 9.245 4.802 12.53 2.413 2.23 6.393 2.992 9.284 1.268 2.69-1.658 2.782-5.447 1.65-8.084-1.696-3.673-5.364-5.736-8.315-8.282-3.37-2.815-7.237-5.57-8.66-9.932-1.246-3.873-.312-8.536 2.943-11.158 4.282-3.535 10.37-4.02 15.593-2.72 1.802.44 3.475 1.255 5.045 2.218 2.318 1.077 1.886-2.6 3.07-2.793 1.566-.438 1.228.884 1.105 2.05-.17 4-.184 8.008-.19 12.013-.664-.163-2.013.468-1.853-.648-.623-3.668-1.917-7.524-4.8-10.036-2.332-1.782-5.79-2.32-8.43-.93-2.986 1.672-2.92 6.058-.963 8.496 3.106 3.662 7.474 5.873 11.077 8.98 3.38 2.623 6.67 6.148 6.92 10.65.465 3.903-1.552 7.793-4.77 9.964-4.334 2.963-10.018 3.632-15.054 2.384-2.43-.617-4.464-2.24-6.892-2.845-1.924-.093-1.006 3.124-2.62 2.85-1.883.48-.83-2.014-.862-3.11-.127-4.288.157-8.578.162-12.866h1.758z"/>
+              </g>
+            </svg>
+          </a></li>
+        </ul>
+        <ul class="links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#purchase">Purchase</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
 
-      <div class="group">
-        <div class="red">
-          <div class="content">
-            <h1>Piquant<br class="responsive-break"> Peppers</h1>
-            <h2>Reasonably Priced,<br class="responsive-break"> Unreasonably Spiced</h2>
+    <div id="main" class="jumbotron">
+      <div class="container" id="header">
+        <h1>Reasonably Priced,</h1>
+        <h2>Unreasonably Spiced</h2>
+        <a href="#purchase" class="btn btn-default" role="button">buy now</a>
+      </div>
+    </div>
+
+    <div id="about">
+      <div class="container">
+        <div class="wrapper col-md-12">
+          <h1>About</h1>
+          <p>
+            GetPeppers is a small business located in Richland, Washington that grows and sells the world’s hottest pepper, the Carolina Reaper.
+            Here at GetPeppers we are committed to providing our customers with the hottest pepper money can buy.
+            The owner of GetPeppers, Dan Avila, personally guarantees all of his peppers to be unreasonably spiced.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div id="products">
+      <div class="container">
+        <div class="wrapper col-xs-12 col-md-6 col-lg-7">
+          <h1>Our Peppers</h1>
+          <p>
+            Here at GetPeppers we are committed to providing the Pacific Northwest with the world's hottest pepper, the infamous <b>Carolina Reaper</b>.
+            With over 2 million Scoville Heat Units (SHU), the Carolina Reaper is feared and praised by many. It's over four hundred times hotter than the jalepeno pepper and
+            twice as hot as the notorius Bhut Jolokia (Ghost Pepper). Though many have tried, few can say that they have conquered the Reaper.
+          </p>
+          <p class="p2">
+            Our Carolina Reapers are grown from seed here in Richland, Washington; enabling us to distribute them at extremely low prices.
+            These peppers are carefully cultivated and harvested over a nine month growing period to ensure thorough spiciness.
+
+          </p>
+        </div>
+        <div id="compare">
+          <div class="wrapper col-xs-12 col-md-6 col-lg-5">
+            <div id="bar-chart">
+              <div class="graph">
+                <ul class="x-axis">
+                  <li id="reaper"><span>Carolina<br>Reaper</span></li>
+                  <li id="viper"><span>Ghost<br>Pepper</span></li>
+                  <li id="ghost"><span>Red<br>Savina</span></li>
+                  <li id="habanero"><span id="mobile"> <br>Habanero</span></li>
+                  <li id="jalepeno"><span> <br>Jalepeno</span></li>
+                </ul>
+                <div class="bars">
+                  <div class="bar-group">
+                    <div class="bar bar-5 stat-1" style="height: 110%;"><h1><b>2,200,000<b class="unit">SHU</b></b></h1></div>
+                  </div>
+                  <div class="bar-group">
+                    <div class="bar bar-4 stat-1" style="height: 50%;"><h1>1,000,000<b class="unit">SHU</b></h1></div>
+                  </div>
+                  <div class="bar-group">
+                    <div class="bar bar-3 stat-1" style="height: 30%;"><h1>600,000<b class="unit">SHU</b></h1></div>
+                  </div>
+                  <div class="bar-group">
+                    <div class="bar bar-2 stat-1" style="height: 11%;"><h1>200,000<b class="unit">SHU</b></h1></div>
+                  </div>
+                  <div class="bar-group">
+                    <div class="bar bar-1 stat-1" style="height: 1%;"><h1>5,000<b class="unit">SHU</b></h1></div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="group">
-        <div class="green">
-          <div class="content">
-            <h1>Our Mission</h1>
+    <div id="purchase">
+      <div class="container">
+        <div class="col-md-12">
+          <h1>Purchase<h1>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean pharetra leo eget lectus feugiat, euismod tincidunt metus fringilla.
-              Proin vitae nisi malesuada turpis faucibus auctor id vel mi. Quisque lobortis justo in risus laoreet, sed aliquet urna suscipit.
-              Cras vel odio ultricies, auctor est sit amet, mattis dui. Sed pharetra, dui non posuere hendrerit, justo elit consequat arcu, vehicula porttitor quam massa eu arcu.
+              The Carolina Reaper can be purchased from GetPeppers for the reasonable price of $10 a pepper.
+              If you live in the Tri-City area then you will receive same day shipping as long as your order before 3:00pm.
+              Don't live near us? No worries we got you taken care of with 5-7 day shipping for a flat rate of $5.
             </p>
+        </div>
+        <div class="block col-md-4">
+          <div class="child reaper">
+            <div class="img-wrapper">
+              <img id="reaper" class="purchase-img" src="http://placehold.it/250x250" alt="reaper">
+            </div>
+            <a data-toggle="modal" data-target="#reaperModal" class="btn btn-default" role="button"><span class="product">Carolina Reaper</span><span class="reveal">buy it now ($10)</span></a>
           </div>
+        </div>
+        <div class="block col-md-4">
+          <div class="child choco">
+            <div class="img-wrapper">
+              <img id="choco" class="purchase-img" src="http://placehold.it/250x250" alt="choco">
+            </div>
+            <a data-toggle="modal" data-target="#chocoModal" class="btn btn-default" role="button"><span class="product">Chocolate Bhutlah</span><span class="reveal">buy it now ($10)</span></a>
+          </div>
+        </div>
+        <div class="block col-md-4">
+          <div class="child shirt">
+            <div class="img-wrapper">
+              <img id="shirt" class="purchase-img" src="http://placehold.it/250x250" alt="shirt">
+            </div>
+            <a data-toggle="modal" data-target="#shirtModal" class="btn btn-default" role="button"><span class="product">Company Shirt</span><span class="reveal">Buy It Now ($15)</span></a>
+          </div>
+        </div>
       </div>
-      </div>
+    </div>
 
-      <div class="purchase col-md-12">
+    <!-- Modal -->
+    <div id="reaperModal" class="modal" role="dialog">
+      <div class="modal-dialog">
 
-        <div class="item col-md-3 col-sm-6 col-xs-6"><a href="" data-toggle="modal" data-target="#reaperModal">
-          <div class="reaper pepper">
-            <h1>Carolina<br> Reaper</h1>
-          </div></a>
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Carolina Reaper</h4>
+          </div>
+          <div class="modal-body">
+            <p>Some text in the modal.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
         </div>
 
-        <div class="item col-md-3 col-sm-6 col-xs-6"><a href="" data-toggle="modal" data-target="#ghostModal">
-          <div class="ghost pepper">
-            <h1>Ghost<br> Pepper</h1>
-          </div></a>
+      </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div id="chocoModal" class="modal" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Chocolate Bhutlah</h4>
+          </div>
+          <div class="modal-body">
+            <p>Some text in the modal.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
         </div>
 
-        <div class="item col-md-3 col-sm-6 col-xs-6"><a href="" data-toggle="modal" data-target="#nagaModal">
-          <div class="naga pepper">
-            <h1>Naga<br> Viper</h1>
-          </div></a>
+      </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div id="shirtModal" class="modal" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Company Shirt</h4>
+          </div>
+          <div class="modal-body">
+            <p>Some text in the modal.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
         </div>
 
-        <div class="item col-md-3 col-sm-6 col-xs-6"><a href="" data-toggle="modal" data-target="#habaneroModal">
-          <div class="habanero pepper">
-            <h1>Spicy<br> Habanero</h1>
-          </div></a>
+      </div>
+    </div>
+
+    <div id="contact">
+      <div class="container">
+        <div class="wrapper col-md-12">
+          <h1>Contact</h1>
+
+            <form action="index.php" method="post" name="contact_form">
+              <div class="contact-info col-md-4">
+                <p>Richland, Wa</p>
+              </div>
+              <div class="contact-form col-md-8">
+                <div class="block col-md-4">
+                  <p>
+                    <b>Name</b> <br>
+                    <input name="name" id="name" type="text"/>
+                  </p>
+                  <p>
+                    <b>E-Mail</b> <br>
+                    <input name="email" id="email" type="text"/>
+                  </p>
+                  <p>
+                    <b>Subject</b> <br>
+                    <input name="subject" id="subject" type="text"/>
+                  </p>
+                </div>
+                <div class="block col-md-8">
+                  <p>
+                    <b>Message</b> <br>
+                    <textarea name="message" id="message"></textarea>&nbsp;
+                  </p>
+                  <p id="submit-container">
+                    <input type="submit" name="submit" id="submit" value="SEND"/>
+                  </p>
+                </div>
+              </div>
+            </form>
+
         </div>
-
-    </div>
-
-
-
-<!-- Reaper Modal -->
-<div class="modal fade" id="reaperModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel"><center>Carolina Reaper</center></h4>
-      </div>
-      <div class="modal-body">
-        <p class="info">The Carolina Reaper is a cultivar of chili pepper of the Capsicum chinense species, originally named the HP22BNH, bred by Ed Currie, who runs PuckerButt Pepper Company in Fort Mill, South Carolina, United States. As of 2015, it is officially the world's hottest pepper. The original crossbreed was between a Bhut jolokia (Ghost Pepper), a former world record holder, and a Red Habanero pepper. The "Carolina Reaper" has been rated as the world's hottest chili pepper by Guinness World Records since August 7, 2013. It averages a 1,569,300 SHU on the Scoville scale with peak levels of over <b>2,200,000</b> Scoville Heat Units (SHU).</p>
-        <i class="source">source: <a href="https://en.wikipedia.org/wiki/Carolina_Reaper">Wikipedia</a></i>
-      </div>
-      <div class="modal-footer">
-        <ul>
-          <li class="price">$20/pepper</li>
-          <a href="mailto:micahcowell99@gmail.com?Subject=Buy%20Reaper%20Carolina"<li><button type="button" class="btn btn-success">Buy Now</button></li></a>
-        </ul>
       </div>
     </div>
-  </div>
-</div>
 
-
-<!-- Ghost Modal -->
-<div class="modal fade" id="ghostModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel"><center>Ghost Pepper</center></h4>
-      </div>
-      <div class="modal-body">
-        <p class="info">The bhut jolokia</b>, also known as bih jolokia, u-morok, ghost pepper, ghost chili pepper, red naga chili, Naga Jolokia, and ghost chili, is an interspecific hybrid chili pepper cultivated in Bangladesh and Indian states of Arunachal Pradesh, Assam, Nagaland and Manipur. It is an interspecies hybrid of C. chinense and C. frutescens genes. In 2007, Guinness World Records certified that the ghost pepper was the world's hottest chili pepper, 401.5 times hotter than Tabasco sauce; the ghost chili is rated at more than <b>1,000,000</b>(scoville heat units). Classic Tabasco sauce ranges from 2,500 to 5,000 SHUs. However, the bhut jolokia was shortly superseded by the infinity chili in early 2011, followed by the Naga Viper, then later the trinidad moruga scorpion in 2012, and finally the "Carolina Reaper" on December 26, 2013.</p>
-        <i class="source">source: <a href="https://en.wikipedia.org/wiki/Bhut_jolokia">Wikipedia</a></i>
-      </div>
-      <div class="modal-footer">
-        <ul>
-          <li class="price">$15/pepper</li>
-          <a href="mailto:micahcowell99@gmail.com?Subject=Buy%20Ghost%20Pepper"<li><button type="button" class="btn btn-success">Buy Now</button></li></a>
-        </ul>
+    <div id="footer">
+      <div class="container">
+        <p> &copy; 2015 GetPeppers All Rights Reserved</p>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+          <path d="M357.932 379.216c-51.543-5.252-58.1-54.84-58.237-60.084-.978-37.242 7.48-33.72 13.852-50.617 7.424-19.69 1.962-43.92 11.24-64.774 9.536-21.427 7.332-24.9-1.88-60.282-11.41-43.823-26.546-54.556-59.815-82.695-31.246-26.43-55.925-23.277-86.875-28.723-34.915-6.143-56.192-7.446-84.164-.624-21.155 5.16-17.69-14.467-41.168-26.2C26.338-7.05 1.525 3.38 7.362 25.406c3.357 12.66 16.44-15.805 41.135 3.408 19.586 15.238.892 34.913-11.768 49.91-12.69 15.03-24.713 33.136-28.457 48.833-4.58 19.21-10.008 41.427-7.74 62.805 2.416 22.784 22.48 35.085 31.266 54.848 10.525 23.676 24.9 32.592 42.897 51.384 15.03 15.696 30.324 26.945 50.9 35.188 41.035 16.44 52.382 3.28 80.038 6.918 19.85 2.61 36.5-9.654 59.06 14.584 17.09 18.36 75.32 62.093 119.153 41.174 45.093-21.52-17.68-14.403-25.916-15.242z"/>
+        </svg><!--<span id="tm">tm</span>-->
       </div>
     </div>
-  </div>
-</div>
 
-
-<!-- Naga Modal -->
-<div class="modal" id="nagaModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel"><center>Naga Viper</center></h4>
-      </div>
-      <div class="modal-body">
-        <p class="info">The Naga Viper pepper is one of the hottest chili peppers ever measured. It was briefly the "World's Hottest Chilli" in 2011 according to the Guinness World Records with a rating of <b>1,382,118</b> Scoville Heat Units (SHU), a figure that surpassed the reading of the Infinity Chilli.</p>
-        <i class="source">source: <a href="https://en.wikipedia.org/wiki/Habanero">Wikipedia</a></i>
-      </div>
-      <div class="modal-footer">
-        <ul>
-          <li class="price">$15/pepper</li>
-          <a href="mailto:micahcowell99@gmail.com?Subject=Buy%20Naga%20Viper"<li><button type="button" class="btn btn-success">Buy Now</button></li></a>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- Habanero Modal -->
-<div class="modal fade" id="habaneroModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel"><center>Spicy Habanero</center></h4>
-      </div>
-      <div class="modal-body">
-        <p class="info">The habanero (/ˌhɑːbəˈnɛroʊ/; Spanish pronunciation: [aβaˈneɾo] is a variety of chili pepper. When used in English, it is sometimes spelled (and pronounced) habañero, the tilde being added as a hyperforeignism (patterned after jalapeño). Unripe habaneros are green, and they color as they mature. Common colors are orange and red, but white, brown, yellow, and pink are also seen. Typically, a ripe habanero chili is 2–6 cm (0.8–2.4 in) long. Habanero chilis are very hot, rated <b>100,000–350,000</b> on the Scoville scale.</p>
-        <i class="source">source: <a href="https://en.wikipedia.org/wiki/Habanero">Wikipedia</a></i>
-      </div>
-      <div class="modal-footer">
-        <ul>
-          <li class="price">$10/pepper</li>
-          <a href="mailto:micahcowell99@gmail.com?Subject=Buy%20Spicy%20Habanero"><li><button type="button" class="btn btn-success">Buy Now</button></li></a>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-  </div><!-- end of container -->
-
-  <!--
-  <div class="footer">
-    <center><p><a href="http://www.micahcowell.com" target="_blank">
-      made with <span class="heart">&hearts;</span> in Richland, WA
-    </a></p>
-  </div>
-  -->
-
-
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="http://www.3magine.com/wp-content/themes/3magine/js/jquery.appear-1.1.1.modified.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script src="https://checkout.stripe.com/checkout.js"></script>
+    <script src="script.js"></script>
 
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-      ga('create', 'UA-39119359-6', 'auto');
-      ga('send', 'pageview');
+    ga('create', 'UA-39119359-6', 'auto');
+    ga('send', 'pageview');
 
-    </script>
-
+  </script>
   </body>
 </html>
