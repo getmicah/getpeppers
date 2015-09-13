@@ -57,15 +57,6 @@ a:active {
       margin: 0 auto; }
     #nav .container .logo {
       float: left; }
-    #nav .container #logo-svg {
-      fill: white;
-      width: 200px;
-      -webkit-transition: background-color 300ms ease;
-      -moz-transition: background-color 300ms ease;
-      -o-transition: background-color 300ms ease;
-      transition: background-color 300ms ease; }
-      #nav .container #logo-svg:hover {
-        fill: rgba(255, 255, 255, 0.9); }
     #nav .container .links {
       float: right;
       vertical-align: middle; }
@@ -79,15 +70,9 @@ a:active {
   -moz-transition: background-color 300ms ease-out;
   -o-transition: background-color 300ms ease-out;
   transition: background-color 300ms ease-out; }
-  #nav.past-header #logo-svg {
-    transform: scale(0.5);
-    -webkit-transition: background-color 300ms ease;
-    -moz-transition: background-color 300ms ease;
-    -o-transition: background-color 300ms ease;
-    transition: background-color 300ms ease; }
 
 .jumbotron {
-  background-image: url(http://micahcowell.com/getpeppers/wall.jpg);
+  background-image: url(http://getpeppers.com/img/wall.jpg);
   height: 75vh;
   margin: 0 auto;
   background-repeat: no-repeat;
@@ -96,7 +81,7 @@ a:active {
     position: relative;
     top: 20%;
     text-align: center; }
-    .jumbotron .container h1, .jumbotron .container h2 {
+    .jumbotron .container h1 {
       color: white;
       font-family: 'Playfair Display', serif;
       font-size: 72px; }
@@ -145,20 +130,20 @@ a:active {
     #about .container .quote {
       margin-height: 5em; }
 
-#products {
+#peppers {
   padding-top: 2em;
   padding-bottom: 2em; }
-  #products .container {
+  #peppers .container {
     background-color: white;
     padding-top: 2em;
     padding-bottom: 2em; }
-    #products .container h1 {
+    #peppers .container h1 {
       font-family: 'Playfair Display', serif;
       font-size: 48px;
       font-weight: 700;
       margin-top: 0;
       margin-bottom: 0.5em; }
-    #products .container p {
+    #peppers .container p {
       font-weight: normal;
       font-size: 18px;
       word-spacing: 1px;
@@ -342,47 +327,47 @@ a:active {
   animation-fill-mode: forwards;
   -webkit-animation-fill-mode: forwards; }
 
-#purchase {
+#products {
   padding-top: 2em;
   padding-bottom: 2em; }
-  #purchase .container {
+  #products .container {
     background-color: white;
     padding-top: 2em;
     padding-bottom: 2em; }
-    #purchase .container h1 {
+    #products .container h1 {
       font-family: 'Playfair Display', serif;
       font-size: 48px;
       font-weight: 700;
       margin-top: 0;
       margin-bottom: 0.5em; }
-    #purchase .container p {
-      font-family: 'Karla', sans-serif;
+    #products .container p {
       font-weight: normal;
       font-size: 18px;
       word-spacing: 1px;
       line-height: 200%; }
-    #purchase .container .block {
+    #products .container .block {
       text-align: center;
       display: table;
-      padding-bottom: 50px;
+      padding-top: 25px;
+      padding-bottom: 25px;
       margin: auto; }
-      #purchase .container .block .child {
+      #products .container .block .child {
         display: table-cell;
         vertical-align: middle; }
-      #purchase .container .block .img-wrapper {
+      #products .container .block .img-wrapper {
         border: 3px solid #262626;
         height: 250px;
         width: 250px;
         overflow: hidden;
         margin: 0 auto; }
-      #purchase .container .block .purchase-img {
+      #products .container .block .purchase-img {
         height: 100%;
         width: 100%;
         -webkit-transition: 250ms ease;
         -moz-transition: 250ms ease;
         -o-transition: 250ms ease;
         transition: 250ms ease; }
-      #purchase .container .block .btn {
+      #products .container .block .btn {
         width: 250px;
         color: #262626;
         border: 3px solid #262626;
@@ -399,18 +384,18 @@ a:active {
         -moz-transition: 250ms ease;
         -o-transition: 250ms ease;
         transition: 250ms ease; }
-        #purchase .container .block .btn span.product {
+        #products .container .block .btn span.product {
           display: inline; }
-        #purchase .container .block .btn span.reveal {
+        #products .container .block .btn span.reveal {
           display: none; }
-        #purchase .container .block .btn:hover {
+        #products .container .block .btn:hover {
           background-color: #262626; }
-          #purchase .container .block .btn:hover span.product {
+          #products .container .block .btn:hover span.product {
             display: none; }
-          #purchase .container .block .btn:hover span.reveal {
+          #products .container .block .btn:hover span.reveal {
             display: inline;
             color: white; }
-      #purchase .container .block p {
+      #products .container .block p {
         margin-top: 1em;
         font-weight: normal;
         font-size: 18px;
@@ -446,7 +431,7 @@ a:active {
     #contact .container .contact-form #submit-container {
       padding-top: 0; }
     #contact .container .contact-form #submit {
-      border: 2px solid #262626;
+      border: 1px solid #262626;
       background-color: white;
       width: 75%;
       padding: 10px;

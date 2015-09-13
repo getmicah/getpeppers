@@ -125,14 +125,6 @@ a {
     .logo {
       float: left;
     }
-    #logo-svg {
-      fill: $primary-color;
-      width: 200px;
-      @include transition(background-color 300ms ease);
-      &:hover {
-        fill: $primary-hover;
-      }
-    }
     .links {
       float: right;
       vertical-align: middle;
@@ -143,15 +135,11 @@ a {
     background-color: $red;
     @include box-shadow(0, 1px, 5px, rgba(0, 0, 0, 0.5));
     @include transition(background-color 300ms ease-out);
-    #logo-svg {
-      transform:scale(0.5);
-      @include transition(background-color 300ms ease);
-    }
   }
 
 
 .jumbotron {
-  background-image: url(http://micahcowell.com/getpeppers/wall.jpg);
+  background-image: url(http://getpeppers.com/img/wall.jpg);
   height: 75vh;
   margin: 0 auto;
   background-repeat: no-repeat;
@@ -160,7 +148,7 @@ a {
     position: relative;
     top: 20%;
     text-align: center;
-    h1, h2 {
+    h1 {
       color: $primary-color;
       font-family: 'Playfair Display', serif;
       font-size: 72px;
@@ -213,7 +201,7 @@ a {
   }
 }
 
-#products {
+#peppers {
   padding-top: 2em;
   padding-bottom: 2em;
   .container {
@@ -406,8 +394,7 @@ a {
   @include bar-animation($default-delay, height);
 }
 
-
-#purchase {
+#products {
   padding-top: 2em;
   padding-bottom: 2em;
   .container {
@@ -422,7 +409,6 @@ a {
       margin-bottom: 0.5em;
     }
     p {
-      font-family: 'Karla', sans-serif;
       font-weight: normal;
       font-size: 18px;
       word-spacing: 1px;
@@ -431,7 +417,8 @@ a {
     .block {
       text-align: center;
       display: table;
-      padding-bottom: 50px;
+      padding-top: 25px;
+      padding-bottom: 25px;
       margin: auto;
       .child {
         display: table-cell;
@@ -491,10 +478,6 @@ a {
   }
 }
 
-.modal {
-
-}
-
 #contact {
   padding-top: 2em;
   padding-bottom: 2em;
@@ -530,7 +513,7 @@ a {
         padding-top: 0;
       }
       #submit {
-        border: 2px solid $dark-color;
+        border: 1px solid $dark-color;
         background-color: $primary-color;
         width: 75%;
         padding: 10px;
