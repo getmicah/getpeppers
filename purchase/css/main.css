@@ -21,11 +21,21 @@ a:after {
 a:active {
   text-decoration: overline; }
 
+#back {
+  margin-top: 25px; }
+  #back .container {
+    text-align: center; }
+    #back .container a {
+      text-align: center;
+      color: #262626;
+      font-size: 12px; }
+
 .purchase .form {
   background-color: white;
   width: 50%;
   height: 375px;
   margin: 100px auto;
+  margin-top: 50px;
   padding-top: 20px;
   padding-left: 50px;
   padding-right: 50px; }
@@ -69,35 +79,30 @@ a:active {
     font-size: 12px;
     margin-top: 10px; }
 
-#footer {
-  position: absolute;
-  bottom: 5px;
-  left: 0;
-  right: 0; }
-  #footer .container {
-    text-align: center; }
-    #footer .container p {
-      font-weight: normal;
-      font-size: 12px;
-      padding-bottom: 1em;
-      fill: #262626;
-      -webkit-transition: 0.5s ease;
-      -moz-transition: 0.5s ease;
-      -o-transition: 0.5s ease;
-      transition: 0.5s ease; }
-    #footer .container svg {
-      margin: 0 auto;
-      width: 50px;
-      fill: #ef4d46;
-      -webkit-transition: 0.5s ease;
-      -moz-transition: 0.5s ease;
-      -o-transition: 0.5s ease;
-      transition: 0.5s ease; }
-    #footer .container #tm {
-      padding-left: 5px;
-      font-weight: normal;
-      font-size: 12px;
-      text-transform: uppercase; }
+#footer .container {
+  text-align: center; }
+  #footer .container p {
+    font-weight: normal;
+    font-size: 12px;
+    padding-bottom: 1em;
+    fill: #262626;
+    -webkit-transition: 0.5s ease;
+    -moz-transition: 0.5s ease;
+    -o-transition: 0.5s ease;
+    transition: 0.5s ease; }
+  #footer .container svg {
+    margin: 0 auto;
+    width: 50px;
+    fill: #ef4d46;
+    -webkit-transition: 0.5s ease;
+    -moz-transition: 0.5s ease;
+    -o-transition: 0.5s ease;
+    transition: 0.5s ease; }
+  #footer .container #tm {
+    padding-left: 5px;
+    font-weight: normal;
+    font-size: 12px;
+    text-transform: uppercase; }
 
 /* Media Queries */
 @media screen and (max-width: 1000px) {

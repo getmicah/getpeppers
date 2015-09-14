@@ -69,12 +69,25 @@ a {
   }
 }
 
+#back {
+  margin-top: 25px;
+  .container {
+    text-align: center;
+    a {
+      text-align: center;
+      color: $dark-color;
+      font-size: 12px;
+    }
+  }
+}
+
 .purchase {
   .form {
     background-color: $primary-color;
     width: 50%;
     height: 375px;
     margin: 100px auto;
+    margin-top: 50px;
     padding-top: 20px;
     padding-left: 50px;
     padding-right: 50px;
@@ -129,8 +142,6 @@ a {
 }
 
 #footer {
-  position: absolute;
-  bottom: 5px; left: 0; right: 0;
   .container {
     text-align: center;
     p {

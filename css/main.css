@@ -58,12 +58,14 @@ a:active {
       float: left;
       font-size: 24px;
       padding: 0px;
-      margin-top: -4px;
-      background-color: #247a41;
-      -webkit-transition: background-color 100ms ease-out;
-      -moz-transition: background-color 100ms ease-out;
-      -o-transition: background-color 100ms ease-out;
-      transition: background-color 100ms ease-out; }
+      margin-top: -4px; }
+      #nav .container .logo a {
+        visibility: hidden;
+        color: transparent;
+        -webkit-transition: 50ms ease-out;
+        -moz-transition: 50ms ease-out;
+        -o-transition: 50ms ease-out;
+        transition: 50ms ease-out; }
     #nav .container .links {
       float: right;
       vertical-align: middle;
@@ -79,12 +81,13 @@ a:active {
   -moz-transition: background-color 300ms ease-out;
   -o-transition: background-color 300ms ease-out;
   transition: background-color 300ms ease-out; }
-  #nav.past-header .logo {
-    background-color: transparent;
-    -webkit-transition: background-color 100ms ease-out;
-    -moz-transition: background-color 100ms ease-out;
-    -o-transition: background-color 100ms ease-out;
-    transition: background-color 100ms ease-out; }
+  #nav.past-header .logo a {
+    visibility: visible;
+    color: white;
+    -webkit-transition: 50ms ease-out;
+    -moz-transition: 50ms ease-out;
+    -o-transition: 50ms ease-out;
+    transition: 50ms ease-out; }
 
 .jumbotron {
   background-image: url(http://getpeppers.com/img/wall.jpg);
@@ -99,7 +102,12 @@ a:active {
     .jumbotron .container h1 {
       color: white;
       font-family: 'Playfair Display', serif;
-      font-size: 72px; }
+      font-size: 84px;
+      padding-bottom: 10px; }
+    .jumbotron .container h2 {
+      color: white;
+      font-size: 42px;
+      line-height: 0.75; }
     .jumbotron .container .btn {
       color: white;
       border: 2px solid white;
@@ -534,42 +542,7 @@ a:active {
     float: none; } }
 @media screen and (max-width: 768px) {
   #nav {
-    position: absolute;
-    padding: 0;
-    -webkit-transition: none;
-    -moz-transition: none;
-    -o-transition: none;
-    transition: none; }
-    #nav .container {
-      padding: 0; }
-      #nav .container a {
-        padding: 0; }
-      #nav .container ul {
-        margin: 0 auto;
-        padding: 0; }
-      #nav .container .logo {
-        position: relative;
-        float: none;
-        margin: 0 auto;
-        text-align: center;
-        background-color: #ef4d46;
-        width: 100%;
-        padding: 0px; }
-        #nav .container .logo a {
-          font-size: 24px;
-          -webkit-transition: none;
-          -moz-transition: none;
-          -o-transition: none;
-          transition: none; }
-      #nav .container .links {
-        display: none;
-        visibility: hidden; }
-      #nav .container .underline {
-        margin: 0 auto;
-        padding: 0 auto; }
-        #nav .container .underline:after {
-          display: none;
-          visibility: hidden; }
+    display: none; }
 
   #nav.past-header {
     background-color: rgba(0, 0, 0, 0.5); }
@@ -577,17 +550,18 @@ a:active {
   .jumbotron {
     height: 100vh; }
     .jumbotron .container h1 {
-      font-size: 60px; } }
+      font-size: 60px; }
+    .jumbotron .container h2 {
+      font-size: 40px; } }
 @media screen and (max-width: 512px) {
-  #nav .logo a {
-    font-size: 16px; }
-
   .jumbotron {
     height: 100vh; }
     .jumbotron .container {
       top: 20%; }
       .jumbotron .container h1 {
         font-size: 42px; }
+      .jumbotron .container h2 {
+        font-size: 32px; }
       .jumbotron .container .btn {
         margin-top: 3em;
         padding-left: 2em;
@@ -607,6 +581,8 @@ a:active {
         font-weight: 700;
         margin-top: 0;
         margin-bottom: 0.5em; }
+      #about .container h2 {
+        font-size: 24px; }
       #about .container p {
         font-weight: normal;
         font-size: 14px;
@@ -627,6 +603,8 @@ a:active {
         font-weight: 700;
         margin-top: 0;
         margin-bottom: 0.5em; }
+      #products .container h2 {
+        font-size: 20px; }
       #products .container p {
         font-weight: normal;
         font-size: 14px;
@@ -649,15 +627,10 @@ a:active {
   #contact .container .contact-form #submit {
     width: 100%; } }
 @media screen and (max-width: 312px) {
-  #nav .logo a {
-    font-size: 16px; }
-
   .jumbotron {
     height: 100vh; }
     .jumbotron .container {
       top: 20%; }
-      .jumbotron .container h1 {
-        font-size: 28px; }
       .jumbotron .container .btn {
         margin-top: 2em;
         padding-left: 1.5em;

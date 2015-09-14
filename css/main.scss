@@ -126,8 +126,11 @@ a {
       font-size: 24px;
       padding: 0px;
       margin-top: -4px;
-      background-color: $green;
-      @include transition(background-color 100ms ease-out);
+      a {
+        visibility: hidden;
+        color: rgba(0, 0, 0, 0);
+        @include transition(50ms ease-out);
+      }
     }
     .links {
       float: right;
@@ -142,8 +145,11 @@ a {
     @include box-shadow(0, 1px, 5px, rgba(0, 0, 0, 0.5));
     @include transition(background-color 300ms ease-out);
     .logo {
-      background-color: rgba(0, 0, 0, 0);
-      @include transition(background-color 100ms ease-out);
+      a {
+        visibility: visible;
+        color: $primary-color;
+        @include transition(50ms ease-out);
+      }
     }
   }
 
@@ -161,7 +167,13 @@ a {
     h1 {
       color: $primary-color;
       font-family: 'Playfair Display', serif;
-      font-size: 72px;
+      font-size: 84px;
+      padding-bottom: 10px;
+    }
+    h2 {
+      color: $primary-color;
+      font-size: 42px;
+      line-height: 0.75;
     }
     .btn {
       color: $primary-color;
@@ -627,44 +639,7 @@ a {
 
 @media screen and (max-width: 768px){
     #nav {
-      position: absolute;
-      padding: 0;
-      @include transition(none);
-      .container {
-        padding: 0;
-        a {
-          padding: 0;
-        }
-        ul {
-          margin: 0 auto;
-          padding: 0;
-        }
-        .logo {
-          position: relative;
-          float: none;
-          margin: 0 auto;
-          text-align: center;
-          background-color: $red;
-          width: 100%;
-          padding: 0px;
-          a {
-            font-size: 24px;
-            @include transition(none);
-          }
-        }
-        .links {
-          display: none;
-          visibility: hidden;
-        }
-        .underline {
-          margin: 0 auto;
-          padding: 0 auto;
-          &:after {
-            display: none;
-            visibility: hidden;
-          }
-        }
-      }
+      display: none;
     }
     #nav.past-header {
       background-color: rgba(0, 0, 0, 0.5);
@@ -675,25 +650,24 @@ a {
         h1 {
           font-size: 60px;
         }
+        h2 {
+          font-size: 40px;
+        }
       }
     }
 
 }
 
 @media screen and (max-width: 512px){
-    #nav {
-      .logo {
-        a {
-          font-size: 16px;
-        }
-      }
-    }
     .jumbotron {
       height: 100vh;
       .container {
         top: 20%;
         h1 {
           font-size: 42px;
+        }
+        h2 {
+          font-size: 32px;
         }
         .btn {
           margin-top: 3em;
@@ -717,6 +691,9 @@ a {
           margin-top: 0;
           margin-bottom: 0.5em;
         }
+        h2 {
+          font-size: 24px;
+        }
         p {
           font-weight: normal;
           font-size: 14px;
@@ -739,6 +716,9 @@ a {
           font-weight: 700;
           margin-top: 0;
           margin-bottom: 0.5em;
+        }
+        h2 {
+          font-size: 20px;
         }
         p {
           font-weight: normal;
@@ -779,20 +759,10 @@ a {
 }
 
 @media screen and (max-width: 312px){
-    #nav {
-      .logo {
-        a {
-          font-size: 16px;
-        }
-      }
-    }
     .jumbotron {
       height: 100vh;
       .container {
         top: 20%;
-        h1 {
-          font-size: 28px;
-        }
         .btn {
           margin-top: 2em;
           padding-left: 1.5em;
