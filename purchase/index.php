@@ -2,12 +2,18 @@
 
   $name = $_POST['name'];
   $email = $_POST['email'];
-  $message = $_POST['message'];
+  $product = $_POST['product'];
+  $quantity = $_POST['quantity'];
 
   $to = "micahcowell99@gmail.com";
-  $subject = $_POST['subject'];
+  $subject = "PURCHASE";
 
-  mail ($to, $subject, $message, "From: " . $name);
-  echo "<script>window.location = 'http://getpeppers.com/sent.html'</script>";
+  mail ($to,
+        $subject,
+        $product .
+        " \n" . "quantity: " . $quantity .
+        " \n" . " \n" . "email: " . $email,
+        "From: " . $name);
 
+  echo "<script>window.location = 'http://getpeppers.com/purchase/thanks.html'</script>";
 ?>

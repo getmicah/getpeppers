@@ -1,0 +1,143 @@
+@import url(http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900);
+@import url(http://fonts.googleapis.com/css?family=Karla:400,700);
+::selection {
+  background-color: rgba(38, 38, 38, 0.9);
+  color: #ef4d46; }
+
+::-moz-selection {
+  background-color: rgba(38, 38, 38, 0.9);
+  color: #ef4d46; }
+
+html, body {
+  height: 100%; }
+
+body {
+  background-color: #efefef;
+  font-family: 'Karla', sans-serif;
+  font-weight: normal; }
+
+a:after {
+  text-decoration: none; }
+a:active {
+  text-decoration: overline; }
+
+.purchase .form {
+  background-color: white;
+  width: 50%;
+  height: 375px;
+  margin: 100px auto;
+  padding-top: 20px;
+  padding-left: 50px;
+  padding-right: 50px; }
+  .purchase .form h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 25px; }
+  .purchase .form b {
+    font-size: 16px;
+    padding-right: 5px;
+    padding-bottom: 5px; }
+  .purchase .form .contact-info {
+    border: 1px solid #262626;
+    background-color: white;
+    color: #262626;
+    width: 100%;
+    margin-bottom: 10px; }
+  .purchase .form #quantity {
+    margin-top: 10px;
+    padding-left: 2px;
+    text-align: center; }
+  .purchase .form #quantity-container {
+    padding-top: 10px; }
+  .purchase .form #submit {
+    border: 1px solid #262626;
+    background-color: white;
+    color: #262626;
+    font-size: 18px;
+    height: 50px;
+    width: 175px;
+    text-transform: uppercase;
+    margin-top: 45px;
+    float: right; }
+    .purchase .form #submit:hover {
+      font-weight: bold; }
+  .purchase .form #back {
+    color: #262626;
+    font-size: 12px;
+    margin-top: 10px; }
+
+#footer {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  right: 0; }
+  #footer .container {
+    text-align: center; }
+    #footer .container p {
+      font-weight: normal;
+      font-size: 12px;
+      padding-bottom: 1em;
+      fill: #262626;
+      -webkit-transition: 0.5s ease;
+      -moz-transition: 0.5s ease;
+      -o-transition: 0.5s ease;
+      transition: 0.5s ease; }
+    #footer .container svg {
+      margin: 0 auto;
+      width: 50px;
+      fill: #ef4d46;
+      -webkit-transition: 0.5s ease;
+      -moz-transition: 0.5s ease;
+      -o-transition: 0.5s ease;
+      transition: 0.5s ease; }
+    #footer .container #tm {
+      padding-left: 5px;
+      font-weight: normal;
+      font-size: 12px;
+      text-transform: uppercase; }
+
+/* Media Queries */
+@media screen and (max-width: 1000px) {
+  html, body {
+    background-color: white; }
+    html .purchase .form, body .purchase .form {
+      width: 50%; }
+      html .purchase .form #submit, body .purchase .form #submit {
+        text-align: center;
+        float: none;
+        margin: auto;
+        width: 100%; } }
+@media screen and (max-width: 860px) {
+  html, body {
+    background-color: white; }
+    html .purchase .form, body .purchase .form {
+      width: 75%;
+      height: 100%;
+      margin: 100px auto;
+      padding-top: 20px;
+      padding-left: 50px;
+      padding-right: 50px; }
+      html .purchase .form .block, body .purchase .form .block {
+        padding-bottom: 10px; } }
+@media screen and (max-width: 720px) {
+  html, body {
+    background-color: white; }
+    html .purchase .form, body .purchase .form {
+      width: 90%;
+      padding-left: 25px;
+      padding-right: 25px; } }
+@media screen and (max-width: 432px) {
+  html, body {
+    background-color: white; }
+    html .purchase .form, body .purchase .form {
+      margin: 25px auto;
+      width: 100%;
+      padding-left: 10px;
+      padding-right: 10px; }
+      html .purchase .form h1, body .purchase .form h1 {
+        font-size: 36px; } }
+
+/*# sourceMappingURL=main.css.map */

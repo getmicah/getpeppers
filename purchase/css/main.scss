@@ -1,0 +1,224 @@
+@import url(http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900);
+@import url(http://fonts.googleapis.com/css?family=Karla:400,700);
+
+@mixin transition($transition) {
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -o-transition: $transition;
+    transition: $transition;
+  }
+@mixin rotate( $degrees ) {
+  -webkit-transform: rotate(#{$degrees}deg);
+  -moz-transform: rotate(#{$degrees}deg);
+  -ms-transform: rotate(#{$degrees}deg);
+  -o-transform: rotate(#{$degrees}deg);
+  transform: rotate(#{$degrees}deg);
+
+  filter:  progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=#{cos($degrees)}, M12=-#{sin($degrees)}, M21=#{sin($degrees)}, M22=#{cos($degrees)});
+  -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=#{cos($degrees)}, M12=-#{sin($degrees)}, M21=#{sin($degrees)}, M22=#{cos($degrees)})";
+  zoom: 1;
+}
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+
+$background-color: #efefef;
+$primary-color: rgba(255, 255, 255, 1);
+$primary-hover: rgba(255, 255, 255, 0.9);
+$dark-color: rgba(38, 38, 38, 1);
+$dark-hover: rgba(38, 38, 38, 0.9);
+$hidden: rgba(255, 255, 255, 0);
+$red: rgba(239, 77, 70, 1);
+$green: rgba(36, 122, 65, 1);
+
+::selection {
+  background-color: $dark-hover;
+  color: $red;
+}
+
+::-moz-selection {
+  background-color: $dark-hover;
+  color: $red;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: $background-color;
+  font-family: 'Karla', sans-serif;
+  font-weight: normal;
+}
+
+a {
+  &:after {
+    text-decoration: none;
+  }
+  &:active {
+    text-decoration: overline;
+  }
+}
+
+.purchase {
+  .form {
+    background-color: $primary-color;
+    width: 50%;
+    height: 375px;
+    margin: 100px auto;
+    padding-top: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      font-weight: 700;
+      margin: 0;
+      padding: 0;
+      padding-bottom: 25px;
+    }
+    b {
+      font-size: 16px;
+      padding-right: 5px;
+      padding-bottom: 5px;
+    }
+    .contact-info {
+      border: 1px solid $dark-color;
+      background-color: $primary-color;
+      color: $dark-color;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    #quantity {
+      margin-top: 10px;
+      padding-left: 2px;
+      text-align: center;
+    }
+    #quantity-container {
+      padding-top: 10px;
+    }
+    #submit {
+      border: 1px solid $dark-color;
+      background-color: $primary-color;
+      color: $dark-color;
+      font-size: 18px;
+      height: 50px;
+      width: 175px;
+      text-transform: uppercase;
+      margin-top: 45px;
+      float: right;
+      &:hover {
+        font-weight: bold;
+      }
+    }
+    #back {
+      color: $dark-color;
+      font-size: 12px;
+      margin-top: 10px;
+    }
+  }
+}
+
+#footer {
+  position: absolute;
+  bottom: 5px; left: 0; right: 0;
+  .container {
+    text-align: center;
+    p {
+      font-weight: normal;
+      font-size: 12px;
+      padding-bottom: 1em;
+      fill: $dark-color;
+      @include transition(0.5s ease);
+    }
+    svg {
+      margin: 0 auto;
+      width: 50px;
+      fill: $red;
+      @include transition(0.5s ease);
+    }
+    #tm {
+      padding-left: 5px;
+      font-weight: normal;
+
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+  }
+}
+
+/* Media Queries */
+@media screen and (max-width: 1000px){
+  html, body {
+    background-color: $primary-color;
+    .purchase {
+      .form {
+        width: 50%;
+        #submit {
+          text-align: center;
+          float: none;
+          margin: auto;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 860px){
+  html, body {
+    background-color: $primary-color;
+    .purchase {
+      .form {
+        width: 75%;
+        height: 100%;
+        margin: 100px auto;
+        padding-top: 20px;
+        padding-left: 50px;
+        padding-right: 50px;
+        .block {
+          padding-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 720px){
+  html, body {
+    background-color: $primary-color;
+    .purchase {
+      .form {
+        width: 90%;
+        padding-left: 25px;
+        padding-right: 25px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 432px){
+  html, body {
+    background-color: $primary-color;
+    .purchase {
+      .form {
+        margin: 25px auto;
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        h1 {
+          font-size: 36px;
+        }
+      }
+    }
+  }
+}

@@ -107,10 +107,8 @@ a {
     white-space: nowrap;
     a {
       color: $primary-color;
-      font-size: 14px;
       padding: 10px;
       letter-spacing: 1px;
-      text-transform: uppercase;
       @include transition(250ms ease);
       &:hover {
         color: $primary-hover;
@@ -123,11 +121,19 @@ a {
       margin: 0 auto;
     }
     .logo {
+      font-family: 'Playfair Display', serif;
       float: left;
+      font-size: 24px;
+      padding: 0px;
+      margin-top: -4px;
+      background-color: $green;
+      @include transition(background-color 100ms ease-out);
     }
     .links {
       float: right;
       vertical-align: middle;
+      text-transform: uppercase;
+      font-size: 14px;
     }
   }
 }
@@ -135,6 +141,10 @@ a {
     background-color: $red;
     @include box-shadow(0, 1px, 5px, rgba(0, 0, 0, 0.5));
     @include transition(background-color 300ms ease-out);
+    .logo {
+      background-color: rgba(0, 0, 0, 0);
+      @include transition(background-color 100ms ease-out);
+    }
   }
 
 
@@ -414,6 +424,9 @@ a {
       word-spacing: 1px;
       line-height: 200%;
     }
+    a:hover {
+      text-decoration: none;
+    }
     .block {
       text-align: center;
       display: table;
@@ -492,6 +505,13 @@ a {
       margin-top: 0;
       margin-bottom: 0.5em;
     }
+    a {
+      color: $dark-color;
+      &:hover {
+        color: $dark-hover;
+        text-decoration: none;
+      }
+    }
     .contact-form {
       p {
         padding-top: 5px
@@ -507,22 +527,20 @@ a {
         width: 75%;
         padding-left: 5px;
         margin-top: 2px;
-        height: 100px;
-      }
-      #submit-container {
-        padding-top: 0;
+        height: 147px;
+        padding-bottom: none;
+        margin-bottom: none;
       }
       #submit {
         border: 1px solid $dark-color;
         background-color: $primary-color;
-        width: 75%;
-        padding: 10px;
-        margin-top: 0;
-        @include transition(250ms ease);
+        color: $dark-color;
+        width: 100px;
+        margin-top: none;
+        margin-right: 25%;
+        float: right;
         &:hover {
-          background-color: $dark-color;
-          color: $primary-color;
-          @include transition(250ms ease);
+          font-weight: bold;
         }
       }
     }
@@ -557,22 +575,65 @@ a {
   }
 }
 
-.modal {
-  height: 100%;
-  width: 100%;
-  .modal-content {
-    margin: auto;
+#sent-footer {
+  position: absolute;
+  bottom: 5px; left: 0; right: 0;
+  .container {
+    text-align: center;
+    p {
+      font-weight: normal;
+      font-size: 12px;
+      padding-bottom: 1em;
+      fill: $dark-color;
+      @include transition(0.5s ease);
+    }
+    svg {
+      margin: 0 auto;
+      width: 50px;
+      fill: $red;
+      @include transition(0.5s ease);
+    }
+    #tm {
+      padding-left: 5px;
+      font-weight: normal;
+
+      font-size: 12px;
+      text-transform: uppercase;
+    }
   }
 }
 
 /* Media Queries */
+@media screen and (max-width: 992px){
+  #contact {
+    .container {
+      .contact-form {
+        input {
+          width: 75%;
+          padding-left: 0;
+        }
+        textarea {
+          width: 75%;
+        }
+        #submit {
+          width: 75%;
+          margin: 0 auto;
+          float: none;
+        }
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 768px){
     #nav {
       position: absolute;
+      padding: 0;
       @include transition(none);
       .container {
+        padding: 0;
         a {
-          padding: 3px;
+          padding: 0;
         }
         ul {
           margin: 0 auto;
@@ -583,6 +644,9 @@ a {
           float: none;
           margin: 0 auto;
           text-align: center;
+          background-color: $red;
+          width: 100%;
+          padding: 0px;
           a {
             font-size: 24px;
             @include transition(none);
@@ -697,26 +761,18 @@ a {
         }
       }
     }
-    #purchase {
-      padding-top: 1em;
-      padding-bottom: 1em;
+    #contact {
       .container {
-        padding-left: 0.1em;
-        padding-left: 0.1em;
-        width: 100%;
-        margin: 0 auto;
-        h1 {
-          font-family: 'Playfair Display', serif;
-          font-size: 36px;
-          font-weight: 700;
-          margin-top: 0;
-          margin-bottom: 0.5em;
-        }
-        p {
-          font-weight: normal;
-          font-size: 14px;
-          word-spacing: 1px;
-          line-height: 200%;
+        .contact-form {
+          input {
+            width: 100%;
+          }
+          textarea {
+            width: 100%;
+          }
+          #submit {
+            width: 100%;
+          }
         }
       }
     }
@@ -742,6 +798,26 @@ a {
           padding-left: 1.5em;
           padding-right: 1.5em;
         }
+      }
+    }
+}
+
+@media screen and (max-height: 900px){
+    .jumbotron {
+      height: 80vh;
+      .container {
+        top: 10%;
+        height: 100%;
+      }
+    }
+}
+
+@media screen and (max-height: 600px){
+    .jumbotron {
+      height: 100vh;
+      .container {
+        top: 5%;
+        height: 100%;
       }
     }
 }

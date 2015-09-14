@@ -37,10 +37,8 @@ a:active {
     white-space: nowrap; }
     #nav .container a {
       color: white;
-      font-size: 14px;
       padding: 10px;
       letter-spacing: 1px;
-      text-transform: uppercase;
       -webkit-transition: 250ms ease;
       -moz-transition: 250ms ease;
       -o-transition: 250ms ease;
@@ -56,10 +54,21 @@ a:active {
       display: inline;
       margin: 0 auto; }
     #nav .container .logo {
-      float: left; }
+      font-family: 'Playfair Display', serif;
+      float: left;
+      font-size: 24px;
+      padding: 0px;
+      margin-top: -4px;
+      background-color: #247a41;
+      -webkit-transition: background-color 100ms ease-out;
+      -moz-transition: background-color 100ms ease-out;
+      -o-transition: background-color 100ms ease-out;
+      transition: background-color 100ms ease-out; }
     #nav .container .links {
       float: right;
-      vertical-align: middle; }
+      vertical-align: middle;
+      text-transform: uppercase;
+      font-size: 14px; }
 
 #nav.past-header {
   background-color: #ef4d46;
@@ -70,6 +79,12 @@ a:active {
   -moz-transition: background-color 300ms ease-out;
   -o-transition: background-color 300ms ease-out;
   transition: background-color 300ms ease-out; }
+  #nav.past-header .logo {
+    background-color: transparent;
+    -webkit-transition: background-color 100ms ease-out;
+    -moz-transition: background-color 100ms ease-out;
+    -o-transition: background-color 100ms ease-out;
+    transition: background-color 100ms ease-out; }
 
 .jumbotron {
   background-image: url(http://getpeppers.com/img/wall.jpg);
@@ -345,6 +360,8 @@ a:active {
       font-size: 18px;
       word-spacing: 1px;
       line-height: 200%; }
+    #products .container a:hover {
+      text-decoration: none; }
     #products .container .block {
       text-align: center;
       display: table;
@@ -415,6 +432,11 @@ a:active {
       font-weight: 700;
       margin-top: 0;
       margin-bottom: 0.5em; }
+    #contact .container a {
+      color: #262626; }
+      #contact .container a:hover {
+        color: rgba(38, 38, 38, 0.9);
+        text-decoration: none; }
     #contact .container .contact-form p {
       padding-top: 5px; }
     #contact .container .contact-form input {
@@ -427,26 +449,19 @@ a:active {
       width: 75%;
       padding-left: 5px;
       margin-top: 2px;
-      height: 100px; }
-    #contact .container .contact-form #submit-container {
-      padding-top: 0; }
+      height: 147px;
+      padding-bottom: none;
+      margin-bottom: none; }
     #contact .container .contact-form #submit {
       border: 1px solid #262626;
       background-color: white;
-      width: 75%;
-      padding: 10px;
-      margin-top: 0;
-      -webkit-transition: 250ms ease;
-      -moz-transition: 250ms ease;
-      -o-transition: 250ms ease;
-      transition: 250ms ease; }
+      color: #262626;
+      width: 100px;
+      margin-top: none;
+      margin-right: 25%;
+      float: right; }
       #contact .container .contact-form #submit:hover {
-        background-color: #262626;
-        color: white;
-        -webkit-transition: 250ms ease;
-        -moz-transition: 250ms ease;
-        -o-transition: 250ms ease;
-        transition: 250ms ease; }
+        font-weight: bold; }
 
 #footer {
   padding-top: 2em;
@@ -476,45 +491,85 @@ a:active {
       font-size: 12px;
       text-transform: uppercase; }
 
-.modal {
-  height: 100%;
-  width: 100%; }
-  .modal .modal-content {
-    margin: auto; }
+#sent-footer {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  right: 0; }
+  #sent-footer .container {
+    text-align: center; }
+    #sent-footer .container p {
+      font-weight: normal;
+      font-size: 12px;
+      padding-bottom: 1em;
+      fill: #262626;
+      -webkit-transition: 0.5s ease;
+      -moz-transition: 0.5s ease;
+      -o-transition: 0.5s ease;
+      transition: 0.5s ease; }
+    #sent-footer .container svg {
+      margin: 0 auto;
+      width: 50px;
+      fill: #ef4d46;
+      -webkit-transition: 0.5s ease;
+      -moz-transition: 0.5s ease;
+      -o-transition: 0.5s ease;
+      transition: 0.5s ease; }
+    #sent-footer .container #tm {
+      padding-left: 5px;
+      font-weight: normal;
+      font-size: 12px;
+      text-transform: uppercase; }
 
 /* Media Queries */
+@media screen and (max-width: 992px) {
+  #contact .container .contact-form input {
+    width: 75%;
+    padding-left: 0; }
+  #contact .container .contact-form textarea {
+    width: 75%; }
+  #contact .container .contact-form #submit {
+    width: 75%;
+    margin: 0 auto;
+    float: none; } }
 @media screen and (max-width: 768px) {
   #nav {
     position: absolute;
+    padding: 0;
     -webkit-transition: none;
     -moz-transition: none;
     -o-transition: none;
     transition: none; }
-    #nav .container a {
-      padding: 3px; }
-    #nav .container ul {
-      margin: 0 auto;
+    #nav .container {
       padding: 0; }
-    #nav .container .logo {
-      position: relative;
-      float: none;
-      margin: 0 auto;
-      text-align: center; }
-      #nav .container .logo a {
-        font-size: 24px;
-        -webkit-transition: none;
-        -moz-transition: none;
-        -o-transition: none;
-        transition: none; }
-    #nav .container .links {
-      display: none;
-      visibility: hidden; }
-    #nav .container .underline {
-      margin: 0 auto;
-      padding: 0 auto; }
-      #nav .container .underline:after {
+      #nav .container a {
+        padding: 0; }
+      #nav .container ul {
+        margin: 0 auto;
+        padding: 0; }
+      #nav .container .logo {
+        position: relative;
+        float: none;
+        margin: 0 auto;
+        text-align: center;
+        background-color: #ef4d46;
+        width: 100%;
+        padding: 0px; }
+        #nav .container .logo a {
+          font-size: 24px;
+          -webkit-transition: none;
+          -moz-transition: none;
+          -o-transition: none;
+          transition: none; }
+      #nav .container .links {
         display: none;
         visibility: hidden; }
+      #nav .container .underline {
+        margin: 0 auto;
+        padding: 0 auto; }
+        #nav .container .underline:after {
+          display: none;
+          visibility: hidden; }
 
   #nav.past-header {
     background-color: rgba(0, 0, 0, 0.5); }
@@ -587,25 +642,12 @@ a:active {
         #products .wrapper #bar-chart #mobile {
           margin-bottom: 10px; }
 
-  #purchase {
-    padding-top: 1em;
-    padding-bottom: 1em; }
-    #purchase .container {
-      padding-left: 0.1em;
-      padding-left: 0.1em;
-      width: 100%;
-      margin: 0 auto; }
-      #purchase .container h1 {
-        font-family: 'Playfair Display', serif;
-        font-size: 36px;
-        font-weight: 700;
-        margin-top: 0;
-        margin-bottom: 0.5em; }
-      #purchase .container p {
-        font-weight: normal;
-        font-size: 14px;
-        word-spacing: 1px;
-        line-height: 200%; } }
+  #contact .container .contact-form input {
+    width: 100%; }
+  #contact .container .contact-form textarea {
+    width: 100%; }
+  #contact .container .contact-form #submit {
+    width: 100%; } }
 @media screen and (max-width: 312px) {
   #nav .logo a {
     font-size: 16px; }
@@ -620,5 +662,17 @@ a:active {
         margin-top: 2em;
         padding-left: 1.5em;
         padding-right: 1.5em; } }
+@media screen and (max-height: 900px) {
+  .jumbotron {
+    height: 80vh; }
+    .jumbotron .container {
+      top: 10%;
+      height: 100%; } }
+@media screen and (max-height: 600px) {
+  .jumbotron {
+    height: 100vh; }
+    .jumbotron .container {
+      top: 5%;
+      height: 100%; } }
 
 /*# sourceMappingURL=main.css.map */

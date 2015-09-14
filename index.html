@@ -21,7 +21,7 @@
     <meta property="og:image"         content="http://www.micahcowell/img/getpeppers_scrot.jpg" />
 
     <title>Get Peppers</title>
-    <link rel="icon" href="img/favicon.png">
+    <link rel="icon" href="http://getpeppers.com/img/favicon.png">
 
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
@@ -35,22 +35,22 @@
       <div class="container">
         <ul class="logo">
           <li><a href="#top">
-            <span>logo here</span>
+            <span>GetPeppers</span>
           </a></li>
         </ul>
         <ul class="links">
           <li><a href="#about">About</a></li>
-          <li><a href="#purchase">Purchase</a></li>
+          <li><a href="#products">Products</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
     </div>
 
     <div id="main" class="jumbotron">
-      <div class="container" id="header">
+      <div id="header" class="container">
         <h1>Reasonably Priced,</h1>
         <h1>Unreasonably Spiced</h1>
-        <a href="#purchase" class="btn btn-default" role="button">buy now</a>
+        <a href="http://getpeppers.com/purchase" class="btn btn-default" role="button">buy now</a>
       </div>
     </div>
 
@@ -125,7 +125,8 @@
           <p>
             The Carolina Reaper can be purchased from GetPeppers for the reasonable price of $10 a pepper.
             If you live in the Tri-City area then you will receive same day shipping as long as your order before 3:00pm.
-            Don't live near us? No worries we got you taken care of with 5-7 day shipping for a flat rate of $5.
+            Don't live near us? No worries we got you taken care of with 5-7 day shipping for a flat rate of $5.<br>
+            <a href="http://getpeppers.com/purchase">Go to the store to buy now</a>
           </p>
         </div>
         <div class="block col-md-4">
@@ -133,7 +134,7 @@
             <div class="img-wrapper">
               <img id="reaper" class="purchase-img" src="http://placehold.it/250x250" alt="reaper">
             </div>
-            <a data-toggle="modal" data-target="#reaperModal" class="btn btn-default" role="button"><span class="product">Carolina Reaper</span><span class="reveal">buy it now ($10)</span></a>
+            <a href="http://getpeppers.com/purchase" class="btn btn-default" role="button"><span class="product">Carolina Reaper</span><span class="reveal">buy it now ($10)</span></a>
           </div>
         </div>
         <div class="block col-md-4">
@@ -141,7 +142,7 @@
             <div class="img-wrapper">
               <img id="choco" class="purchase-img" src="http://placehold.it/250x250" alt="choco">
             </div>
-            <a data-toggle="modal" data-target="#chocoModal" class="btn btn-default" role="button"><span class="product">Chocolate Bhutlah</span><span class="reveal">buy it now ($10)</span></a>
+            <a href="http://getpeppers.com/purchase" class="btn btn-default" role="button"><span class="product">Chocolate Bhutlah</span><span class="reveal">buy it now ($10)</span></a>
           </div>
         </div>
         <div class="block col-md-4">
@@ -149,7 +150,7 @@
             <div class="img-wrapper">
               <img id="shirt" class="purchase-img" src="http://placehold.it/250x250" alt="shirt">
             </div>
-            <a data-toggle="modal" data-target="#shirtModal" class="btn btn-default" role="button"><span class="product">Company Shirt</span><span class="reveal">Buy It Now ($15)</span></a>
+            <a href="http://getpeppers.com/purchase" class="btn btn-default" role="button"><span class="product">Company Shirt</span><span class="reveal">Buy It Now ($15)</span></a>
           </div>
         </div>
       </div>
@@ -160,11 +161,11 @@
         <div class="wrapper col-md-12">
           <h1>Contact</h1>
 
-            <form action="index.php" method="post" name="contact_form">
+            <form action="index.php" method="post" name="contactForm">
               <div class="contact-info col-md-4">
                 <p><a href="#" target="_blank">Richland, Wa</a></p>
-                <p><a href="mailto:micahcowell99@gmail.com" target="_blank">hello@getpeppers.com</a></p>
-                <p><a href="#" target="_blank">123-456-7890</a></p>
+                <p><a href="mailto:micahcowell99@gmail.com"x>hello@getpeppers.com</a></p>
+                <p><a href="tel:15095314321">509-531-4321</a></p>
               </div>
               <div class="contact-form col-md-8">
                 <div class="block col-md-4">
@@ -182,11 +183,9 @@
                   </p>
                 </div>
                 <div class="block col-md-8">
-                  <p>
+                  <p id="text-container">
                     <b>Message</b> <br>
                     <textarea name="message" id="message"></textarea>&nbsp;
-                  </p>
-                  <p id="submit-container">
                     <input type="submit" name="submit" id="submit" value="SEND"/>
                   </p>
                 </div>
@@ -210,9 +209,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
-    <script src="http://www.3magine.com/wp-content/themes/3magine/js/jquery.appear-1.1.1.modified.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-    <script src="https://checkout.stripe.com/checkout.js"></script>
     <script src="script.js"></script>
 
   <script>
