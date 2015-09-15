@@ -81,16 +81,16 @@ a {
   }
 }
 
-.purchase {
+.wrapper {
   .form {
     background-color: $primary-color;
     width: 50%;
-    height: 375px;
     margin: 100px auto;
     margin-top: 50px;
     padding-top: 20px;
     padding-left: 50px;
     padding-right: 50px;
+    padding-bottom: 20px;
     h1 {
       font-family: 'Playfair Display', serif;
       font-size: 48px;
@@ -104,39 +104,40 @@ a {
       padding-right: 5px;
       padding-bottom: 5px;
     }
-    .contact-info {
-      border: 1px solid $dark-color;
-      background-color: $primary-color;
-      color: $dark-color;
-      width: 100%;
-      margin-bottom: 10px;
-    }
-    #quantity {
-      margin-top: 10px;
-      padding-left: 2px;
-      text-align: center;
-    }
-    #quantity-container {
-      padding-top: 10px;
-    }
-    #submit {
-      border: 1px solid $dark-color;
-      background-color: $primary-color;
-      color: $dark-color;
-      font-size: 18px;
-      height: 50px;
-      width: 175px;
-      text-transform: uppercase;
-      margin-top: 45px;
-      float: right;
-      &:hover {
-        font-weight: bold;
+    .purchase {
+      padding-top: 5px;
+      #quantity {
+        margin-top: 10px;
+        padding-left: 2px;
+        text-align: center;
+      }
+      #quantity-container {
+        padding-top: 10px;
       }
     }
-    #back {
-      color: $dark-color;
-      font-size: 12px;
-      margin-top: 10px;
+    .info {
+      padding-top: 20px;
+      .contact-info {
+        border: 1px solid $dark-color;
+        background-color: $primary-color;
+        color: $dark-color;
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      #submit {
+        border: 1px solid $dark-color;
+        background-color: $primary-color;
+        color: $dark-color;
+        font-size: 18px;
+        height: 50px;
+        width: 175px;
+        text-transform: uppercase;
+        margin-top: 25px;
+        float: right;
+        &:hover {
+          font-weight: bold;
+        }
+      }
     }
   }
 }
@@ -167,68 +168,83 @@ a {
   }
 }
 
+#thanks-footer {
+  position: absolute;
+  bottom: 5px; left: 0; right: 0;
+  .container {
+    text-align: center;
+    p {
+      font-weight: normal;
+      font-size: 12px;
+      padding-bottom: 1em;
+      fill: $dark-color;
+      @include transition(0.5s ease);
+    }
+    svg {
+      margin: 0 auto;
+      width: 50px;
+      fill: $red;
+      @include transition(0.5s ease);
+    }
+    #tm {
+      padding-left: 5px;
+      font-weight: normal;
+
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+  }
+}
+
 /* Media Queries */
 @media screen and (max-width: 1000px){
-  html, body {
-    background-color: $primary-color;
-    .purchase {
-      .form {
-        width: 50%;
-        #submit {
-          text-align: center;
-          float: none;
-          margin: auto;
-          width: 100%;
-        }
-      }
+  .wrapper {
+    .form {
+      width: 50%;
     }
   }
 }
 
 @media screen and (max-width: 860px){
-  html, body {
-    background-color: $primary-color;
-    .purchase {
-      .form {
-        width: 75%;
-        height: 100%;
-        margin: 100px auto;
-        padding-top: 20px;
-        padding-left: 50px;
-        padding-right: 50px;
-        .block {
-          padding-bottom: 10px;
-        }
+  .wrapper {
+    .form {
+      width: 65%;
+      margin: 100px auto;
+      padding-top: 20px;
+      padding-left: 50px;
+      padding-right: 50px;
+      .row {
+        padding-bottom: 10px;
+      }
+      #submit {
+        float: none;
+        text-align: center;
+        margin: 0 auto;
+        width: 100%;
       }
     }
   }
 }
 
 @media screen and (max-width: 720px){
-  html, body {
-    background-color: $primary-color;
-    .purchase {
-      .form {
-        width: 90%;
-        padding-left: 25px;
-        padding-right: 25px;
-      }
+  .wrapper {
+    .form {
+      width: 75%;
+      padding-left: 25px;
+      padding-right: 25px;
     }
   }
 }
 
 @media screen and (max-width: 432px){
-  html, body {
-    background-color: $primary-color;
-    .purchase {
-      .form {
-        margin: 25px auto;
-        width: 100%;
-        padding-left: 10px;
-        padding-right: 10px;
-        h1 {
-          font-size: 36px;
-        }
+  .wrapper {
+    .form {
+      margin: 25px auto;
+      width: 90%;
+      padding-left: 10px;
+      padding-right: 10px;
+      h1 {
+        font-size: 36px;
       }
     }
   }

@@ -37,27 +37,53 @@
       </div>
     </div>
 
-    <div class="purchase">
+    <div class="wrapper">
       <div class="form">
         <form action="index.php" method="post" name="purchaseForm">
           <h1>Purchase</h1>
-          <div class="block col-md-6">
-            <b>Product</b> <br>
-            <input type="radio" name="product" value="Carolina Reaper" checked> Carolina Reaper ($10)<br>
-            <input type="radio" name="product" value="Chocolate Bhutlah"> Chocolate Bhutlah ($10)<br>
-            <input type="radio" name="product" value="Company Shirt"> Company Shirt ($15)<br>
-            <span id="quantity-container"><b>Quantity:</b><input name="quantity" id="quantity" type="number" min="1" max="5" value="1"/></span>
+          <div class="purchase row">
+            <div class="buy col-md-6">
+              <b>Product</b> <br>
+              <input type="radio" name="item" value="Carolina Reaper" checked> Carolina Reaper ($10)<br>
+              <input type="radio" name="item" value="Chocolate Bhutlah"> Chocolate Bhutlah ($10)<br>
+              <input type="radio" name="item" value="Company Shirt"> Company Shirt ($15)<br>
+              <span id="quantity-container"><b>Quantity:</b><input name="quantity" id="quantity" type="number" min="1" max="5" value="1"/></span>
+              <!-- <p class="total"><b>Total: $<span id="sum"></span></b></p> -->
+            </div>
+            <div class="shipping col-md-6">
+              <b>Shipping</b><br>
+              <input type="radio" name="shipping" value="local" checked> Local Delivery (free)<br>
+              <input type="radio" name="shipping" value="national"> U.S. Shipping($5)<br>
+            </div>
           </div>
-          <div class="block col-md-6">
-            <p>
+          <div class="info row">
+            <p class="col-md-6">
               <b>Name</b> <br>
               <input class="contact-info" name="name" id="name" type="text"/>
             </p>
-            <p>
+            <p class="col-md-6">
               <b>E-Mail</b> <br>
               <input class="contact-info" name="email" id="email" type="text"/>
             </p>
-            <input type="submit" name="submit" id="submit" value="purchase"/>
+            <p class="col-md-6">
+              <b>Address</b> <br>
+              <input class="contact-info" name="address" id="address" type="text"/>
+            </p>
+            <p class="col-md-6">
+              <b>City</b> <br>
+              <input class="contact-info" name="city" id="city" type="text"/>
+            </p>
+            <p class="col-md-6">
+              <b>State</b> <br>
+              <input class="contact-info" name="state" id="state" type="text"/>
+            </p>
+            <p class="col-md-6">
+              <b>Zip Code</b> <br>
+              <input class="contact-info" name="zip" id="zip" type="number"/>
+            </p>
+            <p class="col-md-12 row">
+              <input type="submit" name="submit" id="submit" value="purchase"/>
+            </p>
           </div>
         </form>
       </div>
