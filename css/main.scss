@@ -77,10 +77,17 @@ $graph-height: 253px;
   color: $red;
 }
 
+.hide {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+}
+
 body {
   background-color: $background-color;
   font-family: 'Karla', sans-serif;
   font-weight: normal;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -138,6 +145,25 @@ a {
       text-transform: uppercase;
       font-size: 14px;
     }
+    .black-friday {
+      background-color: $dark-color;
+      font-style: italic;
+      font-size: 18px;
+      margin-left: 10px;
+      margin-right: 0;
+      &:hover {
+        text-decoration: none;
+      }
+      &:active {
+        text-decoration: none;
+      }
+      &:focus {
+        text-decoration: none;
+      }
+    }
+    #sale {
+      background-color: none;
+    }
   }
 }
 #nav.past-header {
@@ -151,6 +177,10 @@ a {
         @include transition(50ms ease-out);
       }
     }
+    .cd-modal-action .btn {
+      display: table;
+    }
+
   }
 
 
@@ -217,41 +247,18 @@ a {
       word-spacing: 1px;
       line-height: 200%;
     }
-    .quote {
-      margin-height: 5em;
-    }
-  }
-}
-
-#peppers {
-  padding-top: 2em;
-  padding-bottom: 2em;
-  .container {
-    background-color: $primary-color;
-    padding-top: 2em;
-    padding-bottom: 2em;
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 48px;
-      font-weight: 700;
-      margin-top: 0;
-      margin-bottom: 0.5em;
-    }
-    p {
-      font-weight: normal;
-      font-size: 18px;
-      word-spacing: 1px;
-      line-height: 200%;
-    }
   }
 }
 
 
 #compare {
+  opacity: 0;
   position: relative;
   height: 100%;
   margin: 0 auto;
   padding-top: 5%;
+  padding-bottom: 0;
+  @include transition(250ms ease);
   .wrapper {
     position: relative;
   }
@@ -436,70 +443,54 @@ a {
       word-spacing: 1px;
       line-height: 200%;
     }
-    a:hover {
-      text-decoration: none;
-    }
-    .block {
+
+    .item-container {
+      width: 100%;
       text-align: center;
-      display: table;
-      padding-top: 25px;
-      padding-bottom: 25px;
-      margin: auto;
-      .child {
-        display: table-cell;
-        vertical-align: middle;
-      }
-      .img-wrapper {
-        border: 3px solid $dark-color;
-        height: 250px;
-        width: 250px;
-        overflow: hidden;
-        margin: 0 auto;
-      }
-      .purchase-img {
-        height: 100%;
-        width: 100%;
-        @include transition(250ms ease);
-      }
-      .btn {
-        width: 250px;
-        color: $dark-color;
-        border: 3px solid $dark-color;
-        border-top: none;
-        background-color: rgba(0, 0, 0, 0);
-        border-radius: 0;
-        padding: 1em;
-        padding-left: 3em;
-        padding-right: 3em;
-        text-transform: uppercase;
-        font-weight: bold;
-        letter-spacing: 1.5px;
-        @include transition(250ms ease);
-        span.product {
-          display: inline;
-        }
-        span.reveal {
-          display: none;
-        }
-        &:hover {
-          background-color: $dark-color;
-          span.product {
-            display: none;
-          }
-          span.reveal {
-            display: inline;
-            color: $primary-color;
+      .item {
+        text-align: center;
+        margin: auto;
+        .img-container {
+          border: 3px solid $dark-color;
+          width: 250px;
+          height: 250px;
+          margin: auto;
+          img {
+            width: 100%;
+            height: 100%;
           }
         }
-      }
-      p {
-        margin-top: 1em;
-        font-weight: normal;
-        font-size: 18px;
-        word-spacing: 1px;
-        line-height: 200%;
+        .product {
+          border: 3px solid $dark-color;
+          border-top: none;
+          width: 250px;
+          margin: auto;
+          padding: 10px;
+          font-size: 18px;
+          .sale {
+            color: $red;
+            font-style: italic;
+            &:hover {
+              color: $primary-color;
+              background-color: $red;
+            }
+          }
+          a {
+            text-transform: uppercase;
+            color: $dark-color;
+            font-size: 14px;
+            font-weight: 700;
+            padding: 2px;
+            &:hover {
+              color: $primary-color;
+              background-color: $dark-color;
+              text-decoration: none;
+            }
+          }
+        }
       }
     }
+
   }
 }
 
@@ -577,41 +568,6 @@ a {
       fill: $red;
       @include transition(0.5s ease);
     }
-    #tm {
-      padding-left: 5px;
-      font-weight: normal;
-
-      font-size: 12px;
-      text-transform: uppercase;
-    }
-  }
-}
-
-#sent-footer {
-  position: absolute;
-  bottom: 5px; left: 0; right: 0;
-  .container {
-    text-align: center;
-    p {
-      font-weight: normal;
-      font-size: 12px;
-      padding-bottom: 1em;
-      fill: $dark-color;
-      @include transition(0.5s ease);
-    }
-    svg {
-      margin: 0 auto;
-      width: 50px;
-      fill: $red;
-      @include transition(0.5s ease);
-    }
-    #tm {
-      padding-left: 5px;
-      font-weight: normal;
-
-      font-size: 12px;
-      text-transform: uppercase;
-    }
   }
 }
 
@@ -658,120 +614,6 @@ a {
 
 }
 
-@media screen and (max-width: 512px){
-    .jumbotron {
-      height: 100vh;
-      .container {
-        top: 20%;
-        h1 {
-          font-size: 42px;
-        }
-        h2 {
-          font-size: 32px;
-        }
-        .btn {
-          margin-top: 3em;
-          padding-left: 2em;
-          padding-right: 2em;
-        }
-      }
-    }
-    #about {
-      padding-top: 1em;
-      padding-bottom: 1em;
-      .container {
-        padding-left: 0.1em;
-        padding-left: 0.1em;
-        width: 100%;
-        margin: 0 auto;
-        h1 {
-          font-family: 'Playfair Display', serif;
-          font-size: 36px;
-          font-weight: 700;
-          margin-top: 0;
-          margin-bottom: 0.5em;
-        }
-        h2 {
-          font-size: 24px;
-        }
-        p {
-          font-weight: normal;
-          font-size: 14px;
-          word-spacing: 1px;
-          line-height: 200%;
-        }
-      }
-    }
-    #products {
-      padding-top: 1em;
-      padding-bottom: 1em;
-      .container {
-        padding-left: 1em;
-        padding-left: 1em;
-        width: 100%;
-        margin: 0 auto;
-        h1 {
-          font-family: 'Playfair Display', serif;
-          font-size: 36px;
-          font-weight: 700;
-          margin-top: 0;
-          margin-bottom: 0.5em;
-        }
-        h2 {
-          font-size: 20px;
-        }
-        p {
-          font-weight: normal;
-          font-size: 14px;
-          word-spacing: 1px;
-          line-height: 200%;
-        }
-      }
-      .wrapper {
-        padding-left: 0.1em;
-        padding-left: 0.1em;
-        #bar-chart {
-
-          height: 380px;
-          width: 100%;
-          position: relative;
-          #mobile {
-            margin-bottom: 10px;
-          }
-        }
-      }
-    }
-    #contact {
-      .container {
-        .contact-form {
-          input {
-            width: 100%;
-          }
-          textarea {
-            width: 100%;
-          }
-          #submit {
-            width: 100%;
-          }
-        }
-      }
-    }
-}
-
-@media screen and (max-width: 312px){
-    .jumbotron {
-      height: 100vh;
-      .container {
-        top: 20%;
-        .btn {
-          margin-top: 2em;
-          padding-left: 1.5em;
-          padding-right: 1.5em;
-        }
-      }
-    }
-}
-
 @media screen and (max-height: 900px){
     .jumbotron {
       height: 80vh;
@@ -788,6 +630,148 @@ a {
       .container {
         top: 5%;
         height: 100%;
+      }
+    }
+}
+
+@media screen and (max-width: 512px){
+    .jumbotron {
+      height: 100vh;
+      .container {
+        top: 10%;
+        h1 {
+          font-size: 42px;
+        }
+        h2 {
+          font-size: 22px;
+        }
+        .btn {
+          margin-top: 3em;
+          padding-left: 2em;
+          padding-right: 2em;
+        }
+      }
+    }
+    #about {
+      padding-top: 1em;
+      padding-bottom: 1em;
+      .container {
+        padding-left: 0.1em;
+        padding-left: 0.1em;
+        padding-bottom: 0;
+        width: 100%;
+        margin: 0 auto;
+        h1 {
+          font-family: 'Playfair Display', serif;
+          font-size: 36px;
+          font-weight: 700;
+          margin-top: 0;
+          margin-bottom: 0.5em;
+        }
+        p {
+          font-weight: normal;
+          font-size: 14px;
+          word-spacing: 1px;
+          line-height: 150%;
+        }
+        #compare{
+          width: 100%;
+          margin-left: 0;
+          margin-right: 0;
+          #bar-chart {
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+          }
+        }
+      }
+    }
+    #products {
+      padding-top: 1em;
+      padding-bottom: 1em;
+      .container {
+        padding-left: 0.1em;
+        padding-left: 0.1em;
+        width: 100%;
+        margin: 0 auto;
+        h1 {
+          font-family: 'Playfair Display', serif;
+          font-size: 36px;
+          font-weight: 700;
+          margin-top: 0;
+          margin-bottom: 0.5em;
+        }
+        p {
+          font-weight: normal;
+          font-size: 14px;
+          word-spacing: 1px;
+          line-height: 150%;
+        }
+        .item-container {
+          .item {
+            margin-top: 1em;
+          }
+        }
+      }
+    }
+    #contact {
+      padding-top: 1em;
+      padding-bottom: 1em;
+      .container {
+        width: 100%;
+        padding-left: 0.1em;
+        padding-left: 0.1em;
+        text-align: left;
+        h1 {
+          font-family: 'Playfair Display', serif;
+          font-size: 36px;
+          font-weight: 700;
+          margin-top: 0;
+          margin-bottom: 0.5em;
+        }
+        p {
+          font-weight: normal;
+          font-size: 14px;
+          word-spacing: 1px;
+          line-height: 150%;
+          padding: 0;
+          margin: 0;
+        }
+        .contact-form {
+          width: 100%;
+          padding: 0;
+          margin: 0;
+          text-align: left;
+          input {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+          }
+          textarea {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+          }
+          #submit {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+          }
+        }
+      }
+    }
+}
+
+@media screen and (max-width: 312px){
+    .jumbotron {
+      height: 100vh;
+      .container {
+        top: 20%;
+        .btn {
+          margin-top: 2em;
+          padding-left: 1.5em;
+          padding-right: 1.5em;
+        }
       }
     }
 }

@@ -12,5 +12,6 @@
         $message . " \n" . " \n" . "email: " . $email,
         "From: " . $name);
 
-  echo "<script>window.location = 'http://getpeppers.com/sent.html'</script>";
+  echo nl2br("Email sent, we will get back to you shortly!\nYou Will be redirected back to GetPeppers shortly.");
+  echo "<script>setTimeout(\"location.href = 'http://getpeppers.com';\",3000);</script>";
 ?>

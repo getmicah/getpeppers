@@ -98,41 +98,6 @@ a:active {
     -moz-transition: 0.5s ease;
     -o-transition: 0.5s ease;
     transition: 0.5s ease; }
-  #footer .container #tm {
-    padding-left: 5px;
-    font-weight: normal;
-    font-size: 12px;
-    text-transform: uppercase; }
-
-#thanks-footer {
-  position: absolute;
-  bottom: 5px;
-  left: 0;
-  right: 0; }
-  #thanks-footer .container {
-    text-align: center; }
-    #thanks-footer .container p {
-      font-weight: normal;
-      font-size: 12px;
-      padding-bottom: 1em;
-      fill: #262626;
-      -webkit-transition: 0.5s ease;
-      -moz-transition: 0.5s ease;
-      -o-transition: 0.5s ease;
-      transition: 0.5s ease; }
-    #thanks-footer .container svg {
-      margin: 0 auto;
-      width: 50px;
-      fill: #ef4d46;
-      -webkit-transition: 0.5s ease;
-      -moz-transition: 0.5s ease;
-      -o-transition: 0.5s ease;
-      transition: 0.5s ease; }
-    #thanks-footer .container #tm {
-      padding-left: 5px;
-      font-weight: normal;
-      font-size: 12px;
-      text-transform: uppercase; }
 
 /* Media Queries */
 @media screen and (max-width: 1000px) {
@@ -147,11 +112,12 @@ a:active {
     padding-right: 50px; }
     .wrapper .form .row {
       padding-bottom: 10px; }
-    .wrapper .form #submit {
-      float: none;
-      text-align: center;
-      margin: 0 auto;
-      width: 100%; } }
+    .wrapper .form .submit-container {
+      text-align: center; }
+      .wrapper .form .submit-container #submit {
+        position: relative;
+        float: none;
+        margin: 0 auto; } }
 @media screen and (max-width: 720px) {
   .wrapper .form {
     width: 75%;
@@ -164,6 +130,10 @@ a:active {
     padding-left: 10px;
     padding-right: 10px; }
     .wrapper .form h1 {
-      font-size: 36px; } }
+      font-size: 36px; }
+    .wrapper .form .submit-container #submit {
+      width: 125px;
+      height: 50px;
+      font-size: 14px; } }
 
 /*# sourceMappingURL=main.css.map */

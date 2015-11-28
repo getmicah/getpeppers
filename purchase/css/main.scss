@@ -58,6 +58,7 @@ body {
   background-color: $background-color;
   font-family: 'Karla', sans-serif;
   font-weight: normal;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -158,41 +159,6 @@ a {
       fill: $red;
       @include transition(0.5s ease);
     }
-    #tm {
-      padding-left: 5px;
-      font-weight: normal;
-
-      font-size: 12px;
-      text-transform: uppercase;
-    }
-  }
-}
-
-#thanks-footer {
-  position: absolute;
-  bottom: 5px; left: 0; right: 0;
-  .container {
-    text-align: center;
-    p {
-      font-weight: normal;
-      font-size: 12px;
-      padding-bottom: 1em;
-      fill: $dark-color;
-      @include transition(0.5s ease);
-    }
-    svg {
-      margin: 0 auto;
-      width: 50px;
-      fill: $red;
-      @include transition(0.5s ease);
-    }
-    #tm {
-      padding-left: 5px;
-      font-weight: normal;
-
-      font-size: 12px;
-      text-transform: uppercase;
-    }
   }
 }
 
@@ -216,11 +182,13 @@ a {
       .row {
         padding-bottom: 10px;
       }
-      #submit {
-        float: none;
+      .submit-container {
         text-align: center;
-        margin: 0 auto;
-        width: 100%;
+        #submit {
+          position: relative;
+          float: none;
+          margin: 0 auto;
+        }
       }
     }
   }
@@ -245,6 +213,13 @@ a {
       padding-right: 10px;
       h1 {
         font-size: 36px;
+      }
+      .submit-container {
+        #submit {
+          width: 125px;
+          height: 50px;
+          font-size: 14px;
+        }
       }
     }
   }

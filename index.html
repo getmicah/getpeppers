@@ -18,7 +18,7 @@
     <meta property="og:type"          content="website" />
     <meta property="og:title"         content="GetPeppers" />
     <meta property="og:description"   content="Reasonably Priced, Unreasonably Spiced." />
-    <meta property="og:image"         content="http://www.micahcowell/img/getpeppers_scrot.jpg" />
+    <meta property="og:image"         content="http://www.micahcowell/img/shirt.jpg" />
 
     <title>Get Peppers</title>
     <link rel="icon" href="http://getpeppers.com/img/favicon.png">
@@ -31,7 +31,7 @@
 
   <body>
 
-    <div id="nav" data-background="#e67e22">
+    <div id="nav" data-background="#e74c3c">
       <div class="container">
         <ul class="logo">
           <li><a href="#top">
@@ -42,6 +42,7 @@
           <li><a href="#about">About</a></li>
           <li><a href="#products">Products</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li><a href="#products" class="black-friday">BLACK FRIDAY<b class="hide" id="sale">: 50% OFF ALL PEPPERS!</b></a></li>
         </ul>
       </div>
     </div>
@@ -50,37 +51,23 @@
       <div id="header" class="container">
         <h1>GetPeppers</h1>
         <h2>Reasonably Priced,</h2>
-        <h2>Unreasonably Spiced</h2>
+        <h2>Unreasonably Spiced</
         <a href="http://getpeppers.com/purchase" class="btn btn-default" role="button">buy now</a>
       </div>
     </div>
 
     <div id="about">
       <div class="container">
-        <div class="wrapper col-md-12">
-          <h1>About</h1>
-          <p>
-            GetPeppers is a small business located in Richland, Washington that grows and sells the world’s hottest pepper, the Carolina Reaper.
-            Here at GetPeppers we are committed to providing our customers with the hottest pepper money can buy.
-            The owner of GetPeppers, Dan Avila, personally guarantees all of his peppers to be unreasonably spiced.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div id="peppers">
-      <div class="container">
         <div class="wrapper col-xs-12 col-md-6 col-lg-7">
-          <h1>Our Peppers</h1>
+          <h1>About</h1>
           <p>
             Here at GetPeppers we are committed to providing the Pacific Northwest with the world's hottest pepper, the infamous <b>Carolina Reaper</b>.
             With over 2 million Scoville Heat Units (SHU), the Carolina Reaper is feared and praised by many. It's over four hundred times hotter than the jalepeno pepper and
             twice as hot as the notorius Bhut Jolokia (Ghost Pepper). Though many have tried, few can say that they have conquered the Reaper.
           </p>
-          <p class="p2">
+          <p class="trigger">
             Our Carolina Reapers are grown from seed here in Richland, Washington; enabling us to distribute them at extremely low prices.
             These peppers are carefully cultivated and harvested over a nine month growing period to ensure thorough spiciness.
-
           </p>
         </div>
 
@@ -124,36 +111,46 @@
         <div class="wrapper col-md-12">
           <h1>Products</h1>
           <p>
-            The Carolina Reaper can be purchased from GetPeppers for the reasonable price of $10 a pepper.
+            The Carolina Reaper can be purchased from GetPeppers for the reasonable price of <strike>$10</strike> <b>ONLY $5</b> a pepper.
             If you live in the Tri-City area then you will receive same day shipping as long as your order before 3:00pm.
             Don't live near us? No worries we got you taken care of with 5-7 day shipping for a flat rate of $5.<br>
-            <a href="http://getpeppers.com/purchase">Go to the store to buy now</a>
           </p>
         </div>
-        <div class="block col-md-4">
-          <div class="child reaper">
-            <div class="img-wrapper">
-              <img id="reaper" class="purchase-img" src="http://placehold.it/250x250" alt="reaper">
+
+        <div class="item-container">
+
+          <div class="item col-md-4">
+            <div class="img-container">
+              <img src="img/reaper.jpg" alt="carolina reaper"></img>
             </div>
-            <a href="http://getpeppers.com/purchase" class="btn btn-default" role="button"><span class="product">Carolina Reaper</span><span class="reveal">buy it now ($10)</span></a>
-          </div>
-        </div>
-        <div class="block col-md-4">
-          <div class="child choco">
-            <div class="img-wrapper">
-              <img id="choco" class="purchase-img" src="http://placehold.it/250x250" alt="choco">
+            <div class="product">
+              <span>Carolina Reaper<br>
+              <a href="purchase" class="sale">sale ($5)</a></span>
             </div>
-            <a href="http://getpeppers.com/purchase" class="btn btn-default" role="button"><span class="product">Chocolate Bhutlah</span><span class="reveal">buy it now ($10)</span></a>
           </div>
-        </div>
-        <div class="block col-md-4">
-          <div class="child shirt">
-            <div class="img-wrapper">
-              <img id="shirt" class="purchase-img" src="http://placehold.it/250x250" alt="shirt">
+
+          <div class="item col-md-4">
+            <div class="img-container">
+              <img src="img/choco.jpg" alt="chocolate bhutlah"></img>
             </div>
-            <a href="http://getpeppers.com/purchase" class="btn btn-default" role="button"><span class="product">Company Shirt</span><span class="reveal">Buy It Now ($15)</span></a>
+            <div class="product">
+              <span>Chocolate Bhutlah<br>
+              <a href="purchase" class="sale">sale ($5)</a></span>
+            </div>
           </div>
+
+          <div class="item col-md-4">
+            <div class="img-container">
+              <img src="img/shirt.jpg" alt="shirt"></img>
+            </div>
+            <div class="product">
+              <span>Company Shirt<br>
+              <a href="purchase">buy now ($20)</a></span>
+            </div>
+          </div>
+
         </div>
+
       </div>
     </div>
 
@@ -162,30 +159,30 @@
         <div class="wrapper col-md-12">
           <h1>Contact</h1>
 
-            <form action="index.php" method="post" name="contactForm">
+            <form action="contact.php" method="post" name="contactForm" id="contactForm">
               <div class="contact-info col-md-4">
                 <p><a href="#" target="_blank">Richland, Wa</a></p>
-                <p><a href="mailto:micahcowell99@gmail.com"x>hello@getpeppers.com</a></p>
+                <p><a href="mailto:iwant@getpeppers.com"x>iwant@getpeppers.com</a></p>
                 <p><a href="tel:15095314321">509-531-4321</a></p>
               </div>
               <div class="contact-form col-md-8">
                 <div class="block col-md-4">
                   <p>
-                    <b>Name</b> <br>
+                    <b>Name*</b> <br>
                     <input name="name" id="name" type="text"/>
                   </p>
                   <p>
-                    <b>E-Mail</b> <br>
+                    <b>E-Mail*</b> <br>
                     <input name="email" id="email" type="text"/>
                   </p>
                   <p>
-                    <b>Subject</b> <br>
+                    <b>Subject*</b> <br>
                     <input name="subject" id="subject" type="text"/>
                   </p>
                 </div>
                 <div class="block col-md-8">
                   <p id="text-container">
-                    <b>Message</b> <br>
+                    <b>Message*</b> <br>
                     <textarea name="message" id="message"></textarea>&nbsp;
                     <input type="submit" name="submit" id="submit" value="SEND"/>
                   </p>
@@ -202,25 +199,28 @@
         <p> &copy; 2015 GetPeppers All Rights Reserved</p>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
           <path d="M357.932 379.216c-51.543-5.252-58.1-54.84-58.237-60.084-.978-37.242 7.48-33.72 13.852-50.617 7.424-19.69 1.962-43.92 11.24-64.774 9.536-21.427 7.332-24.9-1.88-60.282-11.41-43.823-26.546-54.556-59.815-82.695-31.246-26.43-55.925-23.277-86.875-28.723-34.915-6.143-56.192-7.446-84.164-.624-21.155 5.16-17.69-14.467-41.168-26.2C26.338-7.05 1.525 3.38 7.362 25.406c3.357 12.66 16.44-15.805 41.135 3.408 19.586 15.238.892 34.913-11.768 49.91-12.69 15.03-24.713 33.136-28.457 48.833-4.58 19.21-10.008 41.427-7.74 62.805 2.416 22.784 22.48 35.085 31.266 54.848 10.525 23.676 24.9 32.592 42.897 51.384 15.03 15.696 30.324 26.945 50.9 35.188 41.035 16.44 52.382 3.28 80.038 6.918 19.85 2.61 36.5-9.654 59.06 14.584 17.09 18.36 75.32 62.093 119.153 41.174 45.093-21.52-17.68-14.403-25.916-15.242z"/>
-        </svg><!--<span id="tm">tm</span>-->
+        </svg>
       </div>
     </div>
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    <script src="js/velocity.min.js"></script>
+    <script src="js/modal.js"></script>
 
-    ga('create', 'UA-39119359-6', 'auto');
-    ga('send', 'pageview');
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
 
-  </script>
+      ga('create', 'UA-39119359-6', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+
   </body>
 </html>

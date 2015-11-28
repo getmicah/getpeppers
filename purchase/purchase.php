@@ -7,7 +7,7 @@
   $address = $_POST['address'];
   $city = $_POST['city'];
   $state = $_POST['state'];
-  $zip = $_POST['zip'];
+  $comments = $_POST['comments'];
 
   $to = "micahcowell99@gmail.com";
   $subject = "PURCHASE";
@@ -17,12 +17,13 @@
         $item .
         " \n" . "Shipping: " . $shipping .
         " \n" . "Quantity: " . $quantity .
-        " \n" . " \n" . $address .
-        " \n" .  $city .
-        " \n" .  $state .
-        " \n" .  $zip .
+        " \n" . " \n" . "Address: " . $address .
+        " \n" .  "City: " . $city .
+        " \n" .  "State: " . $state .
+        " \n" .  "Comments: " . $comments .
         " \n" . " \n" . "email: " . $email,
         "From: " . $name);
 
-  echo "<script>window.location = 'http://getpeppers.com/purchase/thanks.html'</script>";
+  echo nl2br("Your purchase is on the way, enjoy your GetPeppers!\nYou Will be redirected back to GetPeppers shortly.");
+  echo "<script>setTimeout(\"location.href = 'http://getpeppers.com';\",3000);</script>";
 ?>
