@@ -1,2 +1,1 @@
-a website by micah cowell
-http://getpeppers.com
+A website by Micah Cowell<br>http://micahcowell.com
