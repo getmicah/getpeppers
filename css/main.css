@@ -90,7 +90,8 @@ a:active {
       #nav .container .black-friday:focus {
         text-decoration: none; }
     #nav .container #sale {
-      background-color: none; }
+      background-color: none;
+      font-size: 16px; }
 
 #nav.past-header {
   background-color: #ef4d46;
