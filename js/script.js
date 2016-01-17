@@ -1,7 +1,3 @@
-//black-friday
-$('.black-friday').click(function (){
-  $('#sale').toggleClass("hide");
-});
 
 //smoothscroll
 $('a[href*=#]:not([href=#])').click(function() {

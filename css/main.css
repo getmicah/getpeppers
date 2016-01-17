@@ -84,10 +84,12 @@ a:active {
       margin-left: 10px;
       margin-right: 0; }
       #nav .container .black-friday:hover {
+        background-color: black;
         text-decoration: none; }
       #nav .container .black-friday:active {
         text-decoration: none; }
       #nav .container .black-friday:focus {
+        background-color: black;
         text-decoration: none; }
     #nav .container #sale {
       background-color: none;
@@ -154,6 +156,23 @@ a:active {
         -moz-transition: 250ms ease;
         -o-transition: 250ms ease;
         transition: 250ms ease; }
+    .jumbotron .container .black-friday-mobile {
+      display: none;
+      color: white;
+      background-color: #262626;
+      border: none; }
+      .jumbotron .container .black-friday-mobile:hover {
+        color: white;
+        background-color: #000;
+        border: none; }
+      .jumbotron .container .black-friday-mobile:active {
+        color: white;
+        background-color: #262626;
+        border: none; }
+      .jumbotron .container .black-friday-mobile:focus {
+        color: white;
+        background-color: #000;
+        border: none; }
 
 #about {
   padding-top: 4em;
@@ -505,7 +524,7 @@ a:active {
       font-size: 60px; }
     .jumbotron .container h2 {
       font-size: 40px; } }
-@media screen and (max-height: 900px) {
+@media screen and (max-height: 992px) {
   .jumbotron {
     height: 80vh; }
     .jumbotron .container {
@@ -628,6 +647,9 @@ a:active {
       .jumbotron .container .btn {
         margin-top: 2em;
         padding-left: 1.5em;
-        padding-right: 1.5em; } }
+        padding-right: 1.5em; }
+
+  #compare {
+    display: none; } }
 
 /*# sourceMappingURL=main.css.map */

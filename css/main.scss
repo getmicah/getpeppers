@@ -152,12 +152,14 @@ a {
       margin-left: 10px;
       margin-right: 0;
       &:hover {
+        background-color: black;
         text-decoration: none;
       }
       &:active {
         text-decoration: none;
       }
       &:focus {
+        background-color: black;
         text-decoration: none;
       }
     }
@@ -181,7 +183,6 @@ a {
     .cd-modal-action .btn {
       display: table;
     }
-
   }
 
 
@@ -223,6 +224,27 @@ a {
         background-color: $primary-color;
         color: $dark-color;
         @include transition(250ms ease);
+      }
+    }
+    .black-friday-mobile {
+      display: none;
+      color: $primary-color;
+      background-color: $dark-color;
+      border: none;
+      &:hover {
+        color: $primary-color;
+        background-color: #000;
+        border: none;
+      }
+      &:active {
+        color: $primary-color;
+        background-color: $dark-color;
+        border: none;
+      }
+      &:focus {
+        color: $primary-color;
+        background-color: #000;
+        border: none;
       }
     }
   }
@@ -615,7 +637,7 @@ a {
 
 }
 
-@media screen and (max-height: 900px){
+@media screen and (max-height: 992px){
     .jumbotron {
       height: 80vh;
       .container {
@@ -774,5 +796,8 @@ a {
           padding-right: 1.5em;
         }
       }
+    }
+    #compare {
+      display: none;
     }
 }
