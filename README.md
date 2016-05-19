@@ -1,4 +1,4 @@
-# getPeppers()
+# getPeppers
 
 Reasonably priced, unreasonably spiced.
 
