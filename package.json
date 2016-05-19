@@ -1,0 +1,24 @@
+{
+  "name": "getpeppers",
+  "version": "1.0.0",
+  "description": "reasonably priced, unreasonably spiced",
+  "dependencies": {
+    "jshint": "2.x.x",
+    "gulp": "*",
+    "gulp-sass": "*",
+    "gulp-jshint": "*",
+    "gulp-concat": "*",
+    "gulp-uglify": "*",
+    "gulp-rename": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/getmicah/getpeppers.git"
+  },
+  "author": "getmicah",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/getmicah/getpeppers/issues"
+  },
+  "homepage": "https://github.com/getmicah/getpeppers#readme"
+}

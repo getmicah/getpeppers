@@ -1,1 +1,3 @@
-A website by Micah Cowell<br>http://micahcowell.com
+# getpeppers.com
+
+Reasonably priced, unreasonably spiced.
