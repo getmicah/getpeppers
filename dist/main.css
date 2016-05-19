@@ -50,24 +50,30 @@ body {
 .navbar__container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: space-between;
   list-style: none;
-  align-items: center;
+  align-items: baseline;
   max-width: 800px;
   margin: 2em auto; }
 
-.navbar__logo svg {
-  fill: #EF4F46;
-  width: 2em;
-  margin-right: 0.8em; }
+.navbar__logo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  list-style: none;
+  align-items: center; }
+  .navbar__logo svg {
+    fill: #EF4F46;
+    width: 2em;
+    margin-right: 1em; }
 
 .navbar__name {
   color: #272727;
   font-size: 2em;
   font-weight: 700; }
 
-.navbar__links {
-  margin-left: auto; }
-  .navbar__links a {
-    display: inline;
-    color: #272727; }
+.navbar__links a {
+  display: inline;
+  color: #272727;
+  font-size: 1.2em;
+  margin: auto 0.4em; }

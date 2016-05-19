@@ -23,16 +23,23 @@ body {
     &__container {
         display: flex;
         flex-wrap: wrap;
-        justify-content: flex-start;
+        justify-content: space-between;
         list-style: none;
-        align-items: center;
+        align-items: baseline;
         max-width: $nav-width;
         margin: 2em auto;
     }
-    &__logo svg {
-        fill: $color-red;
-        width: 2em;
-        margin-right: 0.8em;
+    &__logo {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        list-style: none;
+        align-items: center;
+        svg {
+            fill: $color-red;
+            width: 2em;
+            margin-right: 1em;
+        }
     }
     &__name {
         color: $color-fg;
@@ -40,10 +47,11 @@ body {
         font-weight: $weight-bold;
     }
     &__links {
-        margin-left: auto;
         a {
             display: inline;
             color: $color-fg;
+            font-size: 1.2em;
+            margin: auto 0.4em;
         }
     }
 }
