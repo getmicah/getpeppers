@@ -34,5 +34,40 @@ table {
   border-spacing: 0; }
 
 /* END RESET */
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box; }
+
 body {
-  background: pink; }
+  color: #272727;
+  background: #EFEFEF;
+  font-size: 100%;
+  font-family: "Inconsolata";
+  font-weight: 400; }
+
+.navbar__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  list-style: none;
+  align-items: center;
+  max-width: 800px;
+  margin: 2em auto; }
+
+.navbar__logo svg {
+  fill: #EF4F46;
+  width: 2em;
+  margin-right: 0.8em; }
+
+.navbar__name {
+  color: #272727;
+  font-size: 2em;
+  font-weight: 700; }
+
+.navbar__links {
+  margin-left: auto; }
+  .navbar__links a {
+    display: inline;
+    color: #272727; }

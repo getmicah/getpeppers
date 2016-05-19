@@ -1,0 +1,49 @@
+@import "partials/reset";
+@import "partials/config";
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+}
+body {
+    color: $color-fg;
+    background: $color-bg;
+    font-size: 100%;
+    font-family: $font-mono;
+    font-weight: $weight-normal;
+}
+
+.wrapper {
+
+}
+
+.navbar {
+    &__container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        list-style: none;
+        align-items: center;
+        max-width: $nav-width;
+        margin: 2em auto;
+    }
+    &__logo svg {
+        fill: $color-red;
+        width: 2em;
+        margin-right: 0.8em;
+    }
+    &__name {
+        color: $color-fg;
+        font-size: 2em;
+        font-weight: $weight-bold;
+    }
+    &__links {
+        margin-left: auto;
+        a {
+            display: inline;
+            color: $color-fg;
+        }
+    }
+}
