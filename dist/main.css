@@ -377,8 +377,12 @@ body {
   font-family: "Inconsolata";
   font-weight: 400; }
 
+.wrapper > * {
+  padding: 0 2em; }
+
 .navbar {
-  padding: 3em 0; }
+  padding: 2em 0;
+  background: #FFFFFF; }
   .navbar__container {
     display: flex;
     flex-wrap: wrap;
@@ -407,7 +411,12 @@ body {
     margin: 0 0.4em; }
 
 .jumbotron {
-  padding-bottom: 3em; }
+  padding-bottom: 2em; }
   .jumbotron__container {
     max-width: 800px;
     margin: auto; }
+  .jumbotron__cta {
+    padding-left: 2em;
+    max-width: 500px; }
+    .jumbotron__cta h1 {
+      font-size: 2.6em; }

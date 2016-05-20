@@ -9,18 +9,21 @@ html {
 }
 body {
     color: $color-black;
-    background: $color-white;
+    background: $color-grey;
     font-size: 100%;
     font-family: $font-mono;
     font-weight: $weight-normal;
 }
 
 .wrapper {
-
+    > * {
+        padding: 0 2em;
+    }
 }
 
 .navbar {
-    padding: 3em 0;
+    padding: 2em 0;
+    background: $color-white;
     &__container {
         display: flex;
         flex-wrap: wrap;
@@ -57,10 +60,19 @@ body {
 }
 
 .jumbotron {
-    padding-bottom: 3em;
+    padding-bottom: 2em;
     &__container {
         max-width: $page-width;
         margin: auto;
     }
+    &__cta {
+        padding-left: 2em;
+        max-width: $page-width - 300px;
+        h1 {
+            font-size: 2.6em;
+        }
+        a {
 
+        }
+    }
 }
