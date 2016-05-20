@@ -6,13 +6,18 @@
 }
 html {
   box-sizing: border-box;
+  -moz-osx-font-smoothing: grayscale;
 }
 body {
-    color: $color-black;
     background: $color-grey;
+    color: $color-black;
     font-size: 100%;
-    font-family: $font-mono;
-    font-weight: $weight-normal;
+}
+h1, h2 {
+    margin: 0;
+}
+a {
+    text-decoration: none;
 }
 
 .wrapper {
@@ -22,8 +27,9 @@ body {
 }
 
 .navbar {
-    padding: 2em 0;
     background: $color-white;
+    font-family: $font-mono;
+    padding: 3em 0;
     &__container {
         display: flex;
         flex-wrap: wrap;
@@ -47,7 +53,7 @@ body {
         h1 {
             color: $color-black;
             font-size: 2em;
-            font-weight: $weight-bold;
+            font-weight: 700;
         }
     }
     &__links {
@@ -60,19 +66,34 @@ body {
 }
 
 .jumbotron {
-    padding-bottom: 2em;
+    background: url("https://static.pexels.com/photos/54559/pexels-photo-54559-large.jpeg");
+    background-size: cover;
+    font-family: $font-sans;
+    padding: 3em 0;
     &__container {
         max-width: $page-width;
         margin: auto;
+        padding: 2em 2em 8em 2em;
     }
     &__cta {
-        padding-left: 2em;
-        max-width: $page-width - 300px;
         h1 {
-            font-size: 2.6em;
+            color: $color-white;
+            font-size: 4em;
+            text-shadow: $color_black 0.1em 0.1em 0.2em;
+            line-height: 1.3;
+            margin-bottom: 0.8em;
         }
         a {
-
+            background: $color-white;
+            color: $color-black;
+            font-size: 1.2em;
+            transition: 500ms ease;
+            padding: 0.5em 0.8em;
+            margin-left: 1em;
+            &:hover, &:active, &:focus {
+                background: $color-red;
+                color: $color-white;
+            }
         }
     }
 }

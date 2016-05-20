@@ -4,13 +4,11 @@ $color-white: #FFFFFF;
 $color-grey: #EFEFEF;
 $color-black: #272727;
 $color-red: #EF4F46;
-$color-term: #00FF00;
+$color-none: rgba(0, 0, 0, 0);
 
 // fonts
 $font-mono: 'Inconsolata', ;
-$font-term: 'VT323', ;
-$weight-normal: 400;
-$weight-bold: 700;
+$font-sans: 'Open Sans', sans-serif;
 
 // dimensions
-$page-width: 800px;
+$page-width: 1000px;
