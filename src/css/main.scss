@@ -1,4 +1,4 @@
-@import "partials/reset";
+@import "partials/normalize";
 @import "partials/config";
 
 *, *:before, *:after {
@@ -8,8 +8,8 @@ html {
   box-sizing: border-box;
 }
 body {
-    color: $color-fg;
-    background: $color-bg;
+    color: $color-black;
+    background: $color-white;
     font-size: 100%;
     font-family: $font-mono;
     font-weight: $weight-normal;
@@ -20,14 +20,15 @@ body {
 }
 
 .navbar {
+    padding: 3em 0;
     &__container {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
         list-style: none;
         align-items: baseline;
-        max-width: $nav-width;
-        margin: 2em auto;
+        max-width: $page-width;
+        margin: auto;
     }
     &__logo {
         display: flex;
@@ -40,18 +41,26 @@ body {
             width: 2em;
             margin-right: 1em;
         }
-    }
-    &__name {
-        color: $color-fg;
-        font-size: 2em;
-        font-weight: $weight-bold;
+        h1 {
+            color: $color-black;
+            font-size: 2em;
+            font-weight: $weight-bold;
+        }
     }
     &__links {
         a {
-            display: inline;
-            color: $color-fg;
+            color: $color-black;
             font-size: 1.2em;
-            margin: auto 0.4em;
+            margin: 0 0.4em;
         }
     }
+}
+
+.jumbotron {
+    padding-bottom: 3em;
+    &__container {
+        max-width: $page-width;
+        margin: auto;
+    }
+
 }
