@@ -2,30 +2,34 @@ var gulp = require('gulp');
 
 // Include Plugins
 var sass = require('gulp-sass');
+var autoprefixer = require('gulp-autoprefixer');
 var jshint = require('gulp-jshint');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 
+// compile, post, minify
+gulp.task('style', function() {
+    return gulp.src('src/css/main.scss')
+        .pipe(sass({ outputStyle: 'nested' }).on('error', sass.logError))
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
+        .pipe(gulp.dest('dist/'))
+        .pipe(rename('main.min.css'))
+        .pipe(sass({ outputStyle: 'compressed' }))
+        .pipe(gulp.dest('dist/'));
+});
 
-// Lint Task
+// lint
 gulp.task('lint', function() {
     return gulp.src('src/js/*.js')
         .pipe(jshint())
         .pipe(jshint.reporter('default'));
 });
 
-// Compile & Minify Sass
-gulp.task('style', function() {
-    return gulp.src('src/css/main.scss')
-        .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('dist'))
-        .pipe(rename('main.min.css'))
-        .pipe(sass({ outputStyle: 'compressed' }))
-        .pipe(gulp.dest('dist/'));
-});
-
-// Concatenate & Minify JS
+// concatenate, minify
 gulp.task('scripts', function() {
     return gulp.src('src/js/*.js')
         .pipe(concat('main.js'))
@@ -35,12 +39,12 @@ gulp.task('scripts', function() {
         .pipe(gulp.dest('dist'));
 });
 
-// Watch Files For Changes
+// watch
 gulp.task('watch', function() {
     gulp.watch('src/js/*.js', ['lint', 'scripts']);
     gulp.watch('src/css/*.scss', ['style']);
     gulp.watch('src/css/partials/*.scss', ['style']);
 });
 
-// Default Task
+// default
 gulp.task('default', ['lint', 'style', 'scripts', 'watch']);

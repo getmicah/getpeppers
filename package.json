@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/getmicah/getpeppers/issues"
   },
-  "homepage": "https://github.com/getmicah/getpeppers#readme"
+  "homepage": "https://github.com/getmicah/getpeppers#readme",
+  "devDependencies": {
+    "gulp-autoprefixer": "^3.1.0"
+  }
 }
