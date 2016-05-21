@@ -2,15 +2,6 @@
   "name": "getpeppers",
   "version": "1.0.0",
   "description": "reasonably priced, unreasonably spiced",
-  "dependencies": {
-    "jshint": "2.x.x",
-    "gulp": "*",
-    "gulp-sass": "*",
-    "gulp-jshint": "*",
-    "gulp-concat": "*",
-    "gulp-uglify": "*",
-    "gulp-rename": "*"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/getmicah/getpeppers.git"
@@ -22,6 +13,14 @@
   },
   "homepage": "https://github.com/getmicah/getpeppers#readme",
   "devDependencies": {
-    "gulp-autoprefixer": "^3.1.0"
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-jshint": "^2.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.1",
+    "gulp-uglify": "^1.5.3",
+    "jshint": "^2.9.2",
+    "sass": "^0.5.0"
   }
 }
