@@ -10,7 +10,7 @@ var rename = require('gulp-rename');
 
 // compile, post, minify
 gulp.task('style', function() {
-    return gulp.src('src/css/main.scss')
+    return gulp.src('src/scss/main.scss')
         .pipe(sass({ outputStyle: 'nested' }).on('error', sass.logError))
         .pipe(autoprefixer({
             browsers: ['last 2 versions'],
@@ -42,8 +42,8 @@ gulp.task('scripts', function() {
 // watch
 gulp.task('watch', function() {
     gulp.watch('src/js/*.js', ['lint', 'scripts']);
-    gulp.watch('src/css/*.scss', ['style']);
-    gulp.watch('src/css/partials/*.scss', ['style']);
+    gulp.watch('src/scss/*.scss', ['style']);
+    gulp.watch('src/scss/partials/*.scss', ['style']);
 });
 
 // default
