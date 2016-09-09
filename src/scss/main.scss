@@ -29,10 +29,13 @@ a {
 	margin: 0 30px;
 	&__name {
 		float: left;
-		font-family: 'Playfair Display', serif;
+		span {
+			font-size: 36px;
+			font-weight: 700;
+		}
 		.green {
 			color: green;
-			padding-right: 4px;
+			padding-right: 2px;
 		}
 		.red {
 			color: $color-red;
@@ -80,17 +83,27 @@ a {
 		}
 	}
 	.quote {
-		margin: 30px 10px;
-		padding: 10px;
+		position: relative;
+		margin: 30px 20px;
+		padding: 20px 10px 10px 10px;
 		border-left: 4px solid darken($color-grey, 10);
+		quotes: "\201C""\201D""\2018""\2019";
 		&:before {
-
+			content: open-quote;
+			position: absolute;
+			top: 0;
+			left: 5px;
+			font-size: 30px;
+			color: darken($color-grey, 20);
 		}
 		&__text {
 			margin: 0;
+			margin-bottom: 5px;
+			font-size: 20px;
 		}
 		&__person {
-
+			font-size: 16px;
+			font-style: italic;
 		}
 	}
 }
