@@ -408,7 +408,8 @@ a {
   .main .mission {
     margin: 10px; }
     .main .mission__title {
-      font-size: 20px; }
+      font-size: 20px;
+      margin-bottom: 5px; }
     .main .mission__statement {
       margin: 0; }
   .main .quote {
