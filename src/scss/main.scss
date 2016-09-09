@@ -4,7 +4,7 @@
 body {
 	background: $color-grey;
 	color: $color-black;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 100%;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -17,12 +17,16 @@ a {
 }
 
 .wrapper {
-	max-width: 600px;
+	max-width: $page-width;
 	margin: 100px auto;
+	@media screen and (max-width: $break-mobile) {
+		margin: 24px 0;
+	}
 }
 
 .header {
 	height: 50px;
+	margin: 0 30px;
 	&__name {
 		float: left;
 		font-family: 'Playfair Display', serif;
@@ -44,10 +48,24 @@ a {
 			}
 		}
 	}
+	@media screen and (max-width: $break-mobile) {
+		> * {
+			float: none;
+			padding-left: 12px;
+		}
+		&__links {
+			margin: 0 4px;
+			padding: 0;
+			li {
+				padding-left: 0;
+				padding-right: 6px;
+			}
+		}
+	}
 }
 
 .main {
-	margin: 30px 10px;
+	margin: 30px 40px;
 	padding: 10px;
 	background: $color-white;
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
