@@ -18,15 +18,16 @@ a {
 
 .wrapper {
 	max-width: $page-width;
-	margin: 100px auto;
+	margin: 69px auto;
+	padding: 0 20px;
 	@media screen and (max-width: $break-mobile) {
-		margin: 24px 0;
+		margin: 20px 0;
+		padding: 0 15px;
 	}
 }
 
 .header {
 	height: 50px;
-	margin: 0 30px;
 	&__name {
 		float: left;
 		span {
@@ -54,11 +55,10 @@ a {
 	@media screen and (max-width: $break-mobile) {
 		> * {
 			float: none;
-			padding-left: 12px;
 		}
 		&__links {
-			margin: 0 4px;
 			padding: 0;
+			margin: 8px 4px;
 			li {
 				padding-left: 0;
 				padding-right: 6px;
@@ -68,7 +68,7 @@ a {
 }
 
 .main {
-	margin: 30px 40px;
+	margin: 30px 20px;
 	padding: 10px;
 	background: $color-white;
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
@@ -85,31 +85,38 @@ a {
 	.quote {
 		position: relative;
 		margin: 30px 20px;
-		padding: 20px 10px 10px 10px;
+		padding: 25px 10px 10px 10px;
 		border-left: 4px solid darken($color-grey, 10);
 		quotes: "\201C""\201D""\2018""\2019";
 		&:before {
 			content: open-quote;
 			position: absolute;
-			top: 0;
+			top: 0px;
 			left: 5px;
 			font-size: 30px;
+			font-weight: 700;
 			color: darken($color-grey, 20);
 		}
 		&__text {
 			margin: 0;
 			margin-bottom: 5px;
-			font-size: 20px;
+			font-size: 22px;
 		}
 		&__person {
+			margin-left: 5px;
 			font-size: 16px;
 			font-style: italic;
 		}
+	}
+	@media screen and (max-width: $break-mobile) {
+		margin: 50px 0;
+		padding: 3px;
 	}
 }
 
 .footer {
 	text-align: center;
+	margin: 20px 0;
 	&__logo {
 		height: 36px;
 		width: auto;

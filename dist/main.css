@@ -381,14 +381,15 @@ a {
 
 .wrapper {
   max-width: 666px;
-  margin: 100px auto; }
-  @media screen and (max-width: 420px) {
+  margin: 69px auto;
+  padding: 0 20px; }
+  @media screen and (max-width: 666px) {
     .wrapper {
-      margin: 24px 0; } }
+      margin: 20px 0;
+      padding: 0 15px; } }
 
 .header {
-  height: 50px;
-  margin: 0 30px; }
+  height: 50px; }
   .header__name {
     float: left; }
     .header__name span {
@@ -406,19 +407,18 @@ a {
       padding-left: 12px; }
       .header__links li a {
         color: #272727; }
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 666px) {
     .header > * {
-      float: none;
-      padding-left: 12px; }
+      float: none; }
     .header__links {
-      margin: 0 4px;
-      padding: 0; }
+      padding: 0;
+      margin: 8px 4px; }
       .header__links li {
         padding-left: 0;
         padding-right: 6px; } }
 
 .main {
-  margin: 30px 40px;
+  margin: 30px 20px;
   padding: 10px;
   background: #FFFFFF;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
@@ -432,26 +432,33 @@ a {
   .main .quote {
     position: relative;
     margin: 30px 20px;
-    padding: 20px 10px 10px 10px;
+    padding: 25px 10px 10px 10px;
     border-left: 4px solid #d7d7d7;
     quotes: "“" "”" "‘" "’"; }
     .main .quote:before {
       content: open-quote;
       position: absolute;
-      top: 0;
+      top: 0px;
       left: 5px;
       font-size: 30px;
+      font-weight: 700;
       color: #bdbdbd; }
     .main .quote__text {
       margin: 0;
       margin-bottom: 5px;
-      font-size: 20px; }
+      font-size: 22px; }
     .main .quote__person {
+      margin-left: 5px;
       font-size: 16px;
       font-style: italic; }
+  @media screen and (max-width: 666px) {
+    .main {
+      margin: 50px 0;
+      padding: 3px; } }
 
 .footer {
-  text-align: center; }
+  text-align: center;
+  margin: 20px 0; }
   .footer__logo {
     height: 36px;
     width: auto;
