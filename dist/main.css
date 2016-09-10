@@ -395,6 +395,9 @@ a {
     .header__name span {
       font-size: 36px;
       font-weight: 700; }
+      @media only screen and (max-width: 666px) and (min-width: 300px) {
+        .header__name span {
+          font-size: 48px; } }
     .header__name .green {
       color: green;
       padding-right: 2px; }
@@ -406,6 +409,7 @@ a {
       display: inline;
       padding-left: 12px; }
       .header__links li a {
+        font-size: 16px;
         color: #272727; }
   @media screen and (max-width: 666px) {
     .header > * {
