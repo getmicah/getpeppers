@@ -399,8 +399,7 @@ a {
         .header__name span {
           font-size: 42px; } }
     .header__name .green {
-      color: green;
-      padding-right: 2px; }
+      color: green; }
     .header__name .red {
       color: #EF4F46; }
   .header__links {
@@ -439,7 +438,7 @@ a {
     position: relative;
     margin: 30px 10px;
     padding: 25px 10px 10px 10px;
-    border-left: 4px solid #d7d7d7;
+    border-left: 4px solid #a4a4a4;
     quotes: "“" "”" "‘" "’"; }
     .main .quote:before {
       content: open-quote;
@@ -448,7 +447,7 @@ a {
       left: 5px;
       font-size: 30px;
       font-weight: 700;
-      color: #bdbdbd; }
+      color: #a4a4a4; }
     .main .quote__text {
       margin: 0;
       margin-bottom: 5px;

@@ -39,7 +39,6 @@ a {
 		}
 		.green {
 			color: green;
-			padding-right: 2px;
 		}
 		.red {
 			color: $color-red;
@@ -93,7 +92,7 @@ a {
 		position: relative;
 		margin: 30px 10px;
 		padding: 25px 10px 10px 10px;
-		border-left: 4px solid darken($color-grey, 10);
+		border-left: 4px solid darken($color-grey, 30);
 		quotes: "\201C""\201D""\2018""\2019";
 		&:before {
 			content: open-quote;
@@ -102,7 +101,7 @@ a {
 			left: 5px;
 			font-size: 30px;
 			font-weight: 700;
-			color: darken($color-grey, 20);
+			color: darken($color-grey, 30);
 		}
 		&__text {
 			margin: 0;
