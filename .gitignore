@@ -1,25 +1,2 @@
-
-# osx
 .DS_Store
-.AppleDouble
-.LSOverride
-
-# workflow
-.npm
-node_modules
-# Logs
-logs
-*.log
-npm-debug.log*
-
-# sass
-.sass-cache/
-*.css.map
-
-# other
-.DocumentRevisions-V100
-.fseventsd
-.Spotlight-V100
-.TemporaryItems
-.Trashes
-.VolumeIcon.icns
+/node_modules
