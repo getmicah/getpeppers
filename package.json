@@ -1,5 +1,5 @@
 {
-  "name": "react-boilerplate",
+  "name": "getpeppers",
   "version": "1.0.0",
   "scripts": {
     "start": "./node_modules/.bin/webpack-dev-server",
@@ -7,14 +7,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/getmicah/react-boilerplate.git"
+    "url": "git+https://github.com/getmicah/getpeppers.git"
   },
   "author": "Micah Cowell",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/getmicah/react-boilerplate/issues"
+    "url": "https://github.com/getmicah/getpeppers/issues"
   },
-  "homepage": "https://github.com/getmicah/react-boilerplate#readme",
+  "homepage": "https://github.com/getmicah/getpeppers#readme",
   "devDependencies": {
     "babel-core": "^6.21.0",
     "babel-loader": "^6.2.10",

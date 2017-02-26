@@ -4,7 +4,7 @@ import { Router, Route, IndexRoute, Link, browserHistory } from 'react-router';
 
 import Home from './Components/Home';
 import NotFound from './Components/Error/NotFound';
-import Styles from './Style/main.scss';
+import Styles from './Style/index.scss';
 
 ReactDOM.render((
 	<Router history={browserHistory}>
