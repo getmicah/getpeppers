@@ -16,6 +16,9 @@
 		font-size: 2em;
 		font-weight: bold;
 		font-family: -apple-system-headline, BlinkMacSystemFont, Helvetica, sans-serif;
+		span {
+			color: $color-red;
+		}
 		span:first-child {
 			color: $color-green;
 		}
