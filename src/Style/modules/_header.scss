@@ -26,6 +26,9 @@
 	&__promo {
 		position: absolute;
 		right: 5em;
+		display: flex;
+		align-items: center;
+		height: $header-height;
 		a {
 			font-style: italic;
 			font-weight: 400;
