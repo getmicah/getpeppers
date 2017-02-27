@@ -1,0 +1,11 @@
+.error {
+	text-align: center;
+	padding: 6em 2em;
+	h1 {
+		font-weight: lighter;
+	}
+	a {
+		font-style: italic;
+		border-bottom: 1px dashed $color-black;
+	}
+}
