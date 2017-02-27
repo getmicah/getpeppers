@@ -106,13 +106,14 @@
 		display: flex;
 		justify-content: center;
 		flex-wrap: wrap;
+		overflow: hidden;
 		margin-top: -2em;
 		@media screen and (max-width: $break-mid) {
 			padding: 0;
 		}
 	}
 	&__item {
-		flex: 1;
+		flex: 1 1 150px;
 		min-width: 150px;
 		max-width: 250px;
 		text-align: center;
