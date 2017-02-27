@@ -49,20 +49,29 @@
 		align-items: center;
 		max-width: $max-width;
 		padding: 6em 2em;
-		margin: 0 -$hero-gutter;
 		> div {
-			margin: 0 $hero-gutter;
+			@media screen and (min-width: $break-mid) {
+				margin: 0 2em;
+				&:first-child {
+					margin-left: 0;
+				}
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+			@media screen and (max-width: $break-large) {
+				flex: 1;
+			}
+			@media screen and (max-width: $break-mid) {
+				flex-basis: 100%;
+				margin: 0.5em 0;
+			}
 		}
 		@media screen and (max-width: $break-large) {
 			padding: 4em 2em;
-			> div {
-				flex: 1;
-			}
 		}
 		@media screen and (max-width: $break-mid) {
-			> div {
-				flex-basis: 100%;
-			}
+			padding: 2em;
 		}
 	}
 	&__video {
@@ -90,8 +99,8 @@
 			font-size: 2em;
 		}
 		p {
-			font-size: 1.2em;
-			line-height: 1.5;
+			font-size: 1em;
+			line-height: 1.6;
 		}
 		@media screen and (max-width: $break-large) {
 			p {
@@ -102,6 +111,68 @@
 			h1 {
 				font-size: 1.5em;
 			}
+		}
+	}
+}
+
+.peppers {
+	background: $color-white;
+	box-shadow: 0 2px 25px 0 rgba(0, 0, 0, 0.1);
+	&__container {
+		max-width: $max-width * 0.9;
+		padding: 6em 2em;
+		margin: 0 auto;
+		@media screen and (max-width: $break-large) {
+			padding: 4em 2em;
+		}
+		@media screen and (max-width: $break-mid) {
+			padding: 0 2em;
+		}
+	}
+	&__title {
+		h1 {
+			display: inline-block;
+			font-family: -apple-system-headline, BlinkMacSystemFont, Helvetica, sans-serif;
+			font-size: 3em;
+		}
+	}
+	&__wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		padding: 0 2em;
+		background: $color-green;
+		@media screen and (max-width: $break-mid) {
+			padding: 0;
+		}
+	}
+	&__item {
+		display: flex;
+	    flex-direction: column;
+	    justify-content: center;
+		align-items: center;
+		background: $color-red;
+		font-family: monospace;
+		@media screen and (min-width: $break-small) {
+			margin: 0 2em;
+			&:first-child {
+				margin-left: 0;
+			}
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+		@media screen and (max-width: $break-small) {
+			flex-basis: 100%;
+			margin: 0.5em 0;
+		}
+		span {
+			display: block;
+		}
+		&__name {
+			font-weight: bold;
+		}
+		&__price {
+
 		}
 	}
 }

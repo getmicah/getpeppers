@@ -13,11 +13,8 @@ export default class Hero extends React.Component {
 					<div className='hero__text'>
 						<h1>Reasonably Priced,<br/>Unreasonably spiced.</h1>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							Phasellus nec ullamcorper odio. Cras at purus massa.
-							Donec erat orci, mollis sit amet iaculis malesuada, faucibus et neque.
-							Suspendisse ultricies congue est quis dictum.
-							Integer id nulla in lacus blandit elementum.
+							What started with a simple goal of growing the hottest peppers in the world has pivoted into a multi-facet operation centering around the one thing that matters: <b>community</b>.
+							We promise only the highest quality, which is why we grow our peppers in the world renowned soil of eastern Washington where they are then cared for extensively until harvest season.
 						</p>
 					</div>
 				</div>

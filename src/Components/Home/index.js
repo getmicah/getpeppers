@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Header from './Header';
+import Header from '../Header';
 import Hero from './Hero';
 import Peppers from './Peppers';
 import Merch from './Merch';
@@ -13,8 +13,6 @@ export default class Home extends React.Component {
 				<Header />
 				<Hero />
 				<Peppers />
-				<Merch />
-				<Footer />
 			</div>
 		);
 	}
