@@ -2,8 +2,7 @@ import React from 'react';
 
 import Header from '../Header';
 import Hero from './Hero';
-import Peppers from './Peppers';
-import Merch from './Merch';
+import Products from './Products';
 import Footer from './Footer';
 
 export default class Home extends React.Component {
@@ -12,7 +11,7 @@ export default class Home extends React.Component {
 			<div id="app-container">
 				<Header />
 				<Hero />
-				<Peppers />
+				<Products />
 			</div>
 		);
 	}
