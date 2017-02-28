@@ -1,14 +1,26 @@
 import React from 'react';
 
+import Thumbnail from './Thumbnail';
+import Youtube from './Youtube';
+
 export default class Hero extends React.Component {
+	constructor() {
+		super();
+		this.state = {
+			loadVideo: false
+		};
+	}
+	handleClick() {
+		this.setState({
+			loadVideo: true
+		});
+	}
 	render() {
 		return (
 			<section className='hero'>
 				<div className='hero__container'>
 					<div className='hero__video'>
-						<div className='hero__video__wrapper'>
-							<iframe src="https://www.youtube.com/embed/gblpzvNReDE" frameBorder="0" allowFullScreen></iframe>
-						</div>
+						{this.state.loadVideo ? <Youtube/> : <Thumbnail handleClick={this.handleClick.bind(this)}/> }
 					</div>
 					<div className='hero__text'>
 						<h1>Reasonably Priced,<br/>Unreasonably spiced.</h1>

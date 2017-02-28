@@ -37,6 +37,29 @@
 	&__video {
 		flex: 65;
 		height: auto;
+		&__thumbnail {
+			position: relative;
+			img {
+				width: 100%;
+				height: auto;
+			}
+			svg {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 5em;
+				height: auto;
+				fill: rgba(0, 0, 0, 0.5);
+				transition: fill 100ms ease-in;
+			}
+			&:hover {
+				cursor: pointer;
+				svg {
+					fill: rgba(0, 0, 0, 0.7);
+				}
+			}
+		}
 		&__wrapper {
 			// https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php
 			position: relative;
