@@ -66,11 +66,19 @@
 
 	var _Home2 = _interopRequireDefault(_Home);
 
-	var _Error = __webpack_require__(241);
+	var _Product = __webpack_require__(240);
+
+	var _Product2 = _interopRequireDefault(_Product);
+
+	var _Bhutlah = __webpack_require__(241);
+
+	var _Bhutlah2 = _interopRequireDefault(_Bhutlah);
+
+	var _Error = __webpack_require__(242);
 
 	var _Error2 = _interopRequireDefault(_Error);
 
-	var _index = __webpack_require__(242);
+	var _index = __webpack_require__(243);
 
 	var _index2 = _interopRequireDefault(_index);
 
@@ -117,6 +125,11 @@
 			_reactRouter.Route,
 			{ component: App },
 			_react2.default.createElement(_reactRouter.Route, { path: '/', component: _Home2.default }),
+			_react2.default.createElement(
+				_reactRouter.Route,
+				{ component: _Product2.default },
+				_react2.default.createElement(_reactRouter.Route, { path: '/products/bhutlah', component: _Bhutlah2.default })
+			),
 			_react2.default.createElement(_reactRouter.Route, { path: '*', component: _Error2.default })
 		)
 	), document.getElementById('app'));
@@ -26945,10 +26958,6 @@
 
 	var _Products2 = _interopRequireDefault(_Products);
 
-	var _Footer = __webpack_require__(240);
-
-	var _Footer2 = _interopRequireDefault(_Footer);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -26971,7 +26980,7 @@
 			value: function render() {
 				return _react2.default.createElement(
 					'div',
-					null,
+					{ className: 'homepage' },
 					_react2.default.createElement(_Hero2.default, null),
 					_react2.default.createElement(_Products2.default, null)
 				);
@@ -27232,33 +27241,95 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Footer = function (_React$Component) {
-		_inherits(Footer, _React$Component);
+	var Product = function (_React$Component) {
+		_inherits(Product, _React$Component);
 
-		function Footer() {
-			_classCallCheck(this, Footer);
+		function Product() {
+			_classCallCheck(this, Product);
 
-			return _possibleConstructorReturn(this, (Footer.__proto__ || Object.getPrototypeOf(Footer)).apply(this, arguments));
+			return _possibleConstructorReturn(this, (Product.__proto__ || Object.getPrototypeOf(Product)).apply(this, arguments));
 		}
 
-		_createClass(Footer, [{
+		_createClass(Product, [{
 			key: 'render',
 			value: function render() {
 				return _react2.default.createElement(
-					'section',
-					{ id: 'footer' },
-					'Footer'
+					'div',
+					{ className: 'product' },
+					_react2.default.createElement(
+						'h1',
+						null,
+						'Product'
+					),
+					_react2.default.createElement(
+						'main',
+						null,
+						this.props.children
+					)
 				);
 			}
 		}]);
 
-		return Footer;
+		return Product;
 	}(_react2.default.Component);
 
-	exports.default = Footer;
+	exports.default = Product;
 
 /***/ },
 /* 241 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Bhutlah = function (_React$Component) {
+		_inherits(Bhutlah, _React$Component);
+
+		function Bhutlah() {
+			_classCallCheck(this, Bhutlah);
+
+			return _possibleConstructorReturn(this, (Bhutlah.__proto__ || Object.getPrototypeOf(Bhutlah)).apply(this, arguments));
+		}
+
+		_createClass(Bhutlah, [{
+			key: 'render',
+			value: function render() {
+				return _react2.default.createElement(
+					'div',
+					{ className: 'product' },
+					_react2.default.createElement(
+						'h1',
+						null,
+						'Chocolate Bhutlah'
+					)
+				);
+			}
+		}]);
+
+		return Bhutlah;
+	}(_react2.default.Component);
+
+	exports.default = Bhutlah;
+
+/***/ },
+/* 242 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27297,20 +27368,16 @@
 			value: function render() {
 				return _react2.default.createElement(
 					'div',
-					null,
+					{ className: 'error' },
 					_react2.default.createElement(
-						'div',
-						{ className: 'error' },
-						_react2.default.createElement(
-							'h1',
-							null,
-							'Page not found.'
-						),
-						_react2.default.createElement(
-							_reactRouter.Link,
-							{ to: '/' },
-							'How \'bout you buy some peppers?'
-						)
+						'h1',
+						null,
+						'Page not found.'
+					),
+					_react2.default.createElement(
+						_reactRouter.Link,
+						{ to: '/' },
+						'How \'bout you buy some peppers?'
 					)
 				);
 			}
@@ -27322,16 +27389,16 @@
 	exports.default = NotFound;
 
 /***/ },
-/* 242 */
+/* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(243);
+	var content = __webpack_require__(244);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(245)(content, {});
+	var update = __webpack_require__(246)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -27348,10 +27415,10 @@
 	}
 
 /***/ },
-/* 243 */
+/* 244 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(244)();
+	exports = module.exports = __webpack_require__(245)();
 	// imports
 
 
@@ -27362,7 +27429,7 @@
 
 
 /***/ },
-/* 244 */
+/* 245 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -27417,7 +27484,7 @@
 	};
 
 /***/ },
-/* 245 */
+/* 246 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
