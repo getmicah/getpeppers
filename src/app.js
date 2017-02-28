@@ -6,7 +6,7 @@ import Header from './Components/Header';
 import Home from './Components/Home';
 import Product from './Components/Product';
 import Bhutlah from './Components/Product/Bhutlah';
-import Error from './Components/Error';
+import NotFound from './Components/NotFound';
 import Styles from './Style/index.scss';
 
 class App extends React.Component {
@@ -26,10 +26,7 @@ ReactDOM.render((
 	<Router history={browserHistory}>
 		<Route component={App}>
 			<Route path='/' component={Home} />
-			<Route component={Product}>
-				<Route path='/products/bhutlah' component={Bhutlah} />
-			</Route>
-			<Route path='*' component={Error} />
+			<Route path='*' component={NotFound} />
   		</Route>
 	</Router>
 ), document.getElementById('app'));
