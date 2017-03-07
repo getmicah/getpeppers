@@ -1,0 +1,32 @@
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+html {
+	height: 100%;
+	box-sizing: border-box;
+}
+body {
+	position: relative;
+	margin: 0;
+	padding-bottom: $footer-height;
+	min-height: 100%;
+	font-family: -apple-system, BlinkMacSystemFont, 'Open Sans' sans-serif;
+	font-weight: lighter;
+	color: $color-black;
+	background: $color-white;
+}
+a {
+	text-decoration: none;
+	color: $color-black;
+	&:hover {
+		text-decoration: none;
+		color: $color-black;
+	}
+	&:active {
+		text-decoration: none;
+		color: $color-black;
+	}
+}
+main {
+	padding-top: $header-height;
+}

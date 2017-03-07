@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Router, Route, browserHistory } from 'react-router';
 
 import Header from './Components/Header';
+import Footer from './Components/Footer';
 import Home from './Components/Home';
 import Product from './Components/Product';
 import NotFound from './Components/NotFound';
@@ -16,6 +17,7 @@ class App extends React.Component {
 				<main>
 					{this.props.children}
 				</main>
+				<Footer />
 			</div>
 		);
 	}

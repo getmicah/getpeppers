@@ -1,27 +1,4 @@
 @import './base/variables';
 @import './base/normalize';
-@import './modules/header';
-@import './modules/home';
-@import './modules/notfound';
-
-body {
-	font-family: -apple-system, BlinkMacSystemFont, 'Open Sans' sans-serif;
-	font-weight: lighter;
-	color: $color-black;
-	background: $color-white;
-}
-a {
-	text-decoration: none;
-	color: $color-black;
-	&:hover {
-		text-decoration: none;
-		color: $color-black;
-	}
-	&:active {
-		text-decoration: none;
-		color: $color-black;
-	}
-}
-main {
-	padding-top: $header-height;
-}
+@import './modules/app/index';
+@import './modules/home/index';
