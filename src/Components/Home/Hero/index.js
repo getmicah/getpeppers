@@ -7,12 +7,21 @@ export default class Hero extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			loadVideo: false
+			isLoading: false,
+			loadVideo: false,
+			showVideo: false
 		};
 	}
 	handleClick() {
 		this.setState({
+			isLoading: true,
 			loadVideo: true
+		});
+	}
+	onLoad() {
+		this.setState({
+			isLoading: false,
+			showVideo: true
 		});
 	}
 	render() {
@@ -20,7 +29,8 @@ export default class Hero extends React.Component {
 			<section className='hero'>
 				<div className='hero__container'>
 					<div className='hero__video'>
-						{this.state.loadVideo ? <Youtube/> : <Thumbnail handleClick={this.handleClick.bind(this)}/> }
+						{this.state.showVideo || <Thumbnail handleClick={this.handleClick.bind(this)} isLoading={this.state.isLoading} />}
+						{this.state.loadVideo && <Youtube onLoad={this.onLoad.bind(this)} isReady={this.state.showVideo} />}
 					</div>
 					<div className='hero__text'>
 						<h1>Reasonably Priced,<br/>Unreasonably spiced.</h1>

@@ -37,6 +37,7 @@
 	&__video {
 		flex: 65;
 		height: auto;
+		position: relative;
 		&__thumbnail {
 			position: relative;
 			img {
@@ -53,6 +54,9 @@
 				fill: rgba(0, 0, 0, 0.5);
 				transition: fill 100ms ease-in;
 			}
+			&.loading {
+				border: 5px solid red;
+			}
 			&:hover {
 				cursor: pointer;
 				svg {
@@ -60,18 +64,23 @@
 				}
 			}
 		}
-		&__wrapper {
-			// https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php
-			position: relative;
-			padding-bottom: 56.25%;
-			padding-top: 25px;
-			height: 0;
-			iframe {
+		&__youtube {
+			&.hidden {
 				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
+			}
+			&__wrapper {
+				// https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php
+				position: relative;
+				padding-bottom: 56.25%;
+				padding-top: 25px;
+				height: 0;
+				iframe {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+				}
 			}
 		}
 	}
