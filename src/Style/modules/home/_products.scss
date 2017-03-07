@@ -11,6 +11,9 @@
 		@media screen and (max-width: $break-mid) {
 			padding: 2em;
 		}
+		@media screen and (max-width: $break-small) {
+			padding: 2em 1em;
+		}
 	}
 	&__title {
 		margin-bottom: 2em;

@@ -1,4 +1,5 @@
 import React from 'react';
+import Blur from 'react-blur';
 
 import reaper from '../../Assets/reaper.jpg';
 import bhutlah from '../../Assets/bhutlah.jpg';
@@ -24,13 +25,17 @@ const products = [
 
 export default class Product extends React.Component {
 	render() {
-		console.log(this.props);
 		return (
-			<div className='product'>
-				<h1>{products[this.props.route.id].name}</h1>
-				<p>{products[this.props.route.id].description}</p>
-				<img src={products[this.props.route.id].img} alt={products[this.props.route.id].name} />
-			</div>
+			<Blur img={products[this.props.route.id].img} blurRadius={10}>
+				<div className='product'>
+					<div className='product__container'>
+						<div className='product__details'>
+							<h1>{products[this.props.route.id].name}</h1>
+							<p>{products[this.props.route.id].description}</p>
+						</div>
+					</div>
+				</div>
+			</Blur>
 		);
 	}
 }

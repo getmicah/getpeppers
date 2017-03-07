@@ -74,11 +74,11 @@
 
 	var _Product2 = _interopRequireDefault(_Product);
 
-	var _NotFound = __webpack_require__(245);
+	var _NotFound = __webpack_require__(250);
 
 	var _NotFound2 = _interopRequireDefault(_NotFound);
 
-	var _index = __webpack_require__(246);
+	var _index = __webpack_require__(251);
 
 	var _index2 = _interopRequireDefault(_index);
 
@@ -27034,7 +27034,7 @@
 			value: function render() {
 				return _react2.default.createElement(
 					'div',
-					{ className: 'homepage' },
+					null,
 					_react2.default.createElement(_Hero2.default, null),
 					_react2.default.createElement(_Products2.default, null)
 				);
@@ -27446,6 +27446,10 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactBlur = __webpack_require__(245);
+
+	var _reactBlur2 = _interopRequireDefault(_reactBlur);
+
 	var _reaper = __webpack_require__(241);
 
 	var _reaper2 = _interopRequireDefault(_reaper);
@@ -27492,21 +27496,31 @@
 		_createClass(Product, [{
 			key: 'render',
 			value: function render() {
-				console.log(this.props);
 				return _react2.default.createElement(
-					'div',
-					{ className: 'product' },
+					_reactBlur2.default,
+					{ img: products[this.props.route.id].img, blurRadius: 10 },
 					_react2.default.createElement(
-						'h1',
-						null,
-						products[this.props.route.id].name
-					),
-					_react2.default.createElement(
-						'p',
-						null,
-						products[this.props.route.id].description
-					),
-					_react2.default.createElement('img', { src: products[this.props.route.id].img, alt: products[this.props.route.id].name })
+						'div',
+						{ className: 'product' },
+						_react2.default.createElement(
+							'div',
+							{ className: 'product__container' },
+							_react2.default.createElement(
+								'div',
+								{ className: 'product__details' },
+								_react2.default.createElement(
+									'h1',
+									null,
+									products[this.props.route.id].name
+								),
+								_react2.default.createElement(
+									'p',
+									null,
+									products[this.props.route.id].description
+								)
+							)
+						)
+					)
 				);
 			}
 		}]);
@@ -27518,6 +27532,575 @@
 
 /***/ },
 /* 245 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _extends = Object.assign || function (target) {
+	  for (var i = 1; i < arguments.length; i++) {
+	    var source = arguments[i];for (var key in source) {
+	      if (Object.prototype.hasOwnProperty.call(source, key)) {
+	        target[key] = source[key];
+	      }
+	    }
+	  }return target;
+	};
+
+	var _createClass = function () {
+	  function defineProperties(target, props) {
+	    for (var i = 0; i < props.length; i++) {
+	      var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+	    }
+	  }return function (Constructor, protoProps, staticProps) {
+	    if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
+	  };
+	}();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(32);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _reactAddonsPureRenderMixin = __webpack_require__(246);
+
+	var _reactAddonsPureRenderMixin2 = _interopRequireDefault(_reactAddonsPureRenderMixin);
+
+	function _interopRequireDefault(obj) {
+	  return obj && obj.__esModule ? obj : { default: obj };
+	}
+
+	function _objectWithoutProperties(obj, keys) {
+	  var target = {};for (var i in obj) {
+	    if (keys.indexOf(i) >= 0) continue;if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;target[i] = obj[i];
+	  }return target;
+	}
+
+	function _classCallCheck(instance, Constructor) {
+	  if (!(instance instanceof Constructor)) {
+	    throw new TypeError("Cannot call a class as a function");
+	  }
+	}
+
+	function _possibleConstructorReturn(self, call) {
+	  if (!self) {
+	    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+	  }return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
+	}
+
+	function _inherits(subClass, superClass) {
+	  if (typeof superClass !== "function" && superClass !== null) {
+	    throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
+	  }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+	}
+
+	var stackBlurImage = __webpack_require__(249);
+
+	var ReactBlur = function (_React$Component) {
+	  _inherits(ReactBlur, _React$Component);
+
+	  function ReactBlur(props) {
+	    _classCallCheck(this, ReactBlur);
+
+	    var _this = _possibleConstructorReturn(this, (ReactBlur.__proto__ || Object.getPrototypeOf(ReactBlur)).call(this, props));
+
+	    _this.shouldComponentUpdate = _reactAddonsPureRenderMixin2.default.shouldComponentUpdate.bind(_this);
+	    return _this;
+	  }
+
+	  _createClass(ReactBlur, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      this.loadImage(this.props);
+
+	      window.addEventListener('resize', this.resize.bind(this));
+	    }
+	  }, {
+	    key: 'componentWillUnmount',
+	    value: function componentWillUnmount() {
+	      window.removeEventListener('resize', this.resize.bind(this));
+	    }
+	  }, {
+	    key: 'componentDidUpdate',
+	    value: function componentDidUpdate() {
+	      if (!this.img) {
+	        this.loadImage(this.props);
+	      } else if (!this.isCurrentImgSrc(this.props.img)) {
+	        this.img.src = this.props.img;
+	        this.setDimensions();
+	      } else {
+	        // if some other prop changed reblur
+	        stackBlurImage(this.img, this.canvas, this.getCurrentBlur(), this.width, this.height);
+	      }
+	    }
+	  }, {
+	    key: 'isCurrentImgSrc',
+	    value: function isCurrentImgSrc(newSrc) {
+	      // Handle relative paths
+	      if (this.img) {
+	        var newImg = new Image();
+	        newImg.src = newSrc;
+
+	        // if absolute SRC is the same
+	        return newImg.src === this.img.src;
+	      }
+
+	      return false;
+	    }
+	  }, {
+	    key: 'getCurrentBlur',
+	    value: function getCurrentBlur() {
+	      return this.props.blurRadius;
+	    }
+	  }, {
+	    key: 'loadImage',
+	    value: function loadImage(props) {
+	      var _this2 = this;
+
+	      if (this.isCurrentImgSrc(props.img)) {
+	        stackBlurImage(this.img, this.canvas, props.blurRadius, this.width, this.height);
+	        return;
+	      }
+
+	      this.img = new Image();
+	      this.img.crossOrigin = 'Anonymous';
+	      this.img.onload = function (event) {
+	        stackBlurImage(_this2.img, _this2.canvas, _this2.getCurrentBlur(), _this2.width, _this2.height);
+	        props.onLoadFunction(event);
+	      };
+	      this.img.onerror = function (event) {
+	        _this2.img.onerror = undefined; // Remove the onerror listener. Preventing recursive calls caused by setting this.img.src to a falsey value
+	        _this2.img.src = '';
+	        props.onLoadFunction(event);
+	      };
+	      this.img.src = props.img;
+
+	      this.setDimensions();
+	    }
+	  }, {
+	    key: 'resize',
+	    value: function resize() {
+	      var _this3 = this;
+
+	      var now = new Date().getTime();
+	      var deferTimer = void 0;
+	      var threshhold = this.props.resizeInterval;
+
+	      if (this.last && now < this.last + threshhold) {
+	        clearTimeout(deferTimer);
+	        deferTimer = setTimeout(function () {
+	          _this3.last = now;
+	          _this3.doResize();
+	        }, threshhold);
+	      } else {
+	        this.last = now;
+	        this.doResize();
+	      }
+	    }
+	  }, {
+	    key: 'setDimensions',
+	    value: function setDimensions() {
+	      var container = _reactDom2.default.findDOMNode(this);
+
+	      this.height = container.offsetHeight;
+	      this.width = container.offsetWidth;
+
+	      this.canvas = _reactDom2.default.findDOMNode(this.refs.canvas);
+	      this.canvas.height = this.height;
+	      this.canvas.width = this.width;
+	    }
+	  }, {
+	    key: 'doResize',
+	    value: function doResize() {
+	      this.setDimensions();
+
+	      stackBlurImage(this.img, this.canvas, this.getCurrentBlur(), this.width, this.height);
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _props = this.props;
+	      var className = _props.className;
+	      var children = _props.children;
+
+	      var other = _objectWithoutProperties(_props, ['className', 'children']);
+
+	      var classes = 'react-blur';
+
+	      if (className) {
+	        classes += ' ' + className;
+	      }
+
+	      return _react2.default.createElement('div', _extends({}, other, { className: classes, onClick: this.clickTest }), _react2.default.createElement('canvas', { className: 'react-blur-canvas', ref: 'canvas' }), children);
+	    }
+	  }]);
+
+	  return ReactBlur;
+	}(_react2.default.Component);
+
+	ReactBlur.propTypes = {
+	  img: _react2.default.PropTypes.string.isRequired,
+	  blurRadius: _react2.default.PropTypes.number,
+	  resizeInterval: _react2.default.PropTypes.number,
+	  className: _react2.default.PropTypes.string,
+	  children: _react2.default.PropTypes.any,
+	  onLoadFunction: _react2.default.PropTypes.func
+	};
+	ReactBlur.defaultProps = {
+	  blurRadius: 0,
+	  resizeInterval: 128,
+	  onLoadFunction: function onLoadFunction() {}
+	};
+	exports.default = ReactBlur;
+	;
+
+/***/ },
+/* 246 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	module.exports = __webpack_require__(247);
+
+/***/ },
+/* 247 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-present, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 */
+
+	'use strict';
+
+	var shallowCompare = __webpack_require__(248);
+
+	/**
+	 * If your React component's render function is "pure", e.g. it will render the
+	 * same result given the same props and state, provide this mixin for a
+	 * considerable performance boost.
+	 *
+	 * Most React components have pure render functions.
+	 *
+	 * Example:
+	 *
+	 *   var ReactComponentWithPureRenderMixin =
+	 *     require('ReactComponentWithPureRenderMixin');
+	 *   React.createClass({
+	 *     mixins: [ReactComponentWithPureRenderMixin],
+	 *
+	 *     render: function() {
+	 *       return <div className={this.props.className}>foo</div>;
+	 *     }
+	 *   });
+	 *
+	 * Note: This only checks shallow equality for props and state. If these contain
+	 * complex data structures this mixin may have false-negatives for deeper
+	 * differences. Only mixin to components which have simple props and state, or
+	 * use `forceUpdate()` when you know deep data structures have changed.
+	 *
+	 * See https://facebook.github.io/react/docs/pure-render-mixin.html
+	 */
+	var ReactComponentWithPureRenderMixin = {
+	  shouldComponentUpdate: function shouldComponentUpdate(nextProps, nextState) {
+	    return shallowCompare(this, nextProps, nextState);
+	  }
+	};
+
+	module.exports = ReactComponentWithPureRenderMixin;
+
+/***/ },
+/* 248 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-present, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 */
+
+	'use strict';
+
+	var shallowEqual = __webpack_require__(123);
+
+	/**
+	 * Does a shallow comparison for props and state.
+	 * See ReactComponentWithPureRenderMixin
+	 * See also https://facebook.github.io/react/docs/shallow-compare.html
+	 */
+	function shallowCompare(instance, nextProps, nextState) {
+	  return !shallowEqual(instance.props, nextProps) || !shallowEqual(instance.state, nextState);
+	}
+
+	module.exports = shallowCompare;
+
+/***/ },
+/* 249 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	var mul_table = [512, 512, 456, 512, 328, 456, 335, 512, 405, 328, 271, 456, 388, 335, 292, 512, 454, 405, 364, 328, 298, 271, 496, 456, 420, 388, 360, 335, 312, 292, 273, 512, 482, 454, 428, 405, 383, 364, 345, 328, 312, 298, 284, 271, 259, 496, 475, 456, 437, 420, 404, 388, 374, 360, 347, 335, 323, 312, 302, 292, 282, 273, 265, 512, 497, 482, 468, 454, 441, 428, 417, 405, 394, 383, 373, 364, 354, 345, 337, 328, 320, 312, 305, 298, 291, 284, 278, 271, 265, 259, 507, 496, 485, 475, 465, 456, 446, 437, 428, 420, 412, 404, 396, 388, 381, 374, 367, 360, 354, 347, 341, 335, 329, 323, 318, 312, 307, 302, 297, 292, 287, 282, 278, 273, 269, 265, 261, 512, 505, 497, 489, 482, 475, 468, 461, 454, 447, 441, 435, 428, 422, 417, 411, 405, 399, 394, 389, 383, 378, 373, 368, 364, 359, 354, 350, 345, 341, 337, 332, 328, 324, 320, 316, 312, 309, 305, 301, 298, 294, 291, 287, 284, 281, 278, 274, 271, 268, 265, 262, 259, 257, 507, 501, 496, 491, 485, 480, 475, 470, 465, 460, 456, 451, 446, 442, 437, 433, 428, 424, 420, 416, 412, 408, 404, 400, 396, 392, 388, 385, 381, 377, 374, 370, 367, 363, 360, 357, 354, 350, 347, 344, 341, 338, 335, 332, 329, 326, 323, 320, 318, 315, 312, 310, 307, 304, 302, 299, 297, 294, 292, 289, 287, 285, 282, 280, 278, 275, 273, 271, 269, 267, 265, 263, 261, 259];
+
+	var shg_table = [9, 11, 12, 13, 13, 14, 14, 15, 15, 15, 15, 16, 16, 16, 16, 17, 17, 17, 17, 17, 17, 17, 18, 18, 18, 18, 18, 18, 18, 18, 18, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24];
+
+	function stackBlurImage(img, canvas, radius, w, h) {
+	    var nw = img.naturalWidth;
+	    var nh = img.naturalHeight;
+
+	    canvas.style.width = w + "px";
+	    canvas.style.height = h + "px";
+	    canvas.width = w;
+	    canvas.height = h;
+
+	    var context = canvas.getContext("2d");
+	    context.clearRect(0, 0, w, h);
+
+	    var ratio = 1;
+	    if (nw / w > nh / h) {
+	        ratio = nh / h;
+	    } else {
+	        ratio = nw / w;
+	    }
+
+	    var drawW = nw / ratio;
+	    var drawH = nh / ratio;
+
+	    try {
+	        context.drawImage(img, Math.floor((drawW - w) / -2), Math.floor((drawH - h) / -2), Math.ceil(drawW), Math.ceil(drawH));
+	    } catch (e) {
+	        console.error('There was a problem drawing the image. ' + e);
+	    }
+
+	    if (isNaN(radius) || radius < 1) return;
+	    stackBlurCanvasRGB(canvas, 0, 0, w, h, radius);
+	}
+
+	function stackBlurCanvasRGB(canvas, top_x, top_y, width, height, radius) {
+	    if (isNaN(radius) || radius < 1) return;
+	    radius |= 0;
+
+	    var context = canvas.getContext("2d");
+	    var imageData;
+
+	    try {
+	        imageData = context.getImageData(top_x, top_y, width, height);
+	    } catch (e) {
+	        throw new Error("unable to access image data: " + e);
+	    }
+
+	    var pixels = imageData.data;
+
+	    var x, y, i, p, yp, yi, yw, r_sum, g_sum, b_sum, r_out_sum, g_out_sum, b_out_sum, r_in_sum, g_in_sum, b_in_sum, pr, pg, pb, rbs;
+
+	    var div = radius + radius + 1;
+	    var w4 = width << 2;
+	    var widthMinus1 = width - 1;
+	    var heightMinus1 = height - 1;
+	    var radiusPlus1 = radius + 1;
+	    var sumFactor = radiusPlus1 * (radiusPlus1 + 1) / 2;
+
+	    var stackStart = new BlurStack();
+	    var stack = stackStart;
+	    for (i = 1; i < div; i++) {
+	        stack = stack.next = new BlurStack();
+	        if (i == radiusPlus1) var stackEnd = stack;
+	    }
+	    stack.next = stackStart;
+	    var stackIn = null;
+	    var stackOut = null;
+
+	    yw = yi = 0;
+
+	    var mul_sum = mul_table[radius];
+	    var shg_sum = shg_table[radius];
+
+	    for (y = 0; y < height; y++) {
+	        r_in_sum = g_in_sum = b_in_sum = r_sum = g_sum = b_sum = 0;
+
+	        r_out_sum = radiusPlus1 * (pr = pixels[yi]);
+	        g_out_sum = radiusPlus1 * (pg = pixels[yi + 1]);
+	        b_out_sum = radiusPlus1 * (pb = pixels[yi + 2]);
+
+	        r_sum += sumFactor * pr;
+	        g_sum += sumFactor * pg;
+	        b_sum += sumFactor * pb;
+
+	        stack = stackStart;
+
+	        for (i = 0; i < radiusPlus1; i++) {
+	            stack.r = pr;
+	            stack.g = pg;
+	            stack.b = pb;
+	            stack = stack.next;
+	        }
+
+	        for (i = 1; i < radiusPlus1; i++) {
+	            p = yi + ((widthMinus1 < i ? widthMinus1 : i) << 2);
+	            r_sum += (stack.r = pr = pixels[p]) * (rbs = radiusPlus1 - i);
+	            g_sum += (stack.g = pg = pixels[p + 1]) * rbs;
+	            b_sum += (stack.b = pb = pixels[p + 2]) * rbs;
+
+	            r_in_sum += pr;
+	            g_in_sum += pg;
+	            b_in_sum += pb;
+
+	            stack = stack.next;
+	        }
+
+	        stackIn = stackStart;
+	        stackOut = stackEnd;
+	        for (x = 0; x < width; x++) {
+	            pixels[yi] = r_sum * mul_sum >> shg_sum;
+	            pixels[yi + 1] = g_sum * mul_sum >> shg_sum;
+	            pixels[yi + 2] = b_sum * mul_sum >> shg_sum;
+
+	            r_sum -= r_out_sum;
+	            g_sum -= g_out_sum;
+	            b_sum -= b_out_sum;
+
+	            r_out_sum -= stackIn.r;
+	            g_out_sum -= stackIn.g;
+	            b_out_sum -= stackIn.b;
+
+	            p = yw + ((p = x + radius + 1) < widthMinus1 ? p : widthMinus1) << 2;
+
+	            r_in_sum += stackIn.r = pixels[p];
+	            g_in_sum += stackIn.g = pixels[p + 1];
+	            b_in_sum += stackIn.b = pixels[p + 2];
+
+	            r_sum += r_in_sum;
+	            g_sum += g_in_sum;
+	            b_sum += b_in_sum;
+
+	            stackIn = stackIn.next;
+
+	            r_out_sum += pr = stackOut.r;
+	            g_out_sum += pg = stackOut.g;
+	            b_out_sum += pb = stackOut.b;
+
+	            r_in_sum -= pr;
+	            g_in_sum -= pg;
+	            b_in_sum -= pb;
+
+	            stackOut = stackOut.next;
+
+	            yi += 4;
+	        }
+	        yw += width;
+	    }
+
+	    for (x = 0; x < width; x++) {
+	        g_in_sum = b_in_sum = r_in_sum = g_sum = b_sum = r_sum = 0;
+
+	        yi = x << 2;
+	        r_out_sum = radiusPlus1 * (pr = pixels[yi]);
+	        g_out_sum = radiusPlus1 * (pg = pixels[yi + 1]);
+	        b_out_sum = radiusPlus1 * (pb = pixels[yi + 2]);
+
+	        r_sum += sumFactor * pr;
+	        g_sum += sumFactor * pg;
+	        b_sum += sumFactor * pb;
+
+	        stack = stackStart;
+
+	        for (i = 0; i < radiusPlus1; i++) {
+	            stack.r = pr;
+	            stack.g = pg;
+	            stack.b = pb;
+	            stack = stack.next;
+	        }
+
+	        yp = width;
+
+	        for (i = 1; i <= radius; i++) {
+	            yi = yp + x << 2;
+
+	            r_sum += (stack.r = pr = pixels[yi]) * (rbs = radiusPlus1 - i);
+	            g_sum += (stack.g = pg = pixels[yi + 1]) * rbs;
+	            b_sum += (stack.b = pb = pixels[yi + 2]) * rbs;
+
+	            r_in_sum += pr;
+	            g_in_sum += pg;
+	            b_in_sum += pb;
+
+	            stack = stack.next;
+
+	            if (i < heightMinus1) {
+	                yp += width;
+	            }
+	        }
+
+	        yi = x;
+	        stackIn = stackStart;
+	        stackOut = stackEnd;
+	        for (y = 0; y < height; y++) {
+	            p = yi << 2;
+	            pixels[p] = r_sum * mul_sum >> shg_sum;
+	            pixels[p + 1] = g_sum * mul_sum >> shg_sum;
+	            pixels[p + 2] = b_sum * mul_sum >> shg_sum;
+
+	            r_sum -= r_out_sum;
+	            g_sum -= g_out_sum;
+	            b_sum -= b_out_sum;
+
+	            r_out_sum -= stackIn.r;
+	            g_out_sum -= stackIn.g;
+	            b_out_sum -= stackIn.b;
+
+	            p = x + ((p = y + radiusPlus1) < heightMinus1 ? p : heightMinus1) * width << 2;
+
+	            r_sum += r_in_sum += stackIn.r = pixels[p];
+	            g_sum += g_in_sum += stackIn.g = pixels[p + 1];
+	            b_sum += b_in_sum += stackIn.b = pixels[p + 2];
+
+	            stackIn = stackIn.next;
+
+	            r_out_sum += pr = stackOut.r;
+	            g_out_sum += pg = stackOut.g;
+	            b_out_sum += pb = stackOut.b;
+
+	            r_in_sum -= pr;
+	            g_in_sum -= pg;
+	            b_in_sum -= pb;
+
+	            stackOut = stackOut.next;
+
+	            yi += width;
+	        }
+	    }
+	    context.putImageData(imageData, top_x, top_y);
+	}
+
+	function BlurStack() {
+	    this.r = 0;
+	    this.g = 0;
+	    this.b = 0;
+	    this.a = 0;
+	    this.next = null;
+	}
+
+	module.exports = stackBlurImage;
+
+/***/ },
+/* 250 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27577,16 +28160,16 @@
 	exports.default = NotFound;
 
 /***/ },
-/* 246 */
+/* 251 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(247);
+	var content = __webpack_require__(252);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(249)(content, {});
+	var update = __webpack_require__(254)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -27603,21 +28186,21 @@
 	}
 
 /***/ },
-/* 247 */
+/* 252 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(248)();
+	exports = module.exports = __webpack_require__(253)();
 	// imports
 
 
 	// module
-	exports.push([module.id, "/*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */\n/**\n * 1. Change the default font family in all browsers (opinionated).\n * 2. Correct the line height in all browsers.\n * 3. Prevent adjustments of font size after orientation changes in\n *    IE on Windows Phone and in iOS.\n */\n/* Document\n   ========================================================================== */\nhtml {\n  font-family: sans-serif;\n  /* 1 */\n  line-height: 1.15;\n  /* 2 */\n  -ms-text-size-adjust: 100%;\n  /* 3 */\n  -webkit-text-size-adjust: 100%;\n  /* 3 */ }\n/* Sections\n   ========================================================================== */\n/**\n * Remove the margin in all browsers (opinionated).\n */\nbody {\n  margin: 0; }\n/**\n * Add the correct display in IE 9-.\n */\narticle, aside, footer, header, nav, section {\n  display: block; }\n/**\n * Correct the font size and margin on `h1` elements within `section` and\n * `article` contexts in Chrome, Firefox, and Safari.\n */\nh1 {\n  font-size: 2em;\n  margin: 0.67em 0; }\n/* Grouping content\n   ========================================================================== */\n/**\n * Add the correct display in IE 9-.\n * 1. Add the correct display in IE.\n */\nfigcaption, figure, main {\n  /* 1 */\n  display: block; }\n/**\n * Add the correct margin in IE 8.\n */\nfigure {\n  margin: 1em 40px; }\n/**\n * 1. Add the correct box sizing in Firefox.\n * 2. Show the overflow in Edge and IE.\n */\nhr {\n  box-sizing: content-box;\n  /* 1 */\n  height: 0;\n  /* 1 */\n  overflow: visible;\n  /* 2 */ }\n/**\n * 1. Correct the inheritance and scaling of font size in all browsers.\n * 2. Correct the odd `em` font sizing in all browsers.\n */\npre {\n  font-family: monospace, monospace;\n  /* 1 */\n  font-size: 1em;\n  /* 2 */ }\n/* Text-level semantics\n   ========================================================================== */\n/**\n * 1. Remove the gray background on active links in IE 10.\n * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.\n */\na {\n  background-color: transparent;\n  /* 1 */\n  -webkit-text-decoration-skip: objects;\n  /* 2 */ }\n/**\n * Remove the outline on focused links when they are also active or hovered\n * in all browsers (opinionated).\n */\na:active, a:hover {\n  outline-width: 0; }\n/**\n * 1. Remove the bottom border in Firefox 39-.\n * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.\n */\nabbr[title] {\n  border-bottom: none;\n  /* 1 */\n  text-decoration: underline;\n  /* 2 */\n  text-decoration: underline dotted;\n  /* 2 */ }\n/**\n * Prevent the duplicate application of `bolder` by the next rule in Safari 6.\n */\nb, strong {\n  font-weight: inherit; }\n/**\n * Add the correct font weight in Chrome, Edge, and Safari.\n */\nb, strong {\n  font-weight: bolder; }\n/**\n * 1. Correct the inheritance and scaling of font size in all browsers.\n * 2. Correct the odd `em` font sizing in all browsers.\n */\ncode, kbd, samp {\n  font-family: monospace, monospace;\n  /* 1 */\n  font-size: 1em;\n  /* 2 */ }\n/**\n * Add the correct font style in Android 4.3-.\n */\ndfn {\n  font-style: italic; }\n/**\n * Add the correct background and color in IE 9-.\n */\nmark {\n  background-color: #ff0;\n  color: #000; }\n/**\n * Add the correct font size in all browsers.\n */\nsmall {\n  font-size: 80%; }\n/**\n * Prevent `sub` and `sup` elements from affecting the line height in\n * all browsers.\n */\nsub, sup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline; }\nsub {\n  bottom: -0.25em; }\nsup {\n  top: -0.5em; }\n/* Embedded content\n   ========================================================================== */\n/**\n * Add the correct display in IE 9-.\n */\naudio, video {\n  display: inline-block; }\n/**\n * Add the correct display in iOS 4-7.\n */\naudio:not([controls]) {\n  display: none;\n  height: 0; }\n/**\n * Remove the border on images inside links in IE 10-.\n */\nimg {\n  border-style: none; }\n/**\n * Hide the overflow in IE.\n */\nsvg:not(:root) {\n  overflow: hidden; }\n/* Forms\n   ========================================================================== */\n/**\n * 1. Change the font styles in all browsers (opinionated).\n * 2. Remove the margin in Firefox and Safari.\n */\nbutton, input, optgroup, select, textarea {\n  font-family: sans-serif;\n  /* 1 */\n  font-size: 100%;\n  /* 1 */\n  line-height: 1.15;\n  /* 1 */\n  margin: 0;\n  /* 2 */ }\n/**\n * Show the overflow in IE.\n * 1. Show the overflow in Edge.\n */\nbutton, input {\n  /* 1 */\n  overflow: visible; }\n/**\n * Remove the inheritance of text transform in Edge, Firefox, and IE.\n * 1. Remove the inheritance of text transform in Firefox.\n */\nbutton, select {\n  /* 1 */\n  text-transform: none; }\n/**\n * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`\n *    controls in Android 4.\n * 2. Correct the inability to style clickable types in iOS and Safari.\n */\nbutton, html [type=\"button\"], [type=\"reset\"], [type=\"submit\"] {\n  -webkit-appearance: button;\n  /* 2 */ }\n/**\n * Remove the inner border and padding in Firefox.\n */\nbutton::-moz-focus-inner, [type=\"button\"]::-moz-focus-inner, [type=\"reset\"]::-moz-focus-inner, [type=\"submit\"]::-moz-focus-inner {\n  border-style: none;\n  padding: 0; }\n/**\n * Restore the focus styles unset by the previous rule.\n */\nbutton:-moz-focusring, [type=\"button\"]:-moz-focusring, [type=\"reset\"]:-moz-focusring, [type=\"submit\"]:-moz-focusring {\n  outline: 1px dotted ButtonText; }\n/**\n * Change the border, margin, and padding in all browsers (opinionated).\n */\nfieldset {\n  border: 1px solid #c0c0c0;\n  margin: 0 2px;\n  padding: 0.35em 0.625em 0.75em; }\n/**\n * 1. Correct the text wrapping in Edge and IE.\n * 2. Correct the color inheritance from `fieldset` elements in IE.\n * 3. Remove the padding so developers are not caught out when they zero out\n *    `fieldset` elements in all browsers.\n */\nlegend {\n  box-sizing: border-box;\n  /* 1 */\n  color: inherit;\n  /* 2 */\n  display: table;\n  /* 1 */\n  max-width: 100%;\n  /* 1 */\n  padding: 0;\n  /* 3 */\n  white-space: normal;\n  /* 1 */ }\n/**\n * 1. Add the correct display in IE 9-.\n * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.\n */\nprogress {\n  display: inline-block;\n  /* 1 */\n  vertical-align: baseline;\n  /* 2 */ }\n/**\n * Remove the default vertical scrollbar in IE.\n */\ntextarea {\n  overflow: auto; }\n/**\n * 1. Add the correct box sizing in IE 10-.\n * 2. Remove the padding in IE 10-.\n */\n[type=\"checkbox\"], [type=\"radio\"] {\n  box-sizing: border-box;\n  /* 1 */\n  padding: 0;\n  /* 2 */ }\n/**\n * Correct the cursor style of increment and decrement buttons in Chrome.\n */\n[type=\"number\"]::-webkit-inner-spin-button, [type=\"number\"]::-webkit-outer-spin-button {\n  height: auto; }\n/**\n * 1. Correct the odd appearance in Chrome and Safari.\n * 2. Correct the outline style in Safari.\n */\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n  /* 1 */\n  outline-offset: -2px;\n  /* 2 */ }\n/**\n * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.\n */\n[type=\"search\"]::-webkit-search-cancel-button, [type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none; }\n/**\n * 1. Correct the inability to style clickable types in iOS and Safari.\n * 2. Change font properties to `inherit` in Safari.\n */\n::-webkit-file-upload-button {\n  -webkit-appearance: button;\n  /* 1 */\n  font: inherit;\n  /* 2 */ }\n/* Interactive\n   ========================================================================== */\n/*\n * Add the correct display in IE 9-.\n * 1. Add the correct display in Edge, IE, and Firefox.\n */\ndetails, menu {\n  display: block; }\n/*\n * Add the correct display in all browsers.\n */\nsummary {\n  display: list-item; }\n/* Scripting\n   ========================================================================== */\n/**\n * Add the correct display in IE 9-.\n */\ncanvas {\n  display: inline-block; }\n/**\n * Add the correct display in IE.\n */\ntemplate {\n  display: none; }\n/* Hidden\n   ========================================================================== */\n/**\n * Add the correct display in IE 10-.\n */\n[hidden] {\n  display: none; }\n*, *:before, *:after {\n  box-sizing: inherit; }\nhtml {\n  height: 100%;\n  box-sizing: border-box; }\nbody {\n  position: relative;\n  margin: 0;\n  padding-bottom: 10em;\n  min-height: 100%;\n  font-family: -apple-system, BlinkMacSystemFont, 'Open Sans' sans-serif;\n  font-weight: lighter;\n  color: #272727;\n  background: #FFF; }\na {\n  text-decoration: none;\n  color: #272727; }\na:hover {\n    text-decoration: none;\n    color: #272727; }\na:active {\n    text-decoration: none;\n    color: #272727; }\nmain {\n  padding-top: 5em; }\n.header {\n  position: fixed;\n  z-index: 10;\n  background: #FFF;\n  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);\n  width: 100%; }\n.header__container {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    width: 100%;\n    height: 5em; }\n.header__logo {\n    color: #FF0000;\n    font-size: 2em;\n    font-weight: bold;\n    font-family: -apple-system-headline, BlinkMacSystemFont, Helvetica, sans-serif; }\n.header__logo span {\n      color: #FF0000; }\n.header__logo span:first-child {\n      color: green; }\n.header__promo {\n    position: absolute;\n    right: 5em;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    height: 5em; }\n.header__promo a {\n      font-style: italic;\n      font-weight: 400;\n      border-bottom: 1px dashed #272727; }\n@media screen and (max-width: 746px) {\n      .header__promo {\n        display: none; } }\n.footer {\n  position: absolute;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  padding: 1em;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  height: 10em; }\n.notfound {\n  text-align: center;\n  padding: 6em 2em; }\n.notfound h1 {\n    font-weight: lighter; }\n.notfound a {\n    font-style: italic;\n    border-bottom: 1px dashed #272727; }\n.hero {\n  background: #F2F2F2;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  overflow: hidden; }\n.hero__container {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-wrap: wrap;\n        flex-wrap: wrap;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    max-width: 1080px;\n    padding: 6em 2em; }\n@media screen and (min-width: 746px) {\n      .hero__container > div {\n        margin: 0 2em; }\n        .hero__container > div:first-child {\n          margin-left: 0; }\n        .hero__container > div:last-child {\n          margin-right: 0; } }\n@media screen and (max-width: 1020px) {\n      .hero__container > div {\n        -webkit-box-flex: 1;\n            -ms-flex: 1;\n                flex: 1; } }\n@media screen and (max-width: 746px) {\n      .hero__container > div {\n        -ms-flex-preferred-size: 100%;\n            flex-basis: 100%;\n        margin: 0.5em 0; } }\n@media screen and (max-width: 1020px) {\n      .hero__container {\n        padding: 4em 2em; } }\n@media screen and (max-width: 746px) {\n      .hero__container {\n        padding: 2em; } }\n.hero__video {\n    -webkit-box-flex: 65;\n        -ms-flex: 65;\n            flex: 65;\n    height: auto;\n    position: relative; }\n.hero__video__thumbnail {\n      position: relative; }\n.hero__video__thumbnail.loading {\n        border: 5px solid red; }\n.hero__video__thumbnail:hover {\n        cursor: pointer; }\n.hero__video__thumbnail:hover svg {\n          fill: rgba(0, 0, 0, 0.7); }\n.hero__video__thumbnail img {\n        width: 100%;\n        height: auto; }\n.hero__video__thumbnail svg {\n        position: absolute;\n        top: 50%;\n        left: 50%;\n        -webkit-transform: translate(-50%, -50%);\n                transform: translate(-50%, -50%);\n        width: 5em;\n        height: auto;\n        fill: rgba(0, 0, 0, 0.5);\n        -webkit-transition: fill 100ms ease-in;\n        transition: fill 100ms ease-in; }\n.hero__video__youtube.hidden {\n      display: none; }\n.hero__video__youtube__wrapper {\n      position: relative;\n      padding-bottom: 56.25%;\n      padding-top: 25px;\n      height: 0; }\n.hero__video__youtube__wrapper iframe {\n        position: absolute;\n        top: 0;\n        left: 0;\n        width: 100%;\n        height: 100%; }\n.hero__text {\n    -webkit-box-flex: 35;\n        -ms-flex: 35;\n            flex: 35; }\n.hero__text h1 {\n      font-size: 2em; }\n.hero__text p {\n      font-size: 1em;\n      line-height: 1.6; }\n@media screen and (max-width: 1020px) {\n      .hero__text p {\n        font-size: 1em; } }\n@media screen and (max-width: 388px) {\n      .hero__text h1 {\n        font-size: 1.5em; } }\n.products {\n  background: #FFF;\n  box-shadow: 0 2px 25px 0 rgba(0, 0, 0, 0.1); }\n.products__container {\n    max-width: 972px;\n    padding: 4em 2em;\n    margin: 0 auto; }\n@media screen and (max-width: 1020px) {\n      .products__container {\n        padding: 4em 2em; } }\n@media screen and (max-width: 746px) {\n      .products__container {\n        padding: 2em; } }\n.products__title {\n    margin-bottom: 2em;\n    text-align: center; }\n.products__title h1 {\n      display: inline-block;\n      font-family: -apple-system-headline, BlinkMacSystemFont, Helvetica, sans-serif;\n      font-size: 3em;\n      margin-top: 0; }\n@media screen and (max-width: 388px) {\n        .products__title h1 {\n          font-size: 2em; } }\n.products__wrapper {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -ms-flex-wrap: wrap;\n        flex-wrap: wrap;\n    overflow: hidden;\n    margin-top: -2em; }\n@media screen and (max-width: 746px) {\n      .products__wrapper {\n        padding: 0; } }\n.products__item {\n    -webkit-box-flex: 1;\n        -ms-flex: 1 1 150px;\n            flex: 1 1 150px;\n    min-width: 150px;\n    max-width: 250px;\n    text-align: center;\n    padding: 2em;\n    margin: 2em;\n    font-family: monospace;\n    background: #F2F2F2;\n    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);\n    -webkit-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);\n    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }\n.products__item:hover {\n      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }\n@media screen and (max-width: 746px) {\n      .products__item {\n        padding: 1em;\n        margin: 1em; } }\n.products__item span {\n      display: block; }\n.products__item__img {\n      width: 100%;\n      height: auto; }\n.products__item__name {\n      margin: 1em 0 0.5em 0;\n      font-weight: bold; }\n", ""]);
+	exports.push([module.id, "/*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */\n/**\n * 1. Change the default font family in all browsers (opinionated).\n * 2. Correct the line height in all browsers.\n * 3. Prevent adjustments of font size after orientation changes in\n *    IE on Windows Phone and in iOS.\n */\n/* Document\n   ========================================================================== */\n.react-blur-canvas {\n  position: absolute;\n  top: 0;\n  left: 0;\n}\nhtml {\n  font-family: sans-serif;\n  /* 1 */\n  line-height: 1.15;\n  /* 2 */\n  -ms-text-size-adjust: 100%;\n  /* 3 */\n  -webkit-text-size-adjust: 100%;\n  /* 3 */ }\n/* Sections\n   ========================================================================== */\n/**\n * Remove the margin in all browsers (opinionated).\n */\nbody {\n  margin: 0; }\n/**\n * Add the correct display in IE 9-.\n */\narticle, aside, footer, header, nav, section {\n  display: block; }\n/**\n * Correct the font size and margin on `h1` elements within `section` and\n * `article` contexts in Chrome, Firefox, and Safari.\n */\nh1 {\n  font-size: 2em;\n  margin: 0.67em 0; }\n/* Grouping content\n   ========================================================================== */\n/**\n * Add the correct display in IE 9-.\n * 1. Add the correct display in IE.\n */\nfigcaption, figure, main {\n  /* 1 */\n  display: block; }\n/**\n * Add the correct margin in IE 8.\n */\nfigure {\n  margin: 1em 40px; }\n/**\n * 1. Add the correct box sizing in Firefox.\n * 2. Show the overflow in Edge and IE.\n */\nhr {\n  box-sizing: content-box;\n  /* 1 */\n  height: 0;\n  /* 1 */\n  overflow: visible;\n  /* 2 */ }\n/**\n * 1. Correct the inheritance and scaling of font size in all browsers.\n * 2. Correct the odd `em` font sizing in all browsers.\n */\npre {\n  font-family: monospace, monospace;\n  /* 1 */\n  font-size: 1em;\n  /* 2 */ }\n/* Text-level semantics\n   ========================================================================== */\n/**\n * 1. Remove the gray background on active links in IE 10.\n * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.\n */\na {\n  background-color: transparent;\n  /* 1 */\n  -webkit-text-decoration-skip: objects;\n  /* 2 */ }\n/**\n * Remove the outline on focused links when they are also active or hovered\n * in all browsers (opinionated).\n */\na:active, a:hover {\n  outline-width: 0; }\n/**\n * 1. Remove the bottom border in Firefox 39-.\n * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.\n */\nabbr[title] {\n  border-bottom: none;\n  /* 1 */\n  text-decoration: underline;\n  /* 2 */\n  text-decoration: underline dotted;\n  /* 2 */ }\n/**\n * Prevent the duplicate application of `bolder` by the next rule in Safari 6.\n */\nb, strong {\n  font-weight: inherit; }\n/**\n * Add the correct font weight in Chrome, Edge, and Safari.\n */\nb, strong {\n  font-weight: bolder; }\n/**\n * 1. Correct the inheritance and scaling of font size in all browsers.\n * 2. Correct the odd `em` font sizing in all browsers.\n */\ncode, kbd, samp {\n  font-family: monospace, monospace;\n  /* 1 */\n  font-size: 1em;\n  /* 2 */ }\n/**\n * Add the correct font style in Android 4.3-.\n */\ndfn {\n  font-style: italic; }\n/**\n * Add the correct background and color in IE 9-.\n */\nmark {\n  background-color: #ff0;\n  color: #000; }\n/**\n * Add the correct font size in all browsers.\n */\nsmall {\n  font-size: 80%; }\n/**\n * Prevent `sub` and `sup` elements from affecting the line height in\n * all browsers.\n */\nsub, sup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline; }\nsub {\n  bottom: -0.25em; }\nsup {\n  top: -0.5em; }\n/* Embedded content\n   ========================================================================== */\n/**\n * Add the correct display in IE 9-.\n */\naudio, video {\n  display: inline-block; }\n/**\n * Add the correct display in iOS 4-7.\n */\naudio:not([controls]) {\n  display: none;\n  height: 0; }\n/**\n * Remove the border on images inside links in IE 10-.\n */\nimg {\n  border-style: none; }\n/**\n * Hide the overflow in IE.\n */\nsvg:not(:root) {\n  overflow: hidden; }\n/* Forms\n   ========================================================================== */\n/**\n * 1. Change the font styles in all browsers (opinionated).\n * 2. Remove the margin in Firefox and Safari.\n */\nbutton, input, optgroup, select, textarea {\n  font-family: sans-serif;\n  /* 1 */\n  font-size: 100%;\n  /* 1 */\n  line-height: 1.15;\n  /* 1 */\n  margin: 0;\n  /* 2 */ }\n/**\n * Show the overflow in IE.\n * 1. Show the overflow in Edge.\n */\nbutton, input {\n  /* 1 */\n  overflow: visible; }\n/**\n * Remove the inheritance of text transform in Edge, Firefox, and IE.\n * 1. Remove the inheritance of text transform in Firefox.\n */\nbutton, select {\n  /* 1 */\n  text-transform: none; }\n/**\n * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`\n *    controls in Android 4.\n * 2. Correct the inability to style clickable types in iOS and Safari.\n */\nbutton, html [type=\"button\"], [type=\"reset\"], [type=\"submit\"] {\n  -webkit-appearance: button;\n  /* 2 */ }\n/**\n * Remove the inner border and padding in Firefox.\n */\nbutton::-moz-focus-inner, [type=\"button\"]::-moz-focus-inner, [type=\"reset\"]::-moz-focus-inner, [type=\"submit\"]::-moz-focus-inner {\n  border-style: none;\n  padding: 0; }\n/**\n * Restore the focus styles unset by the previous rule.\n */\nbutton:-moz-focusring, [type=\"button\"]:-moz-focusring, [type=\"reset\"]:-moz-focusring, [type=\"submit\"]:-moz-focusring {\n  outline: 1px dotted ButtonText; }\n/**\n * Change the border, margin, and padding in all browsers (opinionated).\n */\nfieldset {\n  border: 1px solid #c0c0c0;\n  margin: 0 2px;\n  padding: 0.35em 0.625em 0.75em; }\n/**\n * 1. Correct the text wrapping in Edge and IE.\n * 2. Correct the color inheritance from `fieldset` elements in IE.\n * 3. Remove the padding so developers are not caught out when they zero out\n *    `fieldset` elements in all browsers.\n */\nlegend {\n  box-sizing: border-box;\n  /* 1 */\n  color: inherit;\n  /* 2 */\n  display: table;\n  /* 1 */\n  max-width: 100%;\n  /* 1 */\n  padding: 0;\n  /* 3 */\n  white-space: normal;\n  /* 1 */ }\n/**\n * 1. Add the correct display in IE 9-.\n * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.\n */\nprogress {\n  display: inline-block;\n  /* 1 */\n  vertical-align: baseline;\n  /* 2 */ }\n/**\n * Remove the default vertical scrollbar in IE.\n */\ntextarea {\n  overflow: auto; }\n/**\n * 1. Add the correct box sizing in IE 10-.\n * 2. Remove the padding in IE 10-.\n */\n[type=\"checkbox\"], [type=\"radio\"] {\n  box-sizing: border-box;\n  /* 1 */\n  padding: 0;\n  /* 2 */ }\n/**\n * Correct the cursor style of increment and decrement buttons in Chrome.\n */\n[type=\"number\"]::-webkit-inner-spin-button, [type=\"number\"]::-webkit-outer-spin-button {\n  height: auto; }\n/**\n * 1. Correct the odd appearance in Chrome and Safari.\n * 2. Correct the outline style in Safari.\n */\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n  /* 1 */\n  outline-offset: -2px;\n  /* 2 */ }\n/**\n * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.\n */\n[type=\"search\"]::-webkit-search-cancel-button, [type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none; }\n/**\n * 1. Correct the inability to style clickable types in iOS and Safari.\n * 2. Change font properties to `inherit` in Safari.\n */\n::-webkit-file-upload-button {\n  -webkit-appearance: button;\n  /* 1 */\n  font: inherit;\n  /* 2 */ }\n/* Interactive\n   ========================================================================== */\n/*\n * Add the correct display in IE 9-.\n * 1. Add the correct display in Edge, IE, and Firefox.\n */\ndetails, menu {\n  display: block; }\n/*\n * Add the correct display in all browsers.\n */\nsummary {\n  display: list-item; }\n/* Scripting\n   ========================================================================== */\n/**\n * Add the correct display in IE 9-.\n */\ncanvas {\n  display: inline-block; }\n/**\n * Add the correct display in IE.\n */\ntemplate {\n  display: none; }\n/* Hidden\n   ========================================================================== */\n/**\n * Add the correct display in IE 10-.\n */\n[hidden] {\n  display: none; }\n*, *:before, *:after {\n  box-sizing: inherit; }\nhtml {\n  height: 100%;\n  box-sizing: border-box; }\nbody {\n  position: relative;\n  margin: 0;\n  padding-bottom: 10em;\n  min-height: 100%;\n  font-family: -apple-system, BlinkMacSystemFont, 'Open Sans' sans-serif;\n  font-weight: lighter;\n  color: #272727;\n  background: #FFFFFF; }\na {\n  text-decoration: none;\n  color: #272727; }\na:hover {\n    text-decoration: none;\n    color: #272727; }\na:active {\n    text-decoration: none;\n    color: #272727; }\nmain {\n  padding-top: 5em; }\n.header {\n  position: fixed;\n  z-index: 10;\n  background: #FFFFFF;\n  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);\n  width: 100%; }\n.header__container {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    width: 100%;\n    height: 5em; }\n.header__logo {\n    color: #FF0000;\n    font-size: 2em;\n    font-weight: bold;\n    font-family: -apple-system-headline, BlinkMacSystemFont, Helvetica, sans-serif; }\n.header__logo span {\n      color: #FF0000; }\n.header__logo span:first-child {\n      color: green; }\n.header__promo {\n    position: absolute;\n    right: 5em;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    height: 5em; }\n.header__promo a {\n      font-style: italic;\n      font-weight: 400;\n      border-bottom: 1px dashed #272727; }\n@media screen and (max-width: 746px) {\n      .header__promo {\n        display: none; } }\n.footer {\n  position: absolute;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  padding: 1em;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  height: 10em;\n  background: #FAFAFA; }\n.notfound {\n  text-align: center;\n  padding: 6em 2em; }\n.notfound h1 {\n    font-weight: lighter; }\n.notfound a {\n    font-style: italic;\n    border-bottom: 1px dashed #272727; }\n.hero {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  overflow: hidden;\n  background: #FAFAFA; }\n.hero__container {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-wrap: wrap;\n        flex-wrap: wrap;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    max-width: 1080px;\n    padding: 6em 2em; }\n@media screen and (min-width: 746px) {\n      .hero__container > div {\n        margin: 0 2em; }\n        .hero__container > div:first-child {\n          margin-left: 0; }\n        .hero__container > div:last-child {\n          margin-right: 0; } }\n@media screen and (max-width: 1020px) {\n      .hero__container > div {\n        -webkit-box-flex: 1;\n            -ms-flex: 1;\n                flex: 1; } }\n@media screen and (max-width: 746px) {\n      .hero__container > div {\n        -ms-flex-preferred-size: 100%;\n            flex-basis: 100%;\n        margin: 0.5em 0; } }\n@media screen and (max-width: 1020px) {\n      .hero__container {\n        padding: 4em 2em; } }\n@media screen and (max-width: 746px) {\n      .hero__container {\n        padding: 2em; } }\n.hero__video {\n    -webkit-box-flex: 65;\n        -ms-flex: 65;\n            flex: 65;\n    height: auto;\n    position: relative; }\n.hero__video__thumbnail {\n      position: relative; }\n.hero__video__thumbnail.loading {\n        border: 5px solid red; }\n.hero__video__thumbnail:hover {\n        cursor: pointer; }\n.hero__video__thumbnail:hover svg {\n          fill: rgba(0, 0, 0, 0.7); }\n.hero__video__thumbnail img {\n        width: 100%;\n        height: auto; }\n.hero__video__thumbnail svg {\n        position: absolute;\n        top: 50%;\n        left: 50%;\n        -webkit-transform: translate(-50%, -50%);\n                transform: translate(-50%, -50%);\n        width: 5em;\n        height: auto;\n        fill: rgba(0, 0, 0, 0.5);\n        -webkit-transition: fill 100ms ease-in;\n        transition: fill 100ms ease-in; }\n.hero__video__youtube.hidden {\n      display: none; }\n.hero__video__youtube__wrapper {\n      position: relative;\n      padding-bottom: 56.25%;\n      padding-top: 25px;\n      height: 0; }\n.hero__video__youtube__wrapper iframe {\n        position: absolute;\n        top: 0;\n        left: 0;\n        width: 100%;\n        height: 100%; }\n.hero__text {\n    -webkit-box-flex: 35;\n        -ms-flex: 35;\n            flex: 35; }\n.hero__text h1 {\n      font-size: 2em; }\n.hero__text p {\n      font-size: 1em;\n      line-height: 1.6; }\n@media screen and (max-width: 1020px) {\n      .hero__text p {\n        font-size: 1em; } }\n@media screen and (max-width: 388px) {\n      .hero__text h1 {\n        font-size: 1.5em; } }\n.products {\n  background: #FFFFFF;\n  box-shadow: 0 2px 25px 0 rgba(0, 0, 0, 0.1); }\n.products__container {\n    max-width: 972px;\n    padding: 4em 2em;\n    margin: 0 auto; }\n@media screen and (max-width: 1020px) {\n      .products__container {\n        padding: 4em 2em; } }\n@media screen and (max-width: 746px) {\n      .products__container {\n        padding: 2em; } }\n@media screen and (max-width: 388px) {\n      .products__container {\n        padding: 2em 1em; } }\n.products__title {\n    margin-bottom: 2em;\n    text-align: center; }\n.products__title h1 {\n      display: inline-block;\n      font-family: -apple-system-headline, BlinkMacSystemFont, Helvetica, sans-serif;\n      font-size: 3em;\n      margin-top: 0; }\n@media screen and (max-width: 388px) {\n        .products__title h1 {\n          font-size: 2em; } }\n.products__wrapper {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -ms-flex-wrap: wrap;\n        flex-wrap: wrap;\n    overflow: hidden;\n    margin-top: -2em; }\n@media screen and (max-width: 746px) {\n      .products__wrapper {\n        padding: 0; } }\n.products__item {\n    -webkit-box-flex: 1;\n        -ms-flex: 1 1 150px;\n            flex: 1 1 150px;\n    min-width: 150px;\n    max-width: 250px;\n    text-align: center;\n    padding: 2em;\n    margin: 2em;\n    font-family: monospace;\n    background: #FAFAFA;\n    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);\n    -webkit-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);\n    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }\n.products__item:hover {\n      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }\n@media screen and (max-width: 746px) {\n      .products__item {\n        padding: 1em;\n        margin: 1em; } }\n.products__item span {\n      display: block; }\n.products__item__img {\n      width: 100%;\n      height: auto; }\n.products__item__name {\n      margin: 1em 0 0.5em 0;\n      font-weight: bold; }\n.react-blur {\n  position: relative; }\n.product {\n  position: relative;\n  background: rgba(0, 0, 0, 0.5); }\n.product__container {\n    max-width: 1080px;\n    margin: 0 auto;\n    padding: 6em 2em; }\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 248 */
+/* 253 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -27672,7 +28255,7 @@
 	};
 
 /***/ },
-/* 249 */
+/* 254 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*

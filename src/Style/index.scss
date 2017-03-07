@@ -1,4 +1,6 @@
-@import './base/variables';
-@import './base/normalize';
-@import './modules/app/index';
-@import './modules/home/index';
+@import "./base/variables";
+@import "./base/normalize";
+@import "./modules/app/index";
+@import "./modules/home/index";
+@import "./modules/product/index";
+@import "../../node_modules/react-blur/dist/blur.css";
