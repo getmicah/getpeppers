@@ -1,0 +1,30 @@
+.other-products {
+	background: $color-white;
+	box-shadow: 0 -25px 25px -25px rgba(0, 0, 0, 0.1);
+	&__container {
+		max-width: $max-width * 0.9;
+		padding: 4em 2em;
+		margin: 0 auto;
+		@media screen and (max-width: $break-large) {
+			padding: 4em 2em;
+		}
+		@media screen and (max-width: $break-mid) {
+			padding: 2em;
+		}
+		@media screen and (max-width: $break-small) {
+			padding: 2em 1em;
+		}
+	}
+	&__header {
+		font-size: 2em;
+		text-align: center;
+	}
+	&__wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	&__item {
+		@extend .products__item;
+	}
+}

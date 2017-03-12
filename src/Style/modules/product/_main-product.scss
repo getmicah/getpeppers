@@ -1,0 +1,24 @@
+.main-product {
+	background: $color-grey;
+	&__container {
+		max-width: $max-width;
+		margin: 0 auto;
+		padding: 6em 2em;
+	}
+	&__item {
+		display: flex;
+		&__image {
+			img {
+				max-width: 200px;
+				height: auto;
+				border-radius: 50%;
+			}
+		}
+		&__details {
+			margin: 1em 0 0 3em;
+			h1 {
+				white-space: nowrap;
+			}
+		}
+	}
+}

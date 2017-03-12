@@ -41,7 +41,7 @@
 		&__thumbnail {
 			position: relative;
 			&.loading {
-				border: 5px solid red;
+				//border: 5px solid red;
 			}
 			&:hover {
 				cursor: pointer;
@@ -53,15 +53,23 @@
 				width: 100%;
 				height: auto;
 			}
-			svg {
+			svg, span {
 				position: absolute;
 				top: 50%;
 				left: 50%;
 				transform: translate(-50%, -50%);
+			}
+			svg {
 				width: 5em;
 				height: auto;
 				fill: rgba(0, 0, 0, 0.5);
 				transition: fill 100ms ease-in;
+			}
+			span {
+				background: rgba(0, 0, 0, 0.7);
+				color: $color-white;
+				padding: 1em;
+				border-radius: 0.5em;
 			}
 		}
 		&__youtube {

@@ -20,7 +20,7 @@ export default [
 	{
 		name: 'GetPeppers Tee',
 		description: 'swag',
-		price: 15,
+		price: '$15',
 		img: tshirt,
 		url: 'tee'
 	}

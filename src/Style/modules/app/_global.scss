@@ -6,6 +6,7 @@ html {
 	box-sizing: border-box;
 }
 body {
+	background: $color-grey;
 	position: relative;
 	margin: 0;
 	padding-bottom: $footer-height;
@@ -13,7 +14,6 @@ body {
 	font-family: -apple-system, BlinkMacSystemFont, 'Open Sans' sans-serif;
 	font-weight: lighter;
 	color: $color-black;
-	background: $color-white;
 }
 a {
 	text-decoration: none;

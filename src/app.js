@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, browserHistory } from 'react-router';
 
+import products from './Assets/products';
+
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import Home from './Components/Home';
@@ -23,13 +25,19 @@ class App extends React.Component {
 	}
 }
 
+const items = products.map((item, i) => {
+	return <Route
+		path={`/products/${item.url}`}
+		component={Product}
+		id={i}
+		key={i}
+	/>
+});
 ReactDOM.render((
-	<Router history={browserHistory}>
+	<Router onUpdate={() => window.scrollTo(0, 0)} history={browserHistory}>
 		<Route component={App}>
 			<Route path='/' component={Home} />
-			<Route path='/products/carolina-reaper' component={Product} id={0} />
-			<Route path='/products/chocolate-bhutlah' component={Product} id={1} />
-			<Route path='/products/tee' component={Product} id={2} />
+			{items}
 			<Route path='*' component={NotFound} />
   		</Route>
 	</Router>

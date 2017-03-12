@@ -3,12 +3,18 @@ import { Link } from 'react-router';
 
 import products from '../../../Assets/products.js';
 
-import reaper from '../../../Assets/reaper.jpg';
-import bhutlah from '../../../Assets/bhutlah.jpg';
-import tshirt from '../../../Assets/tshirt.jpg';
-
 export default class Products extends React.Component {
 	render() {
+		const items = [];
+		for (let i = 0; i < products.length; i++) {
+			items.push(
+				<Link key={i} className='products__item' to={`/products/${products[i].url}`}>
+					<img src={products[i].img} alt={products[i].name} />
+					<span>{products[i].name}</span>
+					<span>{products[i].price}</span>
+				</Link>
+			);
+		}
 		return (
 			<section className='products'>
 				<div className='products__container'>
@@ -16,21 +22,7 @@ export default class Products extends React.Component {
 						<h1>Products</h1>
 					</div>
 					<div className='products__wrapper'>
-						<Link className='products__item' to='/products/carolina-reaper'>
-							<img className='products__item__img' src={reaper} alt='reaper' />
-							<span className='products__item__name'>Carolina Reaper</span>
-							<span className='products__item__price'>Out of stock</span>
-						</Link>
-						<Link className='products__item' to='/products/chocolate-bhutlah'>
-							<img className='products__item__img' src={bhutlah} alt='bhutlah' />
-							<span className='products__item__name'>Chocolate Bhutlah</span>
-							<span className='products__item__price'>Out of stock</span>
-						</Link>
-						<Link className='products__item' to='/products/tee'>
-							<img className='products__item__img' src={tshirt} alt='tshirt' />
-							<span className='products__item__name'>GetPeppers T-shirt</span>
-							<span className='products__item__price'>$15</span>
-						</Link>
+						{items}
 					</div>
 				</div>
 			</section>
