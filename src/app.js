@@ -29,7 +29,7 @@ ReactDOM.render((
 			<Route path='/' component={Home} />
 			<Route path='/products/carolina-reaper' component={Product} id={0} />
 			<Route path='/products/chocolate-bhutlah' component={Product} id={1} />
-			<Route path='/products/tshirt' component={Product} id={2} />
+			<Route path='/products/tee' component={Product} id={2} />
 			<Route path='*' component={NotFound} />
   		</Route>
 	</Router>
