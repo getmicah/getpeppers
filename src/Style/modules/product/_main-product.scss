@@ -1,9 +1,17 @@
 .main-product {
 	background: $color-grey;
 	&__container {
+		display: flex;
+		flex-wrap: wrap;
 		max-width: $max-width;
 		margin: 0 auto;
 		padding: 6em 2em;
+		@media screen and (max-width: $break-large) {
+			padding: 4em 2em;
+		}
+		@media screen and (max-width: $break-mid) {
+			padding: 2em;
+		}
 	}
 	&__item {
 		display: flex;
@@ -12,12 +20,34 @@
 				max-width: 200px;
 				height: auto;
 				border-radius: 50%;
+				@media screen and (max-width: $break-mid) {
+					max-width: 150px
+				}
 			}
 		}
 		&__details {
 			margin: 1em 0 0 3em;
+			@media screen and (max-width: $break-mid) {
+				margin-left: 2em;
+			}
+			@media screen and (max-width: $break-small) {
+				margin-left: 1em;
+			}
 			h1 {
-				white-space: nowrap;
+				font-size: 2em;
+				@media screen and (max-width: $break-mid) {
+					font-size: 1.5em;
+				}
+				@media screen and (max-width: $break-small) {
+					font-size: 1em;
+				}
+			}
+			span {
+				display: block;
+				font-style: italic;
+			}
+			button {
+
 			}
 		}
 	}

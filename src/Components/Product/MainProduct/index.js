@@ -16,13 +16,16 @@ export default class MainProduct extends React.Component {
 						</div>
 						<div className='main-product__item__details'>
 							<h1>{products[this.props.id].name}</h1>
-							<p>{products[this.props.id].description}</p>
+							<span>{products[this.props.id].price}</span>
+							{products[this.props.id].price ?
+								<button name='purchase'>Buy now</button>
+								:
+								<button name='purchase' disabled>Buy now</button>
+							}
 						</div>
 					</div>
-					<div className='main-product__cards'>
-						<div className='main-product__cards__specs'>
-							cards
-						</div>
+					<div className='main-product__specs'>
+
 					</div>
 				</div>
 			</div>
