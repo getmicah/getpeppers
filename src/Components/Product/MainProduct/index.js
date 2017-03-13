@@ -4,6 +4,12 @@ import products from '../../../Assets/products.js';
 
 export default class MainProduct extends React.Component {
 	render() {
+		const info = [];
+		for (let i = 0; i < products[this.props.id].info.length; i++) {
+			info.push(
+				<li key={i}>{products[this.props.id].info[i]}</li>
+			);
+		}
 		return (
 			<div className='main-product'>
 				<div className='main-product__container'>
@@ -16,7 +22,9 @@ export default class MainProduct extends React.Component {
 						</div>
 						<div className='main-product__item__details'>
 							<h1>{products[this.props.id].name}</h1>
-							<span>{products[this.props.id].price}</span>
+							<span>
+								{products[this.props.id].price ? products[this.props.id].price : 'Out of stock'}
+							</span>
 							{products[this.props.id].price ?
 								<button name='purchase'>Buy now</button>
 								:
@@ -24,8 +32,9 @@ export default class MainProduct extends React.Component {
 							}
 						</div>
 					</div>
-					<div className='main-product__specs'>
-
+					<div className='main-product__info'>
+						<h1>Product Information:</h1>
+						<ul>{info}</ul>
 					</div>
 				</div>
 			</div>

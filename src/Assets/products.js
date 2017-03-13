@@ -7,18 +7,37 @@ export default [
 		name: 'Caronlina Reaper',
 		url: 'carolina-reaper',
 		price: null,
-		img: reaper
+		img: reaper,
+		fire: 5,
+		info: [
+			'Hottest pepper in the world',
+			'~2,200,000 SHU',
+			'Grown in Richland, WA',
+			'100% satisfaction garuntee'
+		]
 	},
 	{
 		name: 'Chocolate Bhutlah',
 		url: 'chocolate-bhutlah',
 		price: null,
-		img: bhutlah
+		fire: 4,
+		img: bhutlah,
+		info: [
+			'~2,000,000 SHU',
+			'Grown in Richland, WA',
+			'100% satisfaction garuntee'
+		]
 	},
 	{
 		name: 'GetPeppers Tee',
 		url: 'tee',
 		price: 15,
-		img: tshirt
+		fire: null,
+		img: tshirt,
+		info: [
+			'100% cotton',
+			'Crewneck short-sleeve',
+			'Machine wash'
+		]
 	}
 ]

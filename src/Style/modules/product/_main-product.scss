@@ -2,6 +2,7 @@
 	background: $color-grey;
 	&__container {
 		display: flex;
+		align-items: center;
 		flex-wrap: wrap;
 		max-width: $max-width;
 		margin: 0 auto;
@@ -14,27 +15,37 @@
 		}
 	}
 	&__item {
+		flex: 2;
 		display: flex;
+		flex-wrap: wrap;
+		margin-right: 5em;
+		@media screen and (max-width: $break-large) {
+			flex-basis: 100%;
+			padding-bottom: 2em;
+		}
+		@media screen and (max-width: $break-mid) {
+			justify-content: center;
+			margin-right: 0;
+		}
 		&__image {
+			text-align: center;
+			margin-right: 3em;
+			@media screen and (max-width: $break-mid) {
+				flex-basis: 100%;
+				margin-right: 0;
+			}
 			img {
-				max-width: 200px;
+				max-width: 250px;
 				height: auto;
-				border-radius: 50%;
-				@media screen and (max-width: $break-mid) {
-					max-width: 150px
-				}
 			}
 		}
 		&__details {
-			margin: 1em 0 0 3em;
 			@media screen and (max-width: $break-mid) {
-				margin-left: 2em;
-			}
-			@media screen and (max-width: $break-small) {
-				margin-left: 1em;
+				text-align: center;
 			}
 			h1 {
 				font-size: 2em;
+				margin-left: -0.1em;
 				@media screen and (max-width: $break-mid) {
 					font-size: 1.5em;
 				}
@@ -44,10 +55,30 @@
 			}
 			span {
 				display: block;
-				font-style: italic;
 			}
 			button {
 
+			}
+		}
+	}
+	&__info {
+		flex: 1;
+		@media screen and (max-width: $break-mid) {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		h1 {
+			font-size: 1.2em;
+			font-weight: normal;
+			@media screen and (max-width: $break-mid) {
+				margin-bottom: -0.5em;
+			}
+		}
+		ul {
+			padding-left: 1.2em;
+			li {
+				margin: 1em 0;
 			}
 		}
 	}

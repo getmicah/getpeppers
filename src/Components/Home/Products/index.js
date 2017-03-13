@@ -11,7 +11,11 @@ export default class Products extends React.Component {
 				<Link key={i} className='products__item' to={`/products/${products[i].url}`}>
 					<img src={products[i].img} alt={products[i].name} />
 					<span>{products[i].name}</span>
-					<span>{products[i].price}</span>
+					{products[i].price ?
+						<span>${products[i].price}</span>
+						:
+						<span>Out of stock</span>
+					}
 				</Link>
 			);
 		}
