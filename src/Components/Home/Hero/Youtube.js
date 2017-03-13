@@ -8,7 +8,7 @@ export default class Youtube extends React.Component {
 		return (
 			<div className={`hero__video__youtube ${this.props.isReady ? null : 'hidden'}`}>
 				<div className='hero__video__youtube__wrapper' >
-					<iframe src='https://www.youtube.com/embed/gblpzvNReDE?start=1&&autoplay=1'
+					<iframe src='https://www.youtube.com/embed/gblpzvNReDE?autoplay=1'
 					 		ref='iframe'
 							frameBorder='0'
 							allowFullScreen >

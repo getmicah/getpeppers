@@ -27355,7 +27355,7 @@
 					_react2.default.createElement(
 						'div',
 						{ className: 'hero__video__youtube__wrapper' },
-						_react2.default.createElement('iframe', { src: 'https://www.youtube.com/embed/gblpzvNReDE?start=1&&autoplay=1',
+						_react2.default.createElement('iframe', { src: 'https://www.youtube.com/embed/gblpzvNReDE?autoplay=1',
 							ref: 'iframe',
 							frameBorder: '0',
 							allowFullScreen: true })
