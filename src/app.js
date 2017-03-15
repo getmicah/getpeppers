@@ -16,9 +16,7 @@ class App extends React.Component {
 		return (
 			<div id='app-container'>
 				<Header />
-				<main>
-					{this.props.children}
-				</main>
+				<main>{this.props.children}</main>
 				<Footer />
 			</div>
 		);
