@@ -16,13 +16,14 @@
 		}
 	}
 	&__item {
-		flex: 2;
+		flex: 2 0 auto;
+		min-width: 0;
 		display: flex;
 		margin: 0 3em 3em 0;
 		@media screen and (max-width: $break-mid) {
-			flex: 1;
+			flex: 1 0 50%;
 			flex-wrap: wrap;
-			margin: 0 2em 2em 0;
+			margin: 0 4em 2em 0;
 		}
 		@media screen and (max-width: $break-small) {
 			justify-content: center;
@@ -63,7 +64,8 @@
 		}
 	}
 	&__info {
-		flex: 1;
+		flex: 1 0 auto;
+		min-width: 0;
 		@media screen and (max-width: $break-small) {
 			display: flex;
 			flex-direction: column;
