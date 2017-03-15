@@ -16,7 +16,7 @@
 		}
 	}
 	&__item {
-		flex: 2;
+		flex: 2 0 auto;
 		display: flex;
 		margin: 0 3em 3em 0;
 		@media screen and (max-width: $break-mid) {
@@ -63,7 +63,7 @@
 		}
 	}
 	&__info {
-		flex: 1;
+		flex: 1 0 auto;
 		@media screen and (max-width: $break-small) {
 			display: flex;
 			flex-direction: column;
