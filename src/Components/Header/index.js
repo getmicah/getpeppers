@@ -14,12 +14,10 @@ export default class Header extends React.Component {
 						<span>Peppers</span>
 					</Link>
 					<div className='header__promo'>
-						<Link to='/'>Join our newsletter</Link>
+						<a className='disabled-link' disabled="true">Join our newsletter</a>
 					</div>
 				</div>
 			</header>
 		);
 	}
 }
-
-// social icons: https://github.com/larsenwork/web.svg.min

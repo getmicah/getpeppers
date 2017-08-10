@@ -30,3 +30,6 @@ a {
 main {
 	padding-top: $header-height;
 }
+.disabled-link {
+	cursor: not-allowed;
+}

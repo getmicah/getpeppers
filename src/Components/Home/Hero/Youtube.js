@@ -7,11 +7,13 @@ export default class Youtube extends React.Component {
 	render () {
 		return (
 			<div className={`hero__video__youtube ${this.props.isReady ? null : 'hidden'}`}>
-				<div className='hero__video__youtube__wrapper' >
-					<iframe src='https://www.youtube.com/embed/gblpzvNReDE?autoplay=1'
-					 		ref='iframe'
-							frameBorder='0'
-							allowFullScreen >
+				<div className='hero__video__youtube__wrapper'>
+					<iframe ref='iframe'
+							src="https://www.youtube.com/embed/gblpzvNReDE?rel=0&&autoplay=1" 
+							width="560" 
+							height="315" 
+							frameBorder="0" 
+							allowFullscreen>
 					</iframe>
 				</div>
 			</div>

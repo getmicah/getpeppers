@@ -22,13 +22,11 @@ export default class MainProduct extends React.Component {
 						</div>
 						<div className='main-product__item__details'>
 							<h1>{products[this.props.id].name}</h1>
-							<span>
-								{products[this.props.id].price ? products[this.props.id].price : 'Out of stock'}
-							</span>
-							{products[this.props.id].price ?
+							<span>${products[this.props.id].price}</span>
+							{products[this.props.id].inStock ?
 								<button name='purchase'>Buy now</button>
 								:
-								<button name='purchase' disabled>Buy now</button>
+								<button name='purchase' disabled>Out of stock</button>
 							}
 						</div>
 					</div>
