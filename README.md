@@ -1,2 +1,2 @@
 # getpeppers
-client website
+reasonably priced, unreasonably spiced
